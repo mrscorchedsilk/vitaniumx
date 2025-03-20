@@ -1,17 +1,16 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
   CheckCircle, 
   Beaker, 
-  Flask, 
+  FlaskConical, 
   Award, 
   Shield, 
   TestTube, 
   MoveRight, 
   Wheat, 
-  DropletHalf, 
+  Droplet, 
   Milk, 
   Pill, 
   HeartPulse 
@@ -247,7 +246,7 @@ const Index = () => {
             <ProductCard
               title="Processed Food Solutions"
               description="Custom premixes for bakery, confectionery, dairy, beverages, and snacks."
-              icon={<DropletHalf className="h-6 w-6" />}
+              icon={<Droplet className="h-6 w-6" />}
               link="/solutions/processed-foods"
               delay={200}
             />
@@ -268,7 +267,7 @@ const Index = () => {
             <ProductCard
               title="Customized Formulations"
               description="Tailored blends designed to meet specific nutritional requirements and applications."
-              icon={<Flask className="h-6 w-6" />}
+              icon={<FlaskConical className="h-6 w-6" />}
               link="/solutions/custom"
               delay={500}
             />
@@ -374,7 +373,7 @@ const Index = () => {
                 </ScrollReveal>
                 <ScrollReveal delay={500}>
                   <div className="flex items-start">
-                    <Flask className="h-6 w-6 text-vitanium-600 mr-3 flex-shrink-0 mt-0.5" />
+                    <FlaskConical className="h-6 w-6 text-vitanium-600 mr-3 flex-shrink-0 mt-0.5" />
                     <div>
                       <h3 className="font-semibold text-lg mb-1">Continuous Improvement</h3>
                       <p className="text-neutral-600">Ongoing research to enhance efficacy and production methods.</p>

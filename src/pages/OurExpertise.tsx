@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle, Award, Users, TrendingUp, Globe, HeartPulse } from 'lucide-react';
+import { CheckCircle, Award, Users, TrendingUp, Globe, HeartPulse, Flask } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
@@ -95,7 +94,7 @@ const OurExpertise = () => {
             
             <ScrollReveal delay={500}>
               <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
-                <FlaskConical className="h-10 w-10 text-vitanium-600 mb-4" />
+                <Flask className="h-10 w-10 text-vitanium-600 mb-4" />
                 <h3 className="text-xl font-semibold mb-3">Custom Formulations</h3>
                 <p className="text-neutral-600">
                   Tailored micronutrient premixes designed to meet specific nutritional requirements, product applications, and regional standards.

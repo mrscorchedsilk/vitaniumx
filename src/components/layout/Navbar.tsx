@@ -13,7 +13,18 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Our Expertise', path: '/expertise' },
-    { name: 'Solutions & Products', path: '/solutions' },
+    { 
+      name: 'Solutions & Products', 
+      path: '/solutions',
+      submenu: [
+        { name: 'Staple Food Fortification', path: '/solutions/staple-food' },
+        { name: 'Processed Food Solutions', path: '/solutions/processed-foods' },
+        { name: 'Therapeutic Foods', path: '/solutions/therapeutic' },
+        { name: 'Animal Nutrition', path: '/solutions/animal-nutrition' },
+        { name: 'Customized Formulations', path: '/solutions/custom' },
+        { name: 'FMCG Fortification', path: '/solutions/fmcg' },
+      ]
+    },
     { 
       name: 'About Us', 
       path: '#',
@@ -44,8 +55,8 @@ const Navbar = () => {
   return (
     <>
       {/* Contact Banner */}
-      <div className="bg-navy-900 text-white py-2">
-        <div className="container-wide flex justify-center md:justify-end items-center space-x-6">
+      <div className="bg-navy-900 text-white py-3">
+        <div className="container-wide flex justify-center items-center space-x-10">
           <a href="tel:+919429694121" className="flex items-center text-sm hover:text-vitanium-300 transition-colors">
             <Phone className="h-4 w-4 mr-2" />
             +91 9429694121

@@ -16,6 +16,14 @@ import SuccessStories from "./pages/SuccessStories";
 import Contact from "./pages/Contact";
 import GetQuote from "./pages/GetQuote";
 
+// Solution pages
+import StapleFood from "./pages/solutions/StapleFood";
+import ProcessedFoods from "./pages/solutions/ProcessedFoods";
+import TherapeuticFoods from "./pages/solutions/TherapeuticFoods";
+import AnimalNutrition from "./pages/solutions/AnimalNutrition";
+import CustomFormulations from "./pages/solutions/CustomFormulations";
+import FmcgFortification from "./pages/solutions/FmcgFortification";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -28,6 +36,15 @@ const App = () => (
           <Route path="/" element={<Layout><Index /></Layout>} />
           <Route path="/expertise" element={<Layout><OurExpertise /></Layout>} />
           <Route path="/solutions" element={<Layout><Solutions /></Layout>} />
+          
+          {/* Solutions & Products subpages */}
+          <Route path="/solutions/staple-food" element={<Layout><StapleFood /></Layout>} />
+          <Route path="/solutions/processed-foods" element={<Layout><ProcessedFoods /></Layout>} />
+          <Route path="/solutions/therapeutic" element={<Layout><TherapeuticFoods /></Layout>} />
+          <Route path="/solutions/animal-nutrition" element={<Layout><AnimalNutrition /></Layout>} />
+          <Route path="/solutions/custom" element={<Layout><CustomFormulations /></Layout>} />
+          <Route path="/solutions/fmcg" element={<Layout><FmcgFortification /></Layout>} />
+          
           <Route path="/quality" element={<Layout><Quality /></Layout>} />
           <Route path="/innovation" element={<Layout><Innovation /></Layout>} />
           <Route path="/knowledge" element={<Layout><Knowledge /></Layout>} />

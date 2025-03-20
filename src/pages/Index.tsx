@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -23,10 +24,9 @@ import ProductCard from '@/components/ui/ProductCard';
 
 const Index = () => {
   return (
-    <div className="pt-16">
+    <div className="pt-0">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-28 overflow-hidden bg-hero-pattern bg-cover bg-center">
-        <div className="absolute inset-0 bg-gradient-to-r from-white/80 to-white/60"></div>
+      <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-r from-vitanium-50 to-navy-50">
         <div className="container-wide relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="lg:pr-8">
@@ -58,14 +58,13 @@ const Index = () => {
             </div>
             <div className="relative">
               <ScrollReveal animation="scale-in">
-                <img 
-                  src="/lovable-uploads/f8acebd6-bc12-434e-af91-1ba0e1289c45.png" 
-                  alt="Laboratory equipment" 
-                  className="rounded-xl shadow-elevated w-full object-cover aspect-[4/3]"
-                />
-                <div className="absolute -bottom-4 -right-4 bg-white p-4 rounded-lg shadow-subtle border border-neutral-100">
-                  <div className="font-semibold text-navy-800">GMP Certified</div>
-                  <div className="text-sm text-neutral-600">ISO 9001:2015 | FSSC 22000</div>
+                <div className="bg-white p-8 rounded-xl shadow-elevated border border-neutral-100 text-center">
+                  <div className="text-3xl font-bold text-vitanium-600 mb-4">Combating Hidden Hunger</div>
+                  <p className="text-neutral-600 mb-6">Our micronutrient premixes have reached millions through government partnerships and food fortification initiatives.</p>
+                  <div className="bg-neutral-50 p-4 rounded-lg inline-block">
+                    <div className="font-semibold text-navy-800">GMP Certified</div>
+                    <div className="text-sm text-neutral-600">ISO 9001:2015 | FSSC 22000</div>
+                  </div>
                 </div>
               </ScrollReveal>
             </div>
@@ -162,11 +161,15 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <ScrollReveal animation="slide-in-right">
-                <img 
-                  src="/lovable-uploads/cb84f353-f35c-4368-aeb6-69773b4f27a3.png" 
-                  alt="Laboratory equipment" 
-                  className="rounded-xl shadow-elevated w-full object-cover aspect-[4/3]"
-                />
+                <div className="bg-white p-8 rounded-xl shadow-elevated border border-neutral-100">
+                  <div className="flex justify-center mb-6">
+                    <TestTube className="h-16 w-16 text-vitanium-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-center mb-4">State-of-the-Art Laboratory</h3>
+                  <p className="text-neutral-600 text-center">
+                    Our advanced testing equipment includes HPLC, ICP-OES, AAS, and more for comprehensive analysis.
+                  </p>
+                </div>
               </ScrollReveal>
             </div>
             <div>
@@ -391,11 +394,15 @@ const Index = () => {
             </div>
             <div className="order-1 lg:order-2">
               <ScrollReveal animation="slide-in-right">
-                <img 
-                  src="/lovable-uploads/ffcec9f3-6a9c-4f6d-ac75-b30da22d22a8.png" 
-                  alt="Innovation laboratory" 
-                  className="rounded-xl shadow-elevated w-full object-cover aspect-[4/3]"
-                />
+                <div className="bg-white p-8 rounded-xl shadow-elevated border border-neutral-100">
+                  <div className="flex justify-center mb-6">
+                    <Beaker className="h-16 w-16 text-vitanium-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-center mb-4">Cutting-Edge Research</h3>
+                  <p className="text-neutral-600 text-center">
+                    Our innovation lab is equipped with the latest technology to develop and test new fortification solutions.
+                  </p>
+                </div>
               </ScrollReveal>
             </div>
           </div>

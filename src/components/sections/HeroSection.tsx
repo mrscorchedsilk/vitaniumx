@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import OrganicShape from '../ui/OrganicShape';
+import { FloatingSphere } from '../layout/Layout';
 
 interface HeroSectionProps {
   title: string;
@@ -46,6 +47,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           opacity={0.07} 
           className="-right-40 -top-40" 
         />
+        
+        {/* Additional floating spheres specifically for the hero section */}
+        <FloatingSphere size={100} color="#10B981" left="2%" top="25%" delay={0.3} blur="2px" />
+        <FloatingSphere size={70} color="#0EA5E9" left="12%" top="60%" delay={0.7} />
+        <FloatingSphere size={120} color="#F59E0B" left="85%" top="10%" delay={1.1} blur="3px" />
+        <FloatingSphere size={50} color="#FA5252" left="80%" top="50%" delay={0.5} />
+        <FloatingSphere size={65} color="#8B5CF6" left="45%" top="75%" delay={1.5} />
+        <FloatingSphere size={40} color="#EC4899" left="65%" top="25%" delay={0.9} />
+        <FloatingSphere size={85} color="#0891B2" left="30%" top="15%" delay={1.3} blur="2px" />
       </div>
       
       <div className="container-wide relative z-10">
@@ -91,7 +101,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <div className="relative bg-white p-2 rounded-2xl shadow-2xl overflow-hidden">
+            <div className="relative bg-white/70 backdrop-blur-md p-2 rounded-2xl shadow-2xl overflow-hidden">
               <img 
                 src={imageSrc} 
                 alt="Nutritious food" 
@@ -103,7 +113,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             
             {/* Floating accents */}
             <motion.div
-              className="absolute -top-6 -right-6 w-24 h-24 bg-vitanium-100 rounded-full flex items-center justify-center shadow-lg"
+              className="absolute -top-6 -right-6 w-24 h-24 bg-vitanium-100/80 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg"
               animate={{ 
                 y: [0, -10, 0],
                 rotate: [0, 5, 0] 
@@ -120,7 +130,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </motion.div>
             
             <motion.div
-              className="absolute -bottom-4 -left-4 w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center shadow-lg"
+              className="absolute -bottom-4 -left-4 w-20 h-20 bg-emerald-100/80 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg"
               animate={{ 
                 y: [0, 10, 0],
                 rotate: [0, -5, 0] 

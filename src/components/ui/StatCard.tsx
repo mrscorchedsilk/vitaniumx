@@ -19,7 +19,8 @@ const StatCard: React.FC<StatCardProps> = ({
   return (
     <ScrollReveal 
       className={cn(
-        'text-center p-6 rounded-lg bg-white shadow-subtle',
+        'text-center p-6 rounded-lg bg-white shadow-lg border border-white/20 transition-shadow duration-300',
+        'shadow-[0_10px_25px_-5px_rgba(92,138,238,0.25)] hover:shadow-[0_15px_35px_-5px_rgba(92,138,238,0.35)]',
         className
       )}
       delay={delay}

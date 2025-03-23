@@ -39,6 +39,26 @@ const FoodImageGallery: React.FC<FoodImageGalleryProps> = ({
     show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
 
+  // Array of different shadow colors for variety
+  const shadowColors = [
+    'shadow-[0_10px_25px_-5px_rgba(14,165,233,0.3)]', // Blue
+    'shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)]', // Green
+    'shadow-[0_10px_25px_-5px_rgba(245,158,11,0.3)]', // Amber
+    'shadow-[0_10px_25px_-5px_rgba(250,82,82,0.3)]',  // Red
+    'shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)]', // Purple
+    'shadow-[0_10px_25px_-5px_rgba(236,72,153,0.3)]', // Pink
+  ];
+
+  // Matching hover shadow colors
+  const hoverShadows = [
+    'hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.5)]', // Blue
+    'hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.5)]', // Green
+    'hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.5)]', // Amber
+    'hover:shadow-[0_15px_35px_-5px_rgba(250,82,82,0.5)]',  // Red
+    'hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.5)]', // Purple
+    'hover:shadow-[0_15px_35px_-5px_rgba(236,72,153,0.5)]', // Pink
+  ];
+
   return (
     <motion.div 
       className={cn(`grid ${columnClasses[columns]} gap-4 md:gap-6`, className)}
@@ -46,28 +66,39 @@ const FoodImageGallery: React.FC<FoodImageGalleryProps> = ({
       initial="hidden"
       animate="show"
     >
-      {images.map((image, index) => (
-        <motion.div 
-          key={index}
-          className="relative overflow-hidden rounded-xl shadow-lg bg-white"
-          variants={item}
-          whileHover={{ 
-            scale: 1.03, 
-            transition: { duration: 0.3 } 
-          }}
-        >
-          <div className="aspect-square overflow-hidden">
-            <img 
-              src={image.src} 
-              alt={image.alt} 
-              className="object-cover w-full h-full transition-transform duration-500 hover:scale-110" 
-            />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-            <span className="text-white font-medium text-sm">{image.alt}</span>
-          </div>
-        </motion.div>
-      ))}
+      {images.map((image, index) => {
+        // Get shadow color based on index (cycling through the array)
+        const shadowIndex = index % shadowColors.length;
+        const shadowColor = shadowColors[shadowIndex];
+        const hoverShadow = hoverShadows[shadowIndex];
+        
+        return (
+          <motion.div 
+            key={index}
+            className={cn(
+              "relative overflow-hidden rounded-xl bg-white border border-white/40 transition-all duration-300",
+              shadowColor,
+              hoverShadow
+            )}
+            variants={item}
+            whileHover={{ 
+              scale: 1.03, 
+              transition: { duration: 0.3 } 
+            }}
+          >
+            <div className="aspect-square overflow-hidden">
+              <img 
+                src={image.src} 
+                alt={image.alt} 
+                className="object-cover w-full h-full transition-transform duration-500 hover:scale-110" 
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <span className="text-white font-medium text-sm">{image.alt}</span>
+            </div>
+          </motion.div>
+        );
+      })}
     </motion.div>
   );
 };

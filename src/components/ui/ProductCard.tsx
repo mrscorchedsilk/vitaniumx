@@ -25,7 +25,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <ScrollReveal
       className={cn(
-        'group p-6 bg-white rounded-lg shadow-subtle border border-neutral-100 transition-all duration-300 hover:shadow-elevated hover:border-vitanium-200',
+        'group p-6 bg-white/90 backdrop-blur-sm rounded-lg border border-neutral-100 transition-all duration-300',
+        'shadow-[0_10px_25px_-5px_rgba(16,185,129,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.35)]',
+        'hover:border-vitanium-200',
         className
       )}
       delay={delay}

@@ -55,13 +55,14 @@ const Navbar = () => {
   return (
     <>
       {/* Contact Banner */}
-      <div className="bg-navy-900 text-white py-3">
+      <div className="bg-gradient-to-r from-emerald-900 to-vitanium-800 text-white py-3 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots opacity-10"></div>
         <div className="container-wide flex justify-center items-center space-x-10">
-          <a href="tel:+919429694121" className="flex items-center text-sm hover:text-vitanium-300 transition-colors">
+          <a href="tel:+919429694121" className="flex items-center text-sm hover:text-emerald-300 transition-colors">
             <Phone className="h-4 w-4 mr-2" />
             +91 9429694121
           </a>
-          <a href="mailto:hello@vitaniumx.com" className="flex items-center text-sm hover:text-vitanium-300 transition-colors">
+          <a href="mailto:hello@vitaniumx.com" className="flex items-center text-sm hover:text-emerald-300 transition-colors">
             <Mail className="h-4 w-4 mr-2" />
             hello@vitaniumx.com
           </a>
@@ -73,8 +74,8 @@ const Navbar = () => {
         className={cn(
           "sticky top-0 w-full z-50 transition-all duration-300",
           scrolled 
-            ? "bg-white/95 backdrop-blur-sm shadow-subtle py-3" 
-            : "bg-white py-5"
+            ? "glass shadow-subtle py-2" 
+            : "bg-white py-4"
         )}
       >
         <div className="container-wide flex items-center justify-between">
@@ -88,17 +89,17 @@ const Navbar = () => {
             {navItems.map((item) => 
               item.submenu ? (
                 <div key={item.name} className="relative group">
-                  <button className="flex items-center text-neutral-800 font-medium hover:text-vitanium-600 transition-colors">
+                  <button className="flex items-center text-neutral-800 font-medium hover:text-emerald-600 transition-colors">
                     {item.name}
-                    <ChevronDown className="ml-1 h-4 w-4" />
+                    <ChevronDown className="ml-1 h-4 w-4 group-hover:rotate-180 transition-transform duration-200" />
                   </button>
-                  <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                    <div className="py-1 rounded-md bg-white">
+                  <div className="absolute left-0 mt-2 w-56 glass rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform -translate-y-2 group-hover:translate-y-0">
+                    <div className="py-1 rounded-lg overflow-hidden">
                       {item.submenu.map((subitem) => (
                         <Link
                           key={subitem.name}
                           to={subitem.path}
-                          className="block px-4 py-2 text-sm text-neutral-800 hover:bg-neutral-50 hover:text-vitanium-600"
+                          className="block px-4 py-2 text-sm text-neutral-800 hover:bg-emerald-50/50 hover:text-emerald-600"
                         >
                           {subitem.name}
                         </Link>
@@ -113,8 +114,8 @@ const Navbar = () => {
                   className={cn(
                     "text-neutral-800 font-medium transition-colors",
                     location.pathname === item.path 
-                      ? "text-vitanium-600" 
-                      : "hover:text-vitanium-600"
+                      ? "text-emerald-600" 
+                      : "hover:text-emerald-600"
                   )}
                 >
                   {item.name}
@@ -149,7 +150,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <div
           className={cn(
-            "lg:hidden fixed inset-0 bg-white z-40 transition-transform ease-in-out duration-300 transform",
+            "lg:hidden fixed inset-0 glass z-40 transition-transform ease-in-out duration-300 transform",
             isOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
@@ -158,13 +159,13 @@ const Navbar = () => {
               {navItems.map((item) => 
                 item.submenu ? (
                   <div key={item.name} className="py-2">
-                    <div className="font-medium text-lg mb-2">{item.name}</div>
-                    <div className="ml-4 border-l-2 border-neutral-200 pl-4 space-y-2">
+                    <div className="font-medium text-lg mb-2 text-emerald-700">{item.name}</div>
+                    <div className="ml-4 border-l-2 border-emerald-200 pl-4 space-y-2">
                       {item.submenu.map((subitem) => (
                         <Link
                           key={subitem.name}
                           to={subitem.path}
-                          className="block py-1 text-neutral-600 hover:text-vitanium-600"
+                          className="block py-1 text-neutral-600 hover:text-emerald-600"
                           onClick={() => setIsOpen(false)}
                         >
                           {subitem.name}
@@ -179,8 +180,8 @@ const Navbar = () => {
                     className={cn(
                       "block py-2 text-lg font-medium",
                       location.pathname === item.path 
-                        ? "text-vitanium-600" 
-                        : "text-neutral-800 hover:text-vitanium-600"
+                        ? "text-emerald-600" 
+                        : "text-neutral-800 hover:text-emerald-600"
                     )}
                     onClick={() => setIsOpen(false)}
                   >

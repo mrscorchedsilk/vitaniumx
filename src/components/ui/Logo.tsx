@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Logo = ({ className }: { className?: string }) => {
   return (
@@ -10,19 +11,15 @@ const Logo = ({ className }: { className?: string }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex items-center">
-        <motion.div
-          className="font-bold text-2xl tracking-wide"
+      <Link to="/" className="inline-block">
+        <motion.img
+          src="/lovable-uploads/bbc3411a-bd12-4d4b-95b4-dab5e7bbd107.png"
+          alt="VITANIUMX Logo"
+          className="h-10 md:h-12 w-auto"
           whileHover={{ scale: 1.03 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        >
-          <span className="text-black">VITANIUM</span>
-          <span className="text-sky-500 font-extrabold">X</span>
-        </motion.div>
-      </div>
-      <span className="text-vitanium-600 text-xs tracking-widest uppercase -mt-1">
-        A Company of Progressive <span className="text-sky-400">Processors</span>
-      </span>
+        />
+      </Link>
     </motion.div>
   );
 };

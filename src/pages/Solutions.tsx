@@ -14,6 +14,35 @@ import {
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import ProductCard from '@/components/ui/ProductCard';
+import FoodImageGallery from '@/components/ui/FoodImageGallery';
+
+// Food image gallery data
+const foodImages = [
+  {
+    src: "/lovable-uploads/aaf178d4-a6a4-4b55-80ec-0c7059537d4e.png",
+    alt: "Nutritious fresh vegetables, legumes and grains in wooden bowls"
+  },
+  {
+    src: "/lovable-uploads/d8fdbed4-1f7c-4aa0-80ba-79f6252a8dc3.png",
+    alt: "Healthy bowl with chickpeas, cucumber and carrots"
+  },
+  {
+    src: "/lovable-uploads/e718b2ed-1282-49a3-a55f-4d222f3281f6.png",
+    alt: "Balanced Buddha bowl with protein and various vegetables"
+  },
+  {
+    src: "/lovable-uploads/c3139f1c-6d1a-4dbc-bcff-98d59759fd73.png",
+    alt: "Fresh green salad in bowl with heart-shaped elements"
+  },
+  {
+    src: "/lovable-uploads/38125dfc-481a-4b2a-a4b5-615898b4a565.png",
+    alt: "Protein-rich salad with chicken, eggs and vegetables"
+  },
+  {
+    src: "/lovable-uploads/4ff432ca-6a3e-42db-9af5-0bd15ac1edd7.png",
+    alt: "Nutritious bowl with grilled chicken, eggs and vegetables"
+  }
+];
 
 const Solutions = () => {
   return (
@@ -24,6 +53,17 @@ const Solutions = () => {
           title="Comprehensive Fortification Solutions"
           description="We offer a wide range of micronutrient premixes designed for various applications across the food industry."
         />
+        
+        {/* Food Images Gallery */}
+        <div className="mt-12">
+          <ScrollReveal>
+            <FoodImageGallery 
+              images={foodImages} 
+              columns={3}
+              className="mt-6"
+            />
+          </ScrollReveal>
+        </div>
         
         {/* Overview Section */}
         <div className="mt-16 max-w-4xl mx-auto">
@@ -95,7 +135,7 @@ const Solutions = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <ScrollReveal delay={100}>
-              <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100">
+              <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(16,185,129,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.3)] transition-all duration-300">
                 <div className="flex justify-center mb-6">
                   <Wheat className="h-16 w-16 text-vitanium-600" />
                 </div>
@@ -110,7 +150,7 @@ const Solutions = () => {
             
             <ScrollReveal delay={200}>
               <div className="space-y-6">
-                <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+                <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(14,165,233,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.3)] transition-all duration-300">
                   <h3 className="text-xl font-semibold mb-4">Wheat Flour Fortification</h3>
                   <p className="text-neutral-600 mb-4">
                     Our wheat flour premixes incorporate Iron, Folic Acid, Vitamin B12, and other micronutrients to address common deficiencies.
@@ -121,7 +161,7 @@ const Solutions = () => {
                   </div>
                 </div>
                 
-                <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+                <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(245,158,11,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.3)] transition-all duration-300">
                   <h3 className="text-xl font-semibold mb-4">Rice Fortification</h3>
                   <p className="text-neutral-600 mb-4">
                     Fortified Rice Kernels (FRK) and premixes with Iron (Ferric Pyrophosphate / NaFeEDTA), Folic Acid, Vitamin B12 via dusting, coating, or hot/warm extrusion.
@@ -132,7 +172,7 @@ const Solutions = () => {
                   </div>
                 </div>
                 
-                <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+                <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(239,68,68,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(239,68,68,0.3)] transition-all duration-300">
                   <h3 className="text-xl font-semibold mb-4">Milk Fortification</h3>
                   <p className="text-neutral-600 mb-4">
                     Premixes containing Vitamins A and D for milk fortification, enhancing the nutritional value of this essential food.
@@ -143,7 +183,7 @@ const Solutions = () => {
                   </div>
                 </div>
                 
-                <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+                <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(139,92,246,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.3)] transition-all duration-300">
                   <h3 className="text-xl font-semibold mb-4">Edible Oil Fortification</h3>
                   <p className="text-neutral-600 mb-4">
                     Vitamins A and D premixes designed specifically for incorporation into edible oils, ensuring stability and bioavailability.
@@ -167,7 +207,7 @@ const Solutions = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <ScrollReveal delay={100}>
               <div className="space-y-6">
-                <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+                <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(236,72,153,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(236,72,153,0.3)] transition-all duration-300">
                   <h3 className="text-xl font-semibold mb-4">FRK Premix</h3>
                   <p className="text-neutral-600 mb-4">
                     Fortified Rice Kernels premixes used in multiple state programs to address iron and folic acid deficiencies among vulnerable populations.
@@ -180,7 +220,7 @@ const Solutions = () => {
                   </div>
                 </div>
                 
-                <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+                <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(14,165,233,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.3)] transition-all duration-300">
                   <h3 className="text-xl font-semibold mb-4">Sweet Dalia & Namkeen Dalia</h3>
                   <p className="text-neutral-600 mb-4">
                     Nutrient-rich dalia formulations for various government programs, with Sweet (Meetha) and Savory (Namkeen) variants.
@@ -197,7 +237,7 @@ const Solutions = () => {
             
             <ScrollReveal delay={200}>
               <div className="space-y-6">
-                <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+                <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(16,185,129,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.3)] transition-all duration-300">
                   <h3 className="text-xl font-semibold mb-4">Panjiri Premix</h3>
                   <p className="text-neutral-600 mb-4">
                     High-calorie, nutrient-dense formulation primarily for infants and young children, distributed through various state programs.
@@ -210,7 +250,7 @@ const Solutions = () => {
                   </div>
                 </div>
                 
-                <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+                <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(245,158,11,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.3)] transition-all duration-300">
                   <h3 className="text-xl font-semibold mb-4">Custom Government Formulations</h3>
                   <p className="text-neutral-600 mb-4">
                     We work closely with state governments and ICDS to develop customized recipes that address the nutritional needs of different beneficiary groups.
@@ -225,6 +265,19 @@ const Solutions = () => {
               </div>
             </ScrollReveal>
           </div>
+        </div>
+        
+        {/* Last Image */}
+        <div className="mt-24">
+          <ScrollReveal>
+            <div className="rounded-xl overflow-hidden shadow-[0_15px_35px_-10px_rgba(16,185,129,0.3)]">
+              <img 
+                src="/lovable-uploads/882e56f0-4f4f-4e3a-a1ec-02b8733d1d3f.png" 
+                alt="Fresh salad with vegetables in a white bowl" 
+                className="w-full object-cover h-[400px]"
+              />
+            </div>
+          </ScrollReveal>
         </div>
         
         {/* CTA Section */}

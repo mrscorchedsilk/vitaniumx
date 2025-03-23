@@ -47,6 +47,8 @@ const FoodImageGallery: React.FC<FoodImageGalleryProps> = ({
     'shadow-[0_10px_25px_-5px_rgba(250,82,82,0.3)]',  // Red
     'shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)]', // Purple
     'shadow-[0_10px_25px_-5px_rgba(236,72,153,0.3)]', // Pink
+    'shadow-[0_10px_25px_-5px_rgba(34,197,94,0.3)]',  // Emerald
+    'shadow-[0_10px_25px_-5px_rgba(168,85,247,0.3)]'  // Violet
   ];
 
   // Matching hover shadow colors
@@ -57,6 +59,8 @@ const FoodImageGallery: React.FC<FoodImageGalleryProps> = ({
     'hover:shadow-[0_15px_35px_-5px_rgba(250,82,82,0.5)]',  // Red
     'hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.5)]', // Purple
     'hover:shadow-[0_15px_35px_-5px_rgba(236,72,153,0.5)]', // Pink
+    'hover:shadow-[0_15px_35px_-5px_rgba(34,197,94,0.5)]',  // Emerald
+    'hover:shadow-[0_15px_35px_-5px_rgba(168,85,247,0.5)]'  // Violet
   ];
 
   return (
@@ -93,7 +97,7 @@ const FoodImageGallery: React.FC<FoodImageGalleryProps> = ({
                 className="object-cover w-full h-full transition-transform duration-500 hover:scale-110" 
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
               <span className="text-white font-medium text-sm">{image.alt}</span>
             </div>
           </motion.div>

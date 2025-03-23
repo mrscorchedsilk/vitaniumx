@@ -12,6 +12,24 @@ import {
 } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import StatCard from '@/components/ui/StatCard';
+import FoodImageGallery from '@/components/ui/FoodImageGallery';
+
+// Food image gallery for this page
+const foodImages = [
+  {
+    src: "/lovable-uploads/aaf178d4-a6a4-4b55-80ec-0c7059537d4e.png",
+    alt: "Nutritious fresh vegetables, legumes and grains in wooden bowls"
+  },
+  {
+    src: "/lovable-uploads/c3139f1c-6d1a-4dbc-bcff-98d59759fd73.png",
+    alt: "Fresh green salad in bowl with heart-shaped elements"
+  },
+  {
+    src: "/lovable-uploads/4ff432ca-6a3e-42db-9af5-0bd15ac1edd7.png",
+    alt: "Nutritious bowl with grilled chicken, eggs and vegetables"
+  }
+];
 
 const ProcessedFoods = () => {
   return (
@@ -24,15 +42,12 @@ const ProcessedFoods = () => {
         />
         
         {/* Hero Image */}
-        <div className="mt-10 relative rounded-xl overflow-hidden">
-          <div className="aspect-[21/9] bg-neutral-200 flex justify-center items-center">
-            <div className="text-center p-6">
-              <Droplet className="w-16 h-16 mx-auto text-vitanium-600 mb-4" />
-              <p className="text-neutral-500">
-                Image placeholder: Various processed food products being fortified
-              </p>
-            </div>
-          </div>
+        <div className="mt-10 relative rounded-xl overflow-hidden shadow-[0_15px_35px_-10px_rgba(236,72,153,0.3)]">
+          <img 
+            src="/lovable-uploads/e718b2ed-1282-49a3-a55f-4d222f3281f6.png"
+            alt="Balanced Buddha bowl with protein and various vegetables"
+            className="w-full object-cover h-[400px]"
+          />
         </div>
         
         {/* Overview */}
@@ -48,6 +63,46 @@ const ProcessedFoods = () => {
             </p>
           </ScrollReveal>
         </div>
+
+        {/* Key Statistics */}
+        <div className="mt-16">
+          <ScrollReveal>
+            <h2 className="text-2xl font-bold text-neutral-800 mb-8 text-center">The Impact of Food Fortification</h2>
+          </ScrollReveal>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <StatCard 
+              number="2 Billion+" 
+              label="People worldwide affected by micronutrient deficiencies" 
+              glowColor="red"
+              delay={100}
+            />
+            <StatCard 
+              number="80%" 
+              label="Cost reduction in addressing deficiencies compared to medical treatment" 
+              glowColor="green"
+              delay={200}
+            />
+            <StatCard 
+              number="30%" 
+              label="Reduction in anemia through iron fortification programs" 
+              glowColor="blue"
+              delay={300}
+            />
+          </div>
+        </div>
+        
+        {/* Food Image Gallery */}
+        <div className="mt-16">
+          <ScrollReveal>
+            <h2 className="text-2xl font-bold text-neutral-800 mb-8">Nutrient-Rich Food Solutions</h2>
+            <FoodImageGallery 
+              images={foodImages} 
+              columns={3}
+              className="mt-6"
+            />
+          </ScrollReveal>
+        </div>
         
         {/* Product Categories */}
         <div className="mt-16">
@@ -58,7 +113,7 @@ const ProcessedFoods = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Bakery Products */}
             <ScrollReveal delay={100}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(236,72,153,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(236,72,153,0.3)] transition-all duration-300">
                 <div className="mb-6">
                   <CakeSlice className="h-12 w-12 text-vitanium-600" />
                 </div>
@@ -98,7 +153,7 @@ const ProcessedFoods = () => {
             
             {/* Confectionery */}
             <ScrollReveal delay={200}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(14,165,233,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.3)] transition-all duration-300">
                 <div className="mb-6">
                   <Cookie className="h-12 w-12 text-vitanium-600" />
                 </div>
@@ -138,7 +193,7 @@ const ProcessedFoods = () => {
             
             {/* Beverages */}
             <ScrollReveal delay={300}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(16,185,129,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.3)] transition-all duration-300">
                 <div className="mb-6">
                   <GlassWater className="h-12 w-12 text-vitanium-600" />
                 </div>
@@ -182,7 +237,7 @@ const ProcessedFoods = () => {
             
             {/* Breakfast Cereals */}
             <ScrollReveal delay={400}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(245,158,11,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.3)] transition-all duration-300">
                 <div className="mb-6">
                   <Coffee className="h-12 w-12 text-vitanium-600" />
                 </div>
@@ -234,7 +289,7 @@ const ProcessedFoods = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ScrollReveal delay={100}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(16,185,129,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.3)] transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-4">Custom Formulations</h3>
                 <p className="text-neutral-600">
                   Tailored micronutrient premixes designed specifically for your product, taking into account processing conditions, interactions with other ingredients, and target consumer groups.
@@ -243,7 +298,7 @@ const ProcessedFoods = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={200}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(236,72,153,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(236,72,153,0.3)] transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-4">Sensory Compatibility</h3>
                 <p className="text-neutral-600">
                   Careful selection of nutrient forms and encapsulation technologies to minimize impact on taste, color, and texture of the final product.
@@ -252,7 +307,7 @@ const ProcessedFoods = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={300}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(14,165,233,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.3)] transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-4">Enhanced Stability</h3>
                 <p className="text-neutral-600">
                   Specialized formulations that ensure nutrient stability during processing, storage, and throughout the product's shelf life.
@@ -261,7 +316,7 @@ const ProcessedFoods = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={400}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(245,158,11,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.3)] transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-4">Regulatory Compliance</h3>
                 <p className="text-neutral-600">
                   Premixes designed to meet FSSAI regulations and international standards, with appropriate documentation for product claims and labeling.
@@ -270,7 +325,7 @@ const ProcessedFoods = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={500}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(139,92,246,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.3)] transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-4">Technical Support</h3>
                 <p className="text-neutral-600">
                   Comprehensive technical assistance, including formulation guidance, process integration advice, and troubleshooting support.
@@ -279,7 +334,7 @@ const ProcessedFoods = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={600}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(239,68,68,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(239,68,68,0.3)] transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-4">Marketing Support</h3>
                 <p className="text-neutral-600">
                   Assistance with developing science-based claims, nutritional information, and consumer education materials for fortified products.
@@ -295,14 +350,15 @@ const ProcessedFoods = () => {
             <h2 className="text-3xl font-bold text-neutral-800 mb-8">Success Story</h2>
           </ScrollReveal>
           
-          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100">
+          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(14,165,233,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.3)] transition-all duration-300">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
               <div className="col-span-1 lg:col-span-2">
-                <div className="aspect-square bg-neutral-200 rounded-lg flex justify-center items-center">
-                  <div className="text-center p-6">
-                    <CakeSlice className="w-12 h-12 mx-auto text-vitanium-600 mb-2" />
-                    <p className="text-neutral-500">Image placeholder: Fortified biscuit product</p>
-                  </div>
+                <div className="rounded-lg overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/d8fdbed4-1f7c-4aa0-80ba-79f6252a8dc3.png" 
+                    alt="Healthy bowl with chickpeas, cucumber and carrots" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               

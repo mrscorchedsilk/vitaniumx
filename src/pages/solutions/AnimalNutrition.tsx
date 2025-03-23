@@ -4,6 +4,23 @@ import { Link } from 'react-router-dom';
 import { Milk, ArrowRight, CheckCircle, Beef, Fish, Bird } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import FoodImageGallery from '@/components/ui/FoodImageGallery';
+
+// Food images for the page
+const foodImages = [
+  {
+    src: "/lovable-uploads/38125dfc-481a-4b2a-a4b5-615898b4a565.png",
+    alt: "Protein-rich food with eggs and vegetables"
+  },
+  {
+    src: "/lovable-uploads/4ff432ca-6a3e-42db-9af5-0bd15ac1edd7.png",
+    alt: "Balanced meal with protein and nutrient-rich vegetables"
+  },
+  {
+    src: "/lovable-uploads/882e56f0-4f4f-4e3a-a1ec-02b8733d1d3f.png",
+    alt: "Fresh nutrient-rich salad bowl with diverse ingredients"
+  }
+];
 
 const AnimalNutrition = () => {
   return (
@@ -16,15 +33,12 @@ const AnimalNutrition = () => {
         />
         
         {/* Hero Image */}
-        <div className="mt-10 relative rounded-xl overflow-hidden">
-          <div className="aspect-[21/9] bg-neutral-200 flex justify-center items-center">
-            <div className="text-center p-6">
-              <Milk className="w-16 h-16 mx-auto text-vitanium-600 mb-4" />
-              <p className="text-neutral-500">
-                Image placeholder: Various farm animals with feed supplementation
-              </p>
-            </div>
-          </div>
+        <div className="mt-10 relative rounded-xl overflow-hidden shadow-[0_15px_35px_-10px_rgba(16,185,129,0.3)]">
+          <img 
+            src="/lovable-uploads/aaf178d4-a6a4-4b55-80ec-0c7059537d4e.png"
+            alt="Nutritious fresh vegetables, legumes and grains in wooden bowls"
+            className="w-full object-cover h-[400px]"
+          />
         </div>
         
         {/* Overview */}
@@ -41,6 +55,18 @@ const AnimalNutrition = () => {
           </ScrollReveal>
         </div>
         
+        {/* Food Image Gallery */}
+        <div className="mt-16">
+          <ScrollReveal>
+            <h2 className="text-2xl font-bold text-neutral-800 mb-8">High-Quality Nutrient Sources</h2>
+            <FoodImageGallery 
+              images={foodImages} 
+              columns={3}
+              className="mt-6"
+            />
+          </ScrollReveal>
+        </div>
+        
         {/* Product Categories */}
         <div className="mt-16">
           <ScrollReveal>
@@ -50,7 +76,7 @@ const AnimalNutrition = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Cattle & Dairy */}
             <ScrollReveal delay={100}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(236,72,153,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(236,72,153,0.3)] transition-all duration-300">
                 <div className="mb-6">
                   <Beef className="h-12 w-12 text-vitanium-600" />
                 </div>
@@ -90,7 +116,7 @@ const AnimalNutrition = () => {
             
             {/* Poultry */}
             <ScrollReveal delay={200}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(14,165,233,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.3)] transition-all duration-300">
                 <div className="mb-6">
                   <Bird className="h-12 w-12 text-vitanium-600" />
                 </div>
@@ -130,7 +156,7 @@ const AnimalNutrition = () => {
             
             {/* Aquaculture */}
             <ScrollReveal delay={300}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(16,185,129,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.3)] transition-all duration-300">
                 <div className="mb-6">
                   <Fish className="h-12 w-12 text-vitanium-600" />
                 </div>
@@ -178,7 +204,7 @@ const AnimalNutrition = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ScrollReveal delay={100}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(236,72,153,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(236,72,153,0.3)] transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-4">Customized Formulations</h3>
                 <p className="text-neutral-600">
                   Tailored premixes designed to meet the specific nutritional requirements of different species, production stages, and farming systems. We consider factors such as genetics, environment, and production goals.
@@ -187,7 +213,7 @@ const AnimalNutrition = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={200}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(14,165,233,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.3)] transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-4">Research-Backed Solutions</h3>
                 <p className="text-neutral-600">
                   Formulations developed based on the latest scientific research and nutritional data, ensuring optimal performance and return on investment for producers.
@@ -196,7 +222,7 @@ const AnimalNutrition = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={300}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(16,185,129,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.3)] transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-4">Quality Ingredients</h3>
                 <p className="text-neutral-600">
                   Only high-quality, bioavailable forms of vitamins and minerals are used in our premixes, ensuring maximum absorption and utilization by the animal.
@@ -205,7 +231,7 @@ const AnimalNutrition = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={400}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(245,158,11,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.3)] transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-4">Technical Support</h3>
                 <p className="text-neutral-600">
                   Comprehensive technical assistance from our team of animal nutritionists and veterinary experts to help you optimize your feeding program and troubleshoot any issues.
@@ -214,7 +240,7 @@ const AnimalNutrition = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={500}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(139,92,246,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.3)] transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-4">Quality Control</h3>
                 <p className="text-neutral-600">
                   Rigorous quality control processes ensure consistent product quality and nutrient levels in every batch, giving you confidence in the performance of our premixes.
@@ -223,7 +249,7 @@ const AnimalNutrition = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={600}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(239,68,68,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(239,68,68,0.3)] transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-4">Regulatory Compliance</h3>
                 <p className="text-neutral-600">
                   All our premixes are formulated to comply with relevant regulatory requirements and industry standards, ensuring safety and efficacy.
@@ -239,14 +265,15 @@ const AnimalNutrition = () => {
             <h2 className="text-3xl font-bold text-neutral-800 mb-8">Success Story</h2>
           </ScrollReveal>
           
-          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100">
+          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(14,165,233,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.3)] transition-all duration-300">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
               <div className="col-span-1 lg:col-span-2">
-                <div className="aspect-square bg-neutral-200 rounded-lg flex justify-center items-center">
-                  <div className="text-center p-6">
-                    <Milk className="w-12 h-12 mx-auto text-vitanium-600 mb-2" />
-                    <p className="text-neutral-500">Image placeholder: Dairy farm operation</p>
-                  </div>
+                <div className="rounded-lg overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/d8fdbed4-1f7c-4aa0-80ba-79f6252a8dc3.png" 
+                    alt="Healthy bowl with chickpeas, cucumber and carrots" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               

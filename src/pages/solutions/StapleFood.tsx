@@ -5,6 +5,7 @@ import { Wheat, ArrowRight, CheckCircle, BarChart3, Tablet, Utensils } from 'luc
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import FoodImageGallery from '@/components/ui/FoodImageGallery';
+import StatCard from '@/components/ui/StatCard';
 
 const StapleFood = () => {
   return (
@@ -19,8 +20,8 @@ const StapleFood = () => {
         {/* Hero Image */}
         <div className="mt-10 relative rounded-xl overflow-hidden">
           <img 
-            src="/images/food/wheat-field.jpg" 
-            alt="Staple Food Fortification" 
+            src="/lovable-uploads/8dcfc58b-98fa-43b2-812e-97e7507e2ac4.png" 
+            alt="Wheat Field" 
             className="w-full aspect-[21/9] object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
@@ -48,6 +49,33 @@ const StapleFood = () => {
           </ScrollReveal>
         </div>
         
+        {/* Stats Section */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StatCard 
+            number="2.5B+"
+            label="People reached through fortification"
+            glowColor="blue"
+          />
+          <StatCard 
+            number="40+"
+            label="Countries with fortification programs"
+            glowColor="green"
+            delay={100}
+          />
+          <StatCard 
+            number="30%"
+            label="Reduction in micronutrient deficiencies"
+            glowColor="amber"
+            delay={200}
+          />
+          <StatCard 
+            number="9:1"
+            label="Benefit-to-cost ratio of fortification"
+            glowColor="purple"
+            delay={300}
+          />
+        </div>
+        
         {/* Food Image Gallery */}
         <div className="mt-16">
           <ScrollReveal>
@@ -57,28 +85,28 @@ const StapleFood = () => {
           <FoodImageGallery 
             images={[
               {
-                src: "/images/food/rice.jpg",
-                alt: "Fortified Rice"
+                src: "/lovable-uploads/a6e4f46c-1bc5-4185-a0ee-4e19acea274d.png",
+                alt: "White Rice"
               },
               {
-                src: "/images/food/wheat-flour.jpg",
-                alt: "Wheat Flour Fortification"
+                src: "/lovable-uploads/2d24b59b-1dc0-4c14-9736-2efaa2ea875e.png",
+                alt: "Rice Sack with Wooden Scoop"
               },
               {
-                src: "/images/food/cooking-oil.jpg",
-                alt: "Edible Oil Fortification"
+                src: "/lovable-uploads/60a0493f-f80d-4e07-8105-ddc44b525875.png",
+                alt: "Premium Edible Oils"
               },
               {
-                src: "/images/food/corn.jpg",
-                alt: "Maize Flour Fortification"
+                src: "/lovable-uploads/a2700011-5dc2-4329-9c4f-3acbc46caa75.png",
+                alt: "Oil Manufacturing Line"
               },
               {
-                src: "/images/food/salt.jpg",
-                alt: "Iodized Salt"
+                src: "/lovable-uploads/6a8ba746-47c7-4954-a5d0-a19272eb55bd.png",
+                alt: "Iodized Salt Crystals"
               },
               {
-                src: "/images/food/milk.jpg",
-                alt: "Fortified Dairy"
+                src: "/lovable-uploads/c0a32cb5-dcb2-48e8-b9dd-954bab2fbeec.png",
+                alt: "Wheat Flour and Wheat Stalks"
               }
             ]}
             columns={3}
@@ -98,8 +126,8 @@ const StapleFood = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(14,165,233,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/images/food/wheat-flour.jpg" 
-                    alt="Wheat flour being fortified" 
+                    src="/lovable-uploads/dc73f31d-4223-4d13-a641-5089713fd5d0.png" 
+                    alt="Flour Fortification Premixes" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
                 </div>
@@ -163,8 +191,8 @@ const StapleFood = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/images/food/rice.jpg" 
-                    alt="Rice fortification process" 
+                    src="/lovable-uploads/6204902b-53ac-4075-9923-76e67c548ea0.png" 
+                    alt="Rice in hands over rice field" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
                 </div>
@@ -230,8 +258,8 @@ const StapleFood = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(245,158,11,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/images/food/cooking-oil.jpg" 
-                    alt="Edible oil fortification process" 
+                    src="/lovable-uploads/74a3d0a0-22d5-4ba7-a2f9-bf495d9de3a0.png" 
+                    alt="Oil Fortification Premixes" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
                 </div>
@@ -287,8 +315,8 @@ const StapleFood = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/images/food/milk.jpg" 
-                    alt="Milk fortification equipment" 
+                    src="/lovable-uploads/059e844d-fe4e-47f4-b1a3-104c6a541f6d.png" 
+                    alt="Fresh Dairy Products" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
                 </div>
@@ -353,8 +381,8 @@ const StapleFood = () => {
                 <div className="flex flex-col h-full">
                   <div className="mb-4 rounded-lg overflow-hidden">
                     <img 
-                      src="/images/food/rice-distribution.jpg" 
-                      alt="Rice distribution program" 
+                      src="/lovable-uploads/2025292d-9888-4583-8efc-9e5ec53fbca5.png" 
+                      alt="Fresh Milk in Containers" 
                       className="w-full aspect-video object-cover"
                     />
                   </div>
@@ -373,8 +401,8 @@ const StapleFood = () => {
                 <div className="flex flex-col h-full">
                   <div className="mb-4 rounded-lg overflow-hidden">
                     <img 
-                      src="/images/food/cooking-oil.jpg" 
-                      alt="Edible oil fortification" 
+                      src="/lovable-uploads/23ee7423-4dc4-4911-9637-b46de5bd277a.png" 
+                      alt="Edible Oil Bottles" 
                       className="w-full aspect-video object-cover"
                     />
                   </div>

@@ -10,12 +10,16 @@ interface FoodImageGalleryProps {
   }>;
   className?: string;
   columns?: 1 | 2 | 3 | 4;
+  hoverEffect?: 'zoom' | 'lift' | 'both';
+  showCaption?: boolean;
 }
 
 const FoodImageGallery: React.FC<FoodImageGalleryProps> = ({ 
   images, 
   className,
-  columns = 3
+  columns = 3,
+  hoverEffect = 'both',
+  showCaption = true
 }) => {
   const columnClasses = {
     1: 'grid-cols-1',
@@ -76,6 +80,17 @@ const FoodImageGallery: React.FC<FoodImageGalleryProps> = ({
         const shadowColor = shadowColors[shadowIndex];
         const hoverShadow = hoverShadows[shadowIndex];
         
+        // Determine hover effect classes
+        const hoverScaleClass = 
+          hoverEffect === 'lift' || hoverEffect === 'both' 
+            ? 'hover:scale-105' 
+            : '';
+        
+        const hoverImageClass = 
+          hoverEffect === 'zoom' || hoverEffect === 'both'
+            ? 'hover:scale-110' 
+            : '';
+        
         return (
           <motion.div 
             key={index}
@@ -86,7 +101,7 @@ const FoodImageGallery: React.FC<FoodImageGalleryProps> = ({
             )}
             variants={item}
             whileHover={{ 
-              scale: 1.03, 
+              scale: hoverEffect === 'lift' || hoverEffect === 'both' ? 1.03 : 1, 
               transition: { duration: 0.3 } 
             }}
           >
@@ -94,12 +109,17 @@ const FoodImageGallery: React.FC<FoodImageGalleryProps> = ({
               <img 
                 src={image.src} 
                 alt={image.alt} 
-                className="object-cover w-full h-full transition-transform duration-500 hover:scale-110" 
+                className={cn(
+                  "object-cover w-full h-full transition-transform duration-500", 
+                  hoverImageClass
+                )} 
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-              <span className="text-white font-medium text-sm">{image.alt}</span>
-            </div>
+            {showCaption && (
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <span className="text-white font-medium text-sm">{image.alt}</span>
+              </div>
+            )}
           </motion.div>
         );
       })}

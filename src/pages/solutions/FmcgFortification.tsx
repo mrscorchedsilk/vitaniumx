@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Pill, ArrowRight, CheckCircle, ShoppingBag, BarChart } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import FoodImageGallery from '@/components/ui/FoodImageGallery';
 
 const FmcgFortification = () => {
   return (
@@ -17,11 +18,17 @@ const FmcgFortification = () => {
         
         {/* Hero Image */}
         <div className="mt-10 relative rounded-xl overflow-hidden">
-          <div className="aspect-[21/9] bg-neutral-200 flex justify-center items-center">
-            <div className="text-center p-6">
-              <Pill className="w-16 h-16 mx-auto text-vitanium-600 mb-4" />
-              <p className="text-neutral-500">
-                Image placeholder: Various FMCG products on retail shelves
+          <img 
+            src="/images/food/fmcg-products.jpg" 
+            alt="Various FMCG products on retail shelves" 
+            className="w-full aspect-[21/9] object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
+            <div className="text-white p-8 md:p-12 max-w-2xl">
+              <Pill className="w-16 h-16 text-vitanium-400 mb-4" />
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Enhanced Consumer Products</h2>
+              <p className="text-lg text-white/80">
+                Differentiate your products with strategic micronutrient fortification while maintaining taste and quality.
               </p>
             </div>
           </div>
@@ -41,6 +48,44 @@ const FmcgFortification = () => {
           </ScrollReveal>
         </div>
         
+        {/* Food Image Gallery */}
+        <div className="mt-16">
+          <ScrollReveal>
+            <h2 className="text-3xl font-bold text-neutral-800 mb-8">Our FMCG Solutions</h2>
+          </ScrollReveal>
+          
+          <FoodImageGallery 
+            images={[
+              {
+                src: "/images/food/fortified-bread.jpg",
+                alt: "Fortified Bakery Products"
+              },
+              {
+                src: "/images/food/breakfast-cereal.jpg",
+                alt: "Fortified Breakfast Cereals"
+              },
+              {
+                src: "/images/food/fortified-beverage.jpg",
+                alt: "Fortified Beverages"
+              },
+              {
+                src: "/images/food/fortified-cookies.jpg",
+                alt: "Fortified Biscuits & Cookies"
+              },
+              {
+                src: "/images/food/fortified-noodles.jpg",
+                alt: "Fortified Noodles & Pasta"
+              },
+              {
+                src: "/images/food/fortified-snacks.jpg",
+                alt: "Fortified Snack Foods"
+              }
+            ]}
+            columns={3}
+            className="mb-12"
+          />
+        </div>
+        
         {/* Product Categories */}
         <div className="mt-16">
           <ScrollReveal>
@@ -51,11 +96,12 @@ const FmcgFortification = () => {
             {/* Bakery Products */}
             <ScrollReveal delay={100}>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-                <div className="md:col-span-1 bg-neutral-200 rounded-lg aspect-square flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <ShoppingBag className="w-10 h-10 mx-auto text-vitanium-600 mb-2" />
-                    <p className="text-neutral-500 text-sm">Image placeholder</p>
-                  </div>
+                <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(14,165,233,0.3)]">
+                  <img 
+                    src="/images/food/fortified-bread.jpg" 
+                    alt="Bakery Products" 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                  />
                 </div>
                 <div className="md:col-span-2">
                   <h3 className="text-xl font-bold mb-3">Bakery Products</h3>
@@ -83,11 +129,12 @@ const FmcgFortification = () => {
             {/* Biscuits & Cookies */}
             <ScrollReveal delay={200}>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-                <div className="md:col-span-1 bg-neutral-200 rounded-lg aspect-square flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <ShoppingBag className="w-10 h-10 mx-auto text-vitanium-600 mb-2" />
-                    <p className="text-neutral-500 text-sm">Image placeholder</p>
-                  </div>
+                <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)]">
+                  <img 
+                    src="/images/food/fortified-cookies.jpg" 
+                    alt="Biscuits & Cookies" 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                  />
                 </div>
                 <div className="md:col-span-2">
                   <h3 className="text-xl font-bold mb-3">Biscuits & Cookies</h3>
@@ -115,11 +162,12 @@ const FmcgFortification = () => {
             {/* Breakfast Cereals */}
             <ScrollReveal delay={300}>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-                <div className="md:col-span-1 bg-neutral-200 rounded-lg aspect-square flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <ShoppingBag className="w-10 h-10 mx-auto text-vitanium-600 mb-2" />
-                    <p className="text-neutral-500 text-sm">Image placeholder</p>
-                  </div>
+                <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(245,158,11,0.3)]">
+                  <img 
+                    src="/images/food/breakfast-cereal.jpg" 
+                    alt="Breakfast Cereals" 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                  />
                 </div>
                 <div className="md:col-span-2">
                   <h3 className="text-xl font-bold mb-3">Breakfast Cereals</h3>
@@ -147,11 +195,12 @@ const FmcgFortification = () => {
             {/* Beverages */}
             <ScrollReveal delay={400}>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-                <div className="md:col-span-1 bg-neutral-200 rounded-lg aspect-square flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <ShoppingBag className="w-10 h-10 mx-auto text-vitanium-600 mb-2" />
-                    <p className="text-neutral-500 text-sm">Image placeholder</p>
-                  </div>
+                <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)]">
+                  <img 
+                    src="/images/food/fortified-beverage.jpg" 
+                    alt="Beverages" 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                  />
                 </div>
                 <div className="md:col-span-2">
                   <h3 className="text-xl font-bold mb-3">Beverages</h3>
@@ -179,11 +228,12 @@ const FmcgFortification = () => {
             {/* Noodles & Pasta */}
             <ScrollReveal delay={500}>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-                <div className="md:col-span-1 bg-neutral-200 rounded-lg aspect-square flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <ShoppingBag className="w-10 h-10 mx-auto text-vitanium-600 mb-2" />
-                    <p className="text-neutral-500 text-sm">Image placeholder</p>
-                  </div>
+                <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(236,72,153,0.3)]">
+                  <img 
+                    src="/images/food/fortified-noodles.jpg" 
+                    alt="Noodles & Pasta" 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                  />
                 </div>
                 <div className="md:col-span-2">
                   <h3 className="text-xl font-bold mb-3">Noodles & Pasta</h3>
@@ -211,11 +261,12 @@ const FmcgFortification = () => {
             {/* Snack Foods */}
             <ScrollReveal delay={600}>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-                <div className="md:col-span-1 bg-neutral-200 rounded-lg aspect-square flex items-center justify-center">
-                  <div className="text-center p-4">
-                    <ShoppingBag className="w-10 h-10 mx-auto text-vitanium-600 mb-2" />
-                    <p className="text-neutral-500 text-sm">Image placeholder</p>
-                  </div>
+                <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(34,197,94,0.3)]">
+                  <img 
+                    src="/images/food/fortified-snacks.jpg" 
+                    alt="Snack Foods" 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                  />
                 </div>
                 <div className="md:col-span-2">
                   <h3 className="text-xl font-bold mb-3">Snack Foods</h3>
@@ -250,7 +301,7 @@ const FmcgFortification = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ScrollReveal delay={100}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(14,165,233,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.5)] transition-all duration-300">
                 <BarChart className="h-12 w-12 text-vitanium-600 mb-6" />
                 <h3 className="text-xl font-semibold mb-4">Market Differentiation</h3>
                 <p className="text-neutral-600">
@@ -260,7 +311,7 @@ const FmcgFortification = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={200}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.5)] transition-all duration-300">
                 <BarChart className="h-12 w-12 text-vitanium-600 mb-6" />
                 <h3 className="text-xl font-semibold mb-4">Premium Positioning</h3>
                 <p className="text-neutral-600">
@@ -270,7 +321,7 @@ const FmcgFortification = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={300}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(245,158,11,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.5)] transition-all duration-300">
                 <BarChart className="h-12 w-12 text-vitanium-600 mb-6" />
                 <h3 className="text-xl font-semibold mb-4">Consumer Appeal</h3>
                 <p className="text-neutral-600">
@@ -280,7 +331,7 @@ const FmcgFortification = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={400}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.5)] transition-all duration-300">
                 <BarChart className="h-12 w-12 text-vitanium-600 mb-6" />
                 <h3 className="text-xl font-semibold mb-4">Marketing Claims</h3>
                 <p className="text-neutral-600">
@@ -290,7 +341,7 @@ const FmcgFortification = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={500}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(236,72,153,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(236,72,153,0.5)] transition-all duration-300">
                 <BarChart className="h-12 w-12 text-vitanium-600 mb-6" />
                 <h3 className="text-xl font-semibold mb-4">Corporate Responsibility</h3>
                 <p className="text-neutral-600">
@@ -300,7 +351,7 @@ const FmcgFortification = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={600}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(250,82,82,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(250,82,82,0.5)] transition-all duration-300">
                 <BarChart className="h-12 w-12 text-vitanium-600 mb-6" />
                 <h3 className="text-xl font-semibold mb-4">Regulatory Compliance</h3>
                 <p className="text-neutral-600">
@@ -317,14 +368,15 @@ const FmcgFortification = () => {
             <h2 className="text-3xl font-bold text-neutral-800 mb-8">Success Story</h2>
           </ScrollReveal>
           
-          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100">
+          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(168,85,247,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(168,85,247,0.5)] transition-all duration-300">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
               <div className="col-span-1 lg:col-span-2">
-                <div className="aspect-square bg-neutral-200 rounded-lg flex justify-center items-center">
-                  <div className="text-center p-6">
-                    <ShoppingBag className="w-12 h-12 mx-auto text-vitanium-600 mb-2" />
-                    <p className="text-neutral-500">Image placeholder: Fortified biscuit retail packaging</p>
-                  </div>
+                <div className="aspect-square rounded-lg overflow-hidden">
+                  <img 
+                    src="/images/food/fortified-biscuits.jpg" 
+                    alt="Fortified biscuit retail packaging" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               
@@ -369,7 +421,7 @@ const FmcgFortification = () => {
             <h2 className="text-3xl font-bold text-neutral-800 mb-8">Our Approach to FMCG Fortification</h2>
           </ScrollReveal>
           
-          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100">
+          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(34,197,94,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(34,197,94,0.5)] transition-all duration-300">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <ScrollReveal delay={100}>
                 <div>
@@ -440,16 +492,16 @@ const FmcgFortification = () => {
         <div className="mt-16">
           <div className="bg-navy-900 text-white py-12 px-8 rounded-xl text-center">
             <ScrollReveal>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">Enhance Your FMCG Products with Fortification</h2>
-              <p className="text-neutral-300 mb-8 max-w-2xl mx-auto">
-                Discover how our fortification solutions can help you create differentiated, premium products that meet the growing consumer demand for nutritious options.
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">Ready to Enhance Your FMCG Products?</h2>
+              <p className="text-neutral-300 max-w-3xl mx-auto mb-8">
+                Contact our team to discuss how our fortification solutions can help differentiate your products and deliver added value to your consumers.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link to="/get-quote" className="btn-primary bg-vitanium-500 hover:bg-vitanium-600">
-                  Get a Quote
+                  Request a Consultation
                 </Link>
                 <Link to="/contact" className="btn-secondary bg-transparent text-white border-white hover:bg-white/10">
-                  Contact Our Team
+                  Learn More
                 </Link>
               </div>
             </ScrollReveal>

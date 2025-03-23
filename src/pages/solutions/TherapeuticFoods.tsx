@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { HeartPulse, ArrowRight, CheckCircle, Baby, Users, Plus } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import FoodImageGallery from '@/components/ui/FoodImageGallery';
 
 const TherapeuticFoods = () => {
   return (
@@ -17,11 +18,17 @@ const TherapeuticFoods = () => {
         
         {/* Hero Image */}
         <div className="mt-10 relative rounded-xl overflow-hidden">
-          <div className="aspect-[21/9] bg-neutral-200 flex justify-center items-center">
-            <div className="text-center p-6">
-              <HeartPulse className="w-16 h-16 mx-auto text-vitanium-600 mb-4" />
-              <p className="text-neutral-500">
-                Image placeholder: Therapeutic food products being prepared and distributed
+          <img 
+            src="/images/food/therapeutic-food.jpg" 
+            alt="Therapeutic food products" 
+            className="w-full aspect-[21/9] object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
+            <div className="text-white p-8 md:p-12 max-w-2xl">
+              <HeartPulse className="w-16 h-16 text-vitanium-400 mb-4" />
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Nutrition That Heals</h2>
+              <p className="text-lg text-white/80">
+                Our therapeutic food solutions combat malnutrition and support recovery with specialized nutrient formulations.
               </p>
             </div>
           </div>
@@ -41,6 +48,44 @@ const TherapeuticFoods = () => {
           </ScrollReveal>
         </div>
         
+        {/* Food Image Gallery */}
+        <div className="mt-16">
+          <ScrollReveal>
+            <h2 className="text-3xl font-bold text-neutral-800 mb-8">Our Therapeutic Solutions</h2>
+          </ScrollReveal>
+          
+          <FoodImageGallery 
+            images={[
+              {
+                src: "/images/food/therapeutic-paste.jpg",
+                alt: "Ready-to-Use Therapeutic Food"
+              },
+              {
+                src: "/images/food/supplementary-food.jpg",
+                alt: "Ready-to-Use Supplementary Food"
+              },
+              {
+                src: "/images/food/f75-f100.jpg",
+                alt: "Therapeutic Milk F75/F100"
+              },
+              {
+                src: "/images/food/maternal-nutrition.jpg",
+                alt: "Maternal Nutrition Supplements"
+              },
+              {
+                src: "/images/food/pediatric-nutrition.jpg",
+                alt: "Pediatric Nutrition Supplements"
+              },
+              {
+                src: "/images/food/clinical-nutrition.jpg",
+                alt: "Clinical Nutrition Products"
+              }
+            ]}
+            columns={3}
+            className="mb-12"
+          />
+        </div>
+        
         {/* Product Categories */}
         <div className="mt-16">
           <ScrollReveal>
@@ -50,12 +95,13 @@ const TherapeuticFoods = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* RUTF */}
             <ScrollReveal delay={100}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden">
-                <div className="aspect-video bg-neutral-200 flex justify-center items-center">
-                  <div className="text-center p-6">
-                    <Baby className="w-12 h-12 mx-auto text-vitanium-600 mb-2" />
-                    <p className="text-neutral-500">Image placeholder: RUTF sachets and packaging</p>
-                  </div>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.5)] transition-all duration-300">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src="/images/food/therapeutic-paste.jpg" 
+                    alt="RUTF sachets and packaging" 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-4">Ready-to-Use Therapeutic Food (RUTF)</h3>
@@ -114,12 +160,13 @@ const TherapeuticFoods = () => {
             
             {/* RUSF */}
             <ScrollReveal delay={200}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden">
-                <div className="aspect-video bg-neutral-200 flex justify-center items-center">
-                  <div className="text-center p-6">
-                    <Users className="w-12 h-12 mx-auto text-vitanium-600 mb-2" />
-                    <p className="text-neutral-500">Image placeholder: RUSF products and application</p>
-                  </div>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(236,72,153,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(236,72,153,0.5)] transition-all duration-300">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src="/images/food/supplementary-food.jpg" 
+                    alt="RUSF products and application" 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-4">Ready-to-Use Supplementary Food (RUSF)</h3>
@@ -179,12 +226,13 @@ const TherapeuticFoods = () => {
           
           <div className="mt-12">
             <ScrollReveal delay={300}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden">
-                <div className="aspect-video bg-neutral-200 flex justify-center items-center">
-                  <div className="text-center p-6">
-                    <Plus className="w-12 h-12 mx-auto text-vitanium-600 mb-2" />
-                    <p className="text-neutral-500">Image placeholder: Specialized nutritional supplements</p>
-                  </div>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(14,165,233,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.5)] transition-all duration-300">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src="/images/food/clinical-nutrition.jpg" 
+                    alt="Specialized nutritional supplements" 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-4">Specialized Nutritional Supplements</h3>
@@ -240,7 +288,7 @@ const TherapeuticFoods = () => {
             <h2 className="text-3xl font-bold text-neutral-800 mb-12">Program Implementation Support</h2>
           </ScrollReveal>
           
-          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100">
+          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.5)] transition-all duration-300">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <ScrollReveal delay={100}>
                 <div>
@@ -305,14 +353,15 @@ const TherapeuticFoods = () => {
             <h2 className="text-3xl font-bold text-neutral-800 mb-8">Success Story</h2>
           </ScrollReveal>
           
-          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100">
+          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(250,82,82,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(250,82,82,0.5)] transition-all duration-300">
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
               <div className="col-span-1 lg:col-span-2">
-                <div className="aspect-square bg-neutral-200 rounded-lg flex justify-center items-center">
-                  <div className="text-center p-6">
-                    <Users className="w-12 h-12 mx-auto text-vitanium-600 mb-2" />
-                    <p className="text-neutral-500">Image placeholder: Children receiving therapeutic foods</p>
-                  </div>
+                <div className="aspect-square rounded-lg overflow-hidden">
+                  <img 
+                    src="/images/food/nutrition-program.jpg" 
+                    alt="Children receiving therapeutic foods" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Wheat, ArrowRight, CheckCircle, BarChart3, Tablet, Utensils } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import FoodImageGallery from '@/components/ui/FoodImageGallery';
 
 const StapleFood = () => {
   return (
@@ -17,11 +18,17 @@ const StapleFood = () => {
         
         {/* Hero Image */}
         <div className="mt-10 relative rounded-xl overflow-hidden">
-          <div className="aspect-[21/9] bg-neutral-200 flex justify-center items-center">
-            <div className="text-center p-6">
-              <Wheat className="w-16 h-16 mx-auto text-vitanium-600 mb-4" />
-              <p className="text-neutral-500">
-                Image placeholder: Rice/wheat grains being fortified in a production facility
+          <img 
+            src="/images/food/wheat-field.jpg" 
+            alt="Staple Food Fortification" 
+            className="w-full aspect-[21/9] object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
+            <div className="text-white p-8 md:p-12 max-w-2xl">
+              <Wheat className="w-16 h-16 text-vitanium-400 mb-4" />
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Enhancing Staple Foods</h2>
+              <p className="text-lg text-white/80">
+                Our fortification solutions add essential micronutrients to everyday foods, improving public health and combating malnutrition.
               </p>
             </div>
           </div>
@@ -41,6 +48,44 @@ const StapleFood = () => {
           </ScrollReveal>
         </div>
         
+        {/* Food Image Gallery */}
+        <div className="mt-16">
+          <ScrollReveal>
+            <h2 className="text-3xl font-bold text-neutral-800 mb-8">Our Staple Food Solutions</h2>
+          </ScrollReveal>
+          
+          <FoodImageGallery 
+            images={[
+              {
+                src: "/images/food/rice.jpg",
+                alt: "Fortified Rice"
+              },
+              {
+                src: "/images/food/wheat-flour.jpg",
+                alt: "Wheat Flour Fortification"
+              },
+              {
+                src: "/images/food/cooking-oil.jpg",
+                alt: "Edible Oil Fortification"
+              },
+              {
+                src: "/images/food/corn.jpg",
+                alt: "Maize Flour Fortification"
+              },
+              {
+                src: "/images/food/salt.jpg",
+                alt: "Iodized Salt"
+              },
+              {
+                src: "/images/food/milk.jpg",
+                alt: "Fortified Dairy"
+              }
+            ]}
+            columns={3}
+            className="mb-12"
+          />
+        </div>
+        
         {/* Product Details */}
         <div className="mt-16">
           <ScrollReveal>
@@ -50,12 +95,13 @@ const StapleFood = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Wheat Flour Fortification */}
             <ScrollReveal delay={100}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden">
-                <div className="aspect-video bg-neutral-200 flex justify-center items-center">
-                  <div className="text-center p-6">
-                    <Wheat className="w-12 h-12 mx-auto text-vitanium-600 mb-2" />
-                    <p className="text-neutral-500">Image placeholder: Wheat flour being fortified</p>
-                  </div>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(14,165,233,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.5)] transition-all duration-300">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src="/images/food/wheat-flour.jpg" 
+                    alt="Wheat flour being fortified" 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-4">Wheat Flour Fortification</h3>
@@ -114,12 +160,13 @@ const StapleFood = () => {
             
             {/* Rice Fortification */}
             <ScrollReveal delay={200}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden">
-                <div className="aspect-video bg-neutral-200 flex justify-center items-center">
-                  <div className="text-center p-6">
-                    <Utensils className="w-12 h-12 mx-auto text-vitanium-600 mb-2" />
-                    <p className="text-neutral-500">Image placeholder: Rice fortification process</p>
-                  </div>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.5)] transition-all duration-300">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src="/images/food/rice.jpg" 
+                    alt="Rice fortification process" 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-4">Rice Fortification</h3>
@@ -180,12 +227,13 @@ const StapleFood = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
             {/* Edible Oil Fortification */}
             <ScrollReveal delay={300}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden">
-                <div className="aspect-video bg-neutral-200 flex justify-center items-center">
-                  <div className="text-center p-6">
-                    <BarChart3 className="w-12 h-12 mx-auto text-vitanium-600 mb-2" />
-                    <p className="text-neutral-500">Image placeholder: Edible oil fortification process</p>
-                  </div>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(245,158,11,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.5)] transition-all duration-300">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src="/images/food/cooking-oil.jpg" 
+                    alt="Edible oil fortification process" 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-4">Edible Oil Fortification</h3>
@@ -236,12 +284,13 @@ const StapleFood = () => {
             
             {/* Milk Fortification */}
             <ScrollReveal delay={400}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden">
-                <div className="aspect-video bg-neutral-200 flex justify-center items-center">
-                  <div className="text-center p-6">
-                    <Tablet className="w-12 h-12 mx-auto text-vitanium-600 mb-2" />
-                    <p className="text-neutral-500">Image placeholder: Milk fortification equipment</p>
-                  </div>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.5)] transition-all duration-300">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src="/images/food/milk.jpg" 
+                    alt="Milk fortification equipment" 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-4">Milk Fortification</h3>
@@ -291,22 +340,29 @@ const StapleFood = () => {
             </ScrollReveal>
           </div>
         </div>
-        
+
         {/* Success Stories */}
         <div className="mt-20">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-neutral-800 mb-8">Implementation Success Stories</h2>
           </ScrollReveal>
           
-          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100">
+          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(236,72,153,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(236,72,153,0.5)] transition-all duration-300">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <ScrollReveal delay={100}>
-                <div>
+                <div className="flex flex-col h-full">
+                  <div className="mb-4 rounded-lg overflow-hidden">
+                    <img 
+                      src="/images/food/rice-distribution.jpg" 
+                      alt="Rice distribution program" 
+                      className="w-full aspect-video object-cover"
+                    />
+                  </div>
                   <h3 className="text-xl font-bold mb-4">Uttar Pradesh Rice Fortification Program</h3>
                   <p className="text-neutral-600 mb-6">
                     Partnered with the Uttar Pradesh government to implement rice fortification across public distribution systems, reaching over 15 million beneficiaries with fortified rice containing iron, folic acid, and vitamin B12.
                   </p>
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-4 mt-auto">
                     <div className="font-semibold">Impact:</div>
                     <div className="text-vitanium-600">15M+ beneficiaries</div>
                   </div>
@@ -314,12 +370,19 @@ const StapleFood = () => {
               </ScrollReveal>
               
               <ScrollReveal delay={200}>
-                <div>
+                <div className="flex flex-col h-full">
+                  <div className="mb-4 rounded-lg overflow-hidden">
+                    <img 
+                      src="/images/food/cooking-oil.jpg" 
+                      alt="Edible oil fortification" 
+                      className="w-full aspect-video object-cover"
+                    />
+                  </div>
                   <h3 className="text-xl font-bold mb-4">National Edible Oil Fortification Initiative</h3>
                   <p className="text-neutral-600 mb-6">
                     Collaborated with major oil manufacturers to implement vitamin A and D fortification in edible oils, contributing to a national initiative aimed at addressing vitamin deficiencies.
                   </p>
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-4 mt-auto">
                     <div className="font-semibold">Impact:</div>
                     <div className="text-vitanium-600">30M+ households reached</div>
                   </div>

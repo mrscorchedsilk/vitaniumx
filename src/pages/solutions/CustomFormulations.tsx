@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FlaskConical, ArrowRight, CheckCircle, Settings, Users, ClipboardCheck } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import FoodImageGallery from '@/components/ui/FoodImageGallery';
 
 const CustomFormulations = () => {
   return (
@@ -17,11 +18,17 @@ const CustomFormulations = () => {
         
         {/* Hero Image */}
         <div className="mt-10 relative rounded-xl overflow-hidden">
-          <div className="aspect-[21/9] bg-neutral-200 flex justify-center items-center">
-            <div className="text-center p-6">
-              <FlaskConical className="w-16 h-16 mx-auto text-vitanium-600 mb-4" />
-              <p className="text-neutral-500">
-                Image placeholder: Laboratory technicians working on custom formulations
+          <img 
+            src="/images/food/laboratory.jpg" 
+            alt="Laboratory technicians working on custom formulations" 
+            className="w-full aspect-[21/9] object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
+            <div className="text-white p-8 md:p-12 max-w-2xl">
+              <FlaskConical className="w-16 h-16 text-vitanium-400 mb-4" />
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Precise Nutrition Solutions</h2>
+              <p className="text-lg text-white/80">
+                Scientifically designed formulations customized for your specific products and target markets.
               </p>
             </div>
           </div>
@@ -41,6 +48,44 @@ const CustomFormulations = () => {
           </ScrollReveal>
         </div>
         
+        {/* Food Image Gallery */}
+        <div className="mt-16">
+          <ScrollReveal>
+            <h2 className="text-3xl font-bold text-neutral-800 mb-8">Our Custom Solutions</h2>
+          </ScrollReveal>
+          
+          <FoodImageGallery 
+            images={[
+              {
+                src: "/images/food/premix-formulation.jpg",
+                alt: "Micronutrient Premix Development"
+              },
+              {
+                src: "/images/food/food-testing.jpg",
+                alt: "Food Matrix Testing"
+              },
+              {
+                src: "/images/food/powder-mixing.jpg",
+                alt: "Powder Blending Technology"
+              },
+              {
+                src: "/images/food/quality-control.jpg",
+                alt: "Quality Control Process"
+              },
+              {
+                src: "/images/food/nutrition-research.jpg",
+                alt: "Nutrition Research"
+              },
+              {
+                src: "/images/food/custom-packaging.jpg",
+                alt: "Custom Packaging Solutions"
+              }
+            ]}
+            columns={3}
+            className="mb-12"
+          />
+        </div>
+        
         {/* Our Process */}
         <div className="mt-20">
           <ScrollReveal>
@@ -49,7 +94,7 @@ const CustomFormulations = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ScrollReveal delay={100}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(14,165,233,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.5)] transition-all duration-300">
                 <div className="mb-6">
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-vitanium-100 text-vitanium-600 font-bold text-xl">
                     1
@@ -89,7 +134,7 @@ const CustomFormulations = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={200}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.5)] transition-all duration-300">
                 <div className="mb-6">
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-vitanium-100 text-vitanium-600 font-bold text-xl">
                     2
@@ -129,7 +174,7 @@ const CustomFormulations = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={300}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(245,158,11,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.5)] transition-all duration-300">
                 <div className="mb-6">
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-vitanium-100 text-vitanium-600 font-bold text-xl">
                     3
@@ -178,7 +223,7 @@ const CustomFormulations = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <ScrollReveal delay={100}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.5)] transition-all duration-300">
                 <div className="mb-6">
                   <Settings className="h-12 w-12 text-vitanium-600" />
                 </div>
@@ -204,7 +249,7 @@ const CustomFormulations = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={200}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(236,72,153,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(236,72,153,0.5)] transition-all duration-300">
                 <div className="mb-6">
                   <Users className="h-12 w-12 text-vitanium-600" />
                 </div>
@@ -238,7 +283,7 @@ const CustomFormulations = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={300}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(250,82,82,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(250,82,82,0.5)] transition-all duration-300">
                 <div className="mb-6">
                   <ClipboardCheck className="h-12 w-12 text-vitanium-600" />
                 </div>
@@ -281,7 +326,14 @@ const CustomFormulations = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ScrollReveal delay={100}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(34,197,94,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(34,197,94,0.5)] transition-all duration-300">
+                <div className="mb-4 rounded-lg overflow-hidden">
+                  <img 
+                    src="/images/food/maternal-nutrition.jpg" 
+                    alt="Maternal nutrition program" 
+                    className="w-full aspect-video object-cover"
+                  />
+                </div>
                 <h3 className="text-xl font-bold mb-4">Maternal Nutrition Program</h3>
                 <p className="text-neutral-600 mb-6">
                   Developed a specialized micronutrient premix for a state government program targeting pregnant women in rural areas. The formulation included iron, folate, calcium, zinc, vitamins A, D, and B-complex in forms optimized for bioavailability and acceptability.
@@ -307,7 +359,14 @@ const CustomFormulations = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={200}>
-              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
+              <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(168,85,247,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(168,85,247,0.5)] transition-all duration-300">
+                <div className="mb-4 rounded-lg overflow-hidden">
+                  <img 
+                    src="/images/food/fortified-yogurt.jpg" 
+                    alt="Fortified dairy product" 
+                    className="w-full aspect-video object-cover"
+                  />
+                </div>
                 <h3 className="text-xl font-bold mb-4">Fortified Dairy Product</h3>
                 <p className="text-neutral-600 mb-6">
                   Created a custom micronutrient blend for a major dairy company launching a fortified yogurt product targeted at children. The formulation required stability during fermentation, minimal impact on flavor, and compliance with regulatory requirements for nutrition claims.

@@ -52,6 +52,21 @@ const Navbar = () => {
     };
   }, []);
 
+  // Effect to control body scroll when mobile menu is open
+  useEffect(() => {
+    // When mobile menu is open, prevent background scrolling
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    // Cleanup function to ensure scroll is re-enabled when component unmounts
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   return (
     <>
       {/* Contact Banner */}

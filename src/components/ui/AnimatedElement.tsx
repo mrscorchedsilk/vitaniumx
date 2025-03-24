@@ -11,6 +11,7 @@ interface AnimatedElementProps extends MotionProps {
   viewportOnce?: boolean;
   viewportMargin?: string;
   viewportAmount?: number;
+  skipHiddenState?: boolean; // New prop to skip the hidden state
 }
 
 const animations: Record<string, Variants> = {
@@ -128,6 +129,20 @@ const animations: Record<string, Variants> = {
   }
 };
 
+// Create floating animation with no hidden state
+const floatOnlyAnimation: Variants = {
+  visible: (i) => ({
+    y: [0, -10, 0],
+    transition: {
+      delay: i * 0.1,
+      duration: 3,
+      ease: "easeInOut",
+      repeat: Infinity,
+      repeatType: "reverse"
+    }
+  })
+};
+
 const AnimatedElement: React.FC<AnimatedElementProps> = ({
   children,
   delay = 0,
@@ -137,8 +152,25 @@ const AnimatedElement: React.FC<AnimatedElementProps> = ({
   viewportOnce = true,
   viewportMargin = "0px 0px -100px 0px",
   viewportAmount = 0.1,
+  skipHiddenState = false,
   ...props
 }) => {
+  // For floating animations that should skip the hidden state (always visible)
+  if (skipHiddenState && animation === 'float') {
+    return (
+      <motion.div
+        className={className}
+        animate="visible"
+        variants={floatOnlyAnimation}
+        custom={delay}
+        {...props}
+      >
+        {children}
+      </motion.div>
+    );
+  }
+  
+  // For regular animations with hidden -> visible states
   const selectedAnimation = animations[animation] || animations.fadeIn;
   
   return (

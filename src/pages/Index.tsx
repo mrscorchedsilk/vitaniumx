@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -92,7 +93,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Key Stats Section with 3D molecules */}
+      {/* Key Stats Section with 3D models side by side */}
       <section className="py-20 bg-white relative">
         <div className="container-wide">
           <SectionHeading
@@ -124,33 +125,46 @@ const Index = () => {
             />
           </div>
           
-          {/* Add 3D Molecule visualization */}
-          <div className="mt-16 relative h-64 md:h-80">
-            <ScrollReveal animation="fade-in">
-              <MoleculeModel className="h-full" autoRotate={true} />
-            </ScrollReveal>
+          {/* All 3D visualizations in a row */}
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Molecule Model */}
+            <div className="bg-white p-6 rounded-xl shadow-md border border-neutral-100 h-80">
+              <h3 className="text-lg font-semibold text-center mb-4 text-vitanium-600">Molecule Model</h3>
+              <ScrollReveal animation="fade-in">
+                <MoleculeModel className="h-64" autoRotate={true} />
+              </ScrollReveal>
+            </div>
+            
+            {/* Floating Pills */}
+            <div className="bg-white p-6 rounded-xl shadow-md border border-neutral-100 h-80">
+              <h3 className="text-lg font-semibold text-center mb-4 text-vitanium-600">Fortification Elements</h3>
+              <ScrollReveal animation="fade-in">
+                <div className="h-64 relative">
+                  <FloatingPills className="h-full" />
+                </div>
+              </ScrollReveal>
+            </div>
+            
+            {/* Product Showcase */}
+            <div className="bg-white p-6 rounded-xl shadow-md border border-neutral-100 h-80">
+              <h3 className="text-lg font-semibold text-center mb-4 text-vitanium-600">Product Gallery</h3>
+              <ScrollReveal animation="fade-in">
+                <ProductShowcase className="h-64" />
+              </ScrollReveal>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Quality Assurance Section */}
+      {/* Quality Assurance Section - Removed 3D Floating Pills */}
       <section className="py-20 bg-neutral-50">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <ScrollReveal animation="slide-in-right">
                 <div className="bg-white p-8 rounded-xl shadow-elevated border border-neutral-100 relative h-80">
-                  <div className="absolute inset-0 rounded-xl overflow-hidden">
-                    <FloatingPills className="h-full" />
-                  </div>
-                  <div className="relative z-10 h-full flex flex-col justify-end bg-gradient-to-t from-white via-white/90 to-transparent">
-                    <div className="flex justify-center mb-6">
-                      <TestTube className="h-16 w-16 text-vitanium-600" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-center mb-4">State-of-the-Art Laboratory</h3>
-                    <p className="text-neutral-600 text-center">
-                      Our advanced testing equipment includes HPLC, ICP-OES, AAS, and more for comprehensive analysis.
-                    </p>
+                  <div className="flex justify-center items-center h-full">
+                    <TestTube className="h-20 w-20 text-vitanium-600" />
                   </div>
                 </div>
               </ScrollReveal>
@@ -212,7 +226,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Our Solutions Section with 3D Product Showcase */}
+      {/* Our Solutions Section - Removed 3D Product Showcase */}
       <section className="py-20 bg-white relative">
         <div className="container-wide">
           <SectionHeading
@@ -221,13 +235,7 @@ const Index = () => {
             description="We offer a wide range of micronutrient premixes designed for various applications across the food industry."
           />
           
-          <div className="my-14 h-64 md:h-80">
-            <ScrollReveal animation="fade-in">
-              <ProductShowcase className="h-full" />
-            </ScrollReveal>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
             <ProductCard
               title="Staple Food Fortification"
               description="Premixes for rice, wheat flour, milk, and oil fortification to address micronutrient deficiencies."
@@ -329,7 +337,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Innovation Section with 3D Molecule */}
+      {/* Innovation Section - Removed 3D Molecule */}
       <section className="py-20 bg-white">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -388,10 +396,8 @@ const Index = () => {
             </div>
             <div className="order-1 lg:order-2">
               <ScrollReveal animation="slide-in-right">
-                <div className="bg-white p-8 rounded-xl shadow-elevated border border-neutral-100 h-80">
-                  <div className="h-full">
-                    <MoleculeModel className="h-full" autoRotate={true} />
-                  </div>
+                <div className="bg-white p-8 rounded-xl shadow-elevated border border-neutral-100 h-80 flex items-center justify-center">
+                  <FlaskConical className="h-24 w-24 text-vitanium-600" />
                 </div>
               </ScrollReveal>
             </div>
@@ -463,4 +469,3 @@ const Index = () => {
 };
 
 export default Index;
-

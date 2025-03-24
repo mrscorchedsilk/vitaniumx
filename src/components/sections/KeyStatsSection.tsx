@@ -22,9 +22,9 @@ const KeyStatsSection = () => {
         {/* Green (bottom) */}
         <div className="absolute top-2/3 w-full h-1/3 bg-gradient-to-t from-emerald-100 to-emerald-50 opacity-30"></div>
         
-        {/* Ashoka Chakra */}
+        {/* Ashoka Chakra - Fixed center positioning */}
         <motion.div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 md:w-64 md:h-64 opacity-10"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 md:w-64 md:h-64 opacity-10"
           animate={{ rotate: 360 }}
           transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
         >

@@ -49,7 +49,7 @@ const PartnersCarousel: React.FC<PartnersCarouselProps> = ({ logos, className })
         
         // Optionally slow down the carousel movement itself
         emblaApi.reInit({
-          speed: 10 // This slows down the transition animation
+          duration: 50 // This slows down the transition animation (higher value = slower)
         });
       }
     }

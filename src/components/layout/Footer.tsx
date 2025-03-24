@@ -22,7 +22,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <img 
-              src="/lovable-uploads/154cc4d2-fd89-483f-8eb7-21939f1f9c8c.png" 
+              src="/lovable-uploads/5642c1e5-ab13-474e-8553-562dd7c66826.png" 
               alt="VitaniumX Logo" 
               className="h-10" 
             />

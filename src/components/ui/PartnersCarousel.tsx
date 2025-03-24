@@ -27,16 +27,29 @@ const PartnersCarousel: React.FC<PartnersCarouselProps> = ({ logos, className })
       containScroll: "trimSnaps",
       align: "start",
       slidesToScroll: 1,
+      speed: 5, // Slower animation speed (higher number = slower)
     },
     [
       Autoplay({ 
-        delay: 2000, 
+        delay: 0, // No delay between movements for continuous scrolling
         stopOnInteraction: false,
         stopOnMouseEnter: true,
-        playOnInit: true
+        playOnInit: true,
+        rootNode: (emblaRoot) => emblaRoot.parentElement,
       })
     ]
   );
+
+  // Adjust the autoplay speed after initialization for smoother, slower scrolling
+  useEffect(() => {
+    if (emblaApi) {
+      const autoplay = emblaApi.plugins().autoplay;
+      if (autoplay) {
+        // Set a slower playback speed
+        autoplay.options.playbackSpeed = 0.5; // Slower speed (lower number = slower)
+      }
+    }
+  }, [emblaApi]);
 
   // Ensure carousel continues after interaction
   const onPointerDown = useCallback(() => {

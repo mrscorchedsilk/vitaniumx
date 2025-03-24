@@ -65,6 +65,7 @@ const TrustedPartnersSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
+          className="py-8" // Added more padding for better visual spacing
         >
           <PartnersCarousel logos={partnerLogos} className="py-4" />
         </motion.div>

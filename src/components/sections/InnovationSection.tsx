@@ -3,6 +3,7 @@ import React from 'react';
 import { Beaker, TestTube, FlaskConical } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 const InnovationSection = () => {
   return (
@@ -56,9 +57,11 @@ const InnovationSection = () => {
             </div>
             <ScrollReveal delay={600}>
               <div className="mt-10">
-                <Link to="/innovation" className="btn-primary">
-                  Explore Our Innovation Lab
-                </Link>
+                <Button asChild>
+                  <Link to="/innovation">
+                    Explore Our Innovation Lab
+                  </Link>
+                </Button>
               </div>
             </ScrollReveal>
           </div>

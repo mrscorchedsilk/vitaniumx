@@ -3,6 +3,7 @@ import React from 'react';
 import { CheckCircle, TestTube } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 const QualityAssuranceSection = () => {
   return (
@@ -77,9 +78,11 @@ const QualityAssuranceSection = () => {
             </div>
             <ScrollReveal delay={600}>
               <div className="mt-10">
-                <Link to="/quality" className="btn-primary">
-                  Learn More About Our Quality
-                </Link>
+                <Button asChild>
+                  <Link to="/quality">
+                    Learn More About Our Quality
+                  </Link>
+                </Button>
               </div>
             </ScrollReveal>
           </div>

@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Phone, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import Logo from '../ui/Logo';
+import NavbarLogo from '../ui/NavbarLogo';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,16 +51,13 @@ const Navbar = () => {
     };
   }, []);
 
-  // Effect to control body scroll when mobile menu is open
   useEffect(() => {
-    // When mobile menu is open, prevent background scrolling
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
     }
 
-    // Cleanup function to ensure scroll is re-enabled when component unmounts
     return () => {
       document.body.style.overflow = '';
     };
@@ -69,7 +65,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Contact Banner */}
       <div className="bg-gradient-to-r from-emerald-900 to-vitanium-800 text-white py-3 relative overflow-hidden">
         <div className="absolute inset-0 bg-dots opacity-10"></div>
         <div className="container-wide flex justify-center items-center space-x-10">
@@ -84,7 +79,6 @@ const Navbar = () => {
         </div>
       </div>
       
-      {/* Main Navigation */}
       <nav 
         className={cn(
           "sticky top-0 w-full z-50 transition-all duration-300",
@@ -94,12 +88,10 @@ const Navbar = () => {
         )}
       >
         <div className="container-wide flex items-center justify-between">
-          {/* Logo */}
           <Link to="/" className="flex-shrink-0">
-            <Logo />
+            <NavbarLogo />
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => 
               item.submenu ? (
@@ -139,7 +131,6 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* CTA Button */}
           <div className="hidden lg:block">
             <Link 
               to="/get-quote" 
@@ -149,7 +140,6 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="lg:hidden rounded-md p-2 text-neutral-800 hover:bg-neutral-100 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
@@ -162,7 +152,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         <div
           className={cn(
             "lg:hidden fixed inset-0 glass z-40 transition-transform ease-in-out duration-300 transform",

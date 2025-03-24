@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const Logo = ({ className }: { className?: string }) => {
+const NavbarLogo = ({ className }: { className?: string }) => {
   return (
     <motion.div 
       className={`flex flex-col items-start ${className}`}
@@ -13,7 +13,7 @@ const Logo = ({ className }: { className?: string }) => {
     >
       <Link to="/" className="inline-block">
         <motion.img
-          src="/lovable-uploads/5642c1e5-ab13-474e-8553-562dd7c66826.png"
+          src="/lovable-uploads/c024433a-6385-4f2b-9332-9dbeae45790e.png"
           alt="VITANIUMX Logo"
           className="h-10 md:h-12 w-auto"
           whileHover={{ scale: 1.03 }}
@@ -24,4 +24,4 @@ const Logo = ({ className }: { className?: string }) => {
   );
 };
 
-export default Logo;
+export default NavbarLogo;

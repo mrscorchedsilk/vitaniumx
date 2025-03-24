@@ -19,8 +19,8 @@ const CustomFormulations = () => {
         {/* Hero Image */}
         <div className="mt-10 relative rounded-xl overflow-hidden">
           <img 
-            src="/images/food/laboratory.jpg" 
-            alt="Laboratory technicians working on custom formulations" 
+            src="/lovable-uploads/10da3b95-043b-4c40-a27d-55b29dfd59e0.png" 
+            alt="Food scientist examining nutrient formulations in a laboratory" 
             className="w-full aspect-[21/9] object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
@@ -57,28 +57,28 @@ const CustomFormulations = () => {
           <FoodImageGallery 
             images={[
               {
-                src: "/images/food/premix-formulation.jpg",
-                alt: "Micronutrient Premix Development"
+                src: "/lovable-uploads/d0098acb-8109-49f0-813d-3cb10b8a9f7b.png",
+                alt: "Manufacturing process with nutrient premix production line"
               },
               {
-                src: "/images/food/food-testing.jpg",
-                alt: "Food Matrix Testing"
+                src: "/lovable-uploads/4fa0c9a4-c990-4524-9ce1-c0bc24be38b6.png",
+                alt: "Dairy products fortified with customized nutrients"
               },
               {
-                src: "/images/food/powder-mixing.jpg",
-                alt: "Powder Blending Technology"
+                src: "/lovable-uploads/69a2d987-2c3a-41b1-909d-4e2c5cb19d6f.png",
+                alt: "Food safety testing and nutrient analysis in laboratory"
               },
               {
-                src: "/images/food/quality-control.jpg",
-                alt: "Quality Control Process"
+                src: "/lovable-uploads/6023eb0a-5382-4ccd-81a1-ceda74c22753.png",
+                alt: "Maternal nutrition with fresh fruit blend"
               },
               {
-                src: "/images/food/nutrition-research.jpg",
-                alt: "Nutrition Research"
+                src: "/lovable-uploads/b6defa9a-7ef3-4a67-b3ee-6f818c1ddc85.png",
+                alt: "Child nutrition with creative healthy eating"
               },
               {
-                src: "/images/food/custom-packaging.jpg",
-                alt: "Custom Packaging Solutions"
+                src: "/lovable-uploads/efa88797-b242-4857-8154-49dcab3871c2.png",
+                alt: "Micronutrient powder production on conveyor"
               }
             ]}
             columns={3}
@@ -329,8 +329,8 @@ const CustomFormulations = () => {
               <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(34,197,94,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(34,197,94,0.5)] transition-all duration-300">
                 <div className="mb-4 rounded-lg overflow-hidden">
                   <img 
-                    src="/images/food/maternal-nutrition.jpg" 
-                    alt="Maternal nutrition program" 
+                    src="/lovable-uploads/6aa39373-a88a-49b3-98ea-0dc7006f1609.png" 
+                    alt="Quality control testing in food manufacturing facility" 
                     className="w-full aspect-video object-cover"
                   />
                 </div>
@@ -362,8 +362,8 @@ const CustomFormulations = () => {
               <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full shadow-[0_10px_25px_-5px_rgba(168,85,247,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(168,85,247,0.5)] transition-all duration-300">
                 <div className="mb-4 rounded-lg overflow-hidden">
                   <img 
-                    src="/images/food/fortified-yogurt.jpg" 
-                    alt="Fortified dairy product" 
+                    src="/lovable-uploads/671c36e8-6268-44ca-b9e1-1793ee35ba8e.png" 
+                    alt="Industrial food production line with premix packaging" 
                     className="w-full aspect-video object-cover"
                   />
                 </div>

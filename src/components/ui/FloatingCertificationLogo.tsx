@@ -30,7 +30,7 @@ const FloatingCertificationLogo: React.FC<FloatingCertificationLogoProps> = ({
       delay={delay} 
       className={`rounded-full flex items-center justify-center ${className}`}
       viewportOnce={true}
-      skipHiddenState={true} // This will prevent the blinking effect
+      skipHiddenState={true} // This will prevent the blinking effect by skipping the hidden state
     >
       <img 
         src={src} 

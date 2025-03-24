@@ -20,6 +20,16 @@ const PartnersCarousel: React.FC<PartnersCarouselProps> = ({ logos, className })
   // Duplicate logos to create a seamless loop effect
   const extendedLogos = [...logos, ...logos];
   
+  // Create autoplay plugin instance outside of useEmblaCarousel to have more control
+  const autoplayOptions = {
+    delay: 5000,
+    stopOnInteraction: false,
+    stopOnMouseEnter: true,
+    playOnInit: false // Changed to false to manually start after initialization
+  };
+  
+  const autoplayPlugin = Autoplay(autoplayOptions);
+  
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { 
       loop: true,
@@ -28,32 +38,31 @@ const PartnersCarousel: React.FC<PartnersCarouselProps> = ({ logos, className })
       align: "start",
       slidesToScroll: 1,
     },
-    [
-      Autoplay({ 
-        delay: 5000, // Much longer delay between movements for slower scrolling
-        stopOnInteraction: false,
-        stopOnMouseEnter: true,
-        playOnInit: true,
-        rootNode: (emblaRoot) => emblaRoot.parentElement,
-      })
-    ]
+    [autoplayPlugin]
   );
 
-  // Adjust the autoplay behavior after initialization
+  // Safely handle autoplay initialization after the carousel is fully mounted
   useEffect(() => {
+    // Only attempt to access plugins when emblaApi is defined
     if (emblaApi) {
-      const autoplay = emblaApi.plugins().autoplay;
-      if (autoplay) {
-        // Resume autoplay with default settings
-        autoplay.play();
-        
-        // Optionally slow down the carousel movement itself
-        emblaApi.reInit({
-          duration: 50 // This slows down the transition animation (higher value = slower)
-        });
-      }
+      // Wait a short time to ensure carousel is fully initialized
+      const timer = setTimeout(() => {
+        try {
+          // Optionally slow down the carousel movement itself
+          emblaApi.reInit({
+            duration: 50 // This slows down the transition animation (higher value = slower)
+          });
+          
+          // Start autoplay after the carousel is fully initialized
+          autoplayPlugin.play();
+        } catch (error) {
+          console.error("Error initializing carousel:", error);
+        }
+      }, 100);
+      
+      return () => clearTimeout(timer);
     }
-  }, [emblaApi]);
+  }, [emblaApi, autoplayPlugin]);
 
   // Ensure carousel continues after interaction
   const onPointerDown = useCallback(() => {
@@ -61,9 +70,13 @@ const PartnersCarousel: React.FC<PartnersCarouselProps> = ({ logos, className })
     
     // Resume autoplay after user interaction
     setTimeout(() => {
-      emblaApi.plugins().autoplay?.play();
+      try {
+        autoplayPlugin.play();
+      } catch (error) {
+        console.error("Error resuming autoplay:", error);
+      }
     }, 100);
-  }, [emblaApi]);
+  }, [emblaApi, autoplayPlugin]);
 
   return (
     <div className={cn("w-full overflow-hidden", className)}>

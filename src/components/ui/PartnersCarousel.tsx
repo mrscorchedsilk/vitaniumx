@@ -27,7 +27,6 @@ const PartnersCarousel: React.FC<PartnersCarouselProps> = ({ logos, className })
       containScroll: "trimSnaps",
       align: "start",
       slidesToScroll: 1,
-      speed: 5, // Slower animation speed (higher number = slower)
     },
     [
       Autoplay({ 
@@ -45,8 +44,11 @@ const PartnersCarousel: React.FC<PartnersCarouselProps> = ({ logos, className })
     if (emblaApi) {
       const autoplay = emblaApi.plugins().autoplay;
       if (autoplay) {
-        // Set a slower playback speed
-        autoplay.options.playbackSpeed = 0.5; // Slower speed (lower number = slower)
+        // Set a slower scroll speed by adjusting the delay between frames
+        // This is the correct property to adjust, not 'playbackSpeed'
+        emblaApi.reInit({ 
+          speed: 10 // Higher number = slower speed (in embla-carousel v7+)
+        });
       }
     }
   }, [emblaApi]);

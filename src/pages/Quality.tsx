@@ -12,6 +12,8 @@ import {
 } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import AnimatedElement from '@/components/ui/AnimatedElement';
+import FloatingCertificationLogo from '@/components/ui/FloatingCertificationLogo';
 
 const Quality = () => {
   return (
@@ -46,8 +48,12 @@ const Quality = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ScrollReveal delay={100}>
               <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
-                <div className="flex items-center mb-6">
-                  <Award className="h-10 w-10 text-vitanium-600 mr-4" />
+                <div className="flex flex-col items-center mb-6">
+                  <div className="mb-4 h-24 w-24 flex items-center justify-center">
+                    <AnimatedElement animation="float" delay={0.2}>
+                      <img src="/lovable-uploads/b66033d2-e7ea-409f-a2ed-2e7a7b8b3409.png" alt="GMP" className="max-h-full max-w-full" />
+                    </AnimatedElement>
+                  </div>
                   <h3 className="text-xl font-semibold">GMP</h3>
                 </div>
                 <p className="text-neutral-600 mb-4">
@@ -61,9 +67,13 @@ const Quality = () => {
             
             <ScrollReveal delay={200}>
               <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
-                <div className="flex items-center mb-6">
-                  <Shield className="h-10 w-10 text-vitanium-600 mr-4" />
-                  <h3 className="text-xl font-semibold">ISO 9001:2015</h3>
+                <div className="flex flex-col items-center mb-6">
+                  <div className="mb-4 h-24 w-24 flex items-center justify-center">
+                    <AnimatedElement animation="float" delay={0.4}>
+                      <img src="/lovable-uploads/df1ac649-a94b-4bb9-9366-b01aee375315.png" alt="ISO 9001:2008" className="max-h-full max-w-full" />
+                    </AnimatedElement>
+                  </div>
+                  <h3 className="text-xl font-semibold">ISO 9001:2008</h3>
                 </div>
                 <p className="text-neutral-600 mb-4">
                   International standard for quality management systems, demonstrating our commitment to consistently meeting customer requirements.
@@ -76,8 +86,12 @@ const Quality = () => {
             
             <ScrollReveal delay={300}>
               <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
-                <div className="flex items-center mb-6">
-                  <Shield className="h-10 w-10 text-vitanium-600 mr-4" />
+                <div className="flex flex-col items-center mb-6">
+                  <div className="mb-4 h-24 w-24 flex items-center justify-center">
+                    <AnimatedElement animation="float" delay={0.6}>
+                      <img src="/lovable-uploads/e4aab3cf-b528-4ac6-bf8d-039af06a24e9.png" alt="FSSC 22000" className="max-h-full max-w-full" />
+                    </AnimatedElement>
+                  </div>
                   <h3 className="text-xl font-semibold">FSSC 22000</h3>
                 </div>
                 <p className="text-neutral-600 mb-4">
@@ -91,8 +105,12 @@ const Quality = () => {
             
             <ScrollReveal delay={400}>
               <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
-                <div className="flex items-center mb-6">
-                  <Shield className="h-10 w-10 text-vitanium-600 mr-4" />
+                <div className="flex flex-col items-center mb-6">
+                  <div className="mb-4 h-24 w-24 flex items-center justify-center">
+                    <AnimatedElement animation="float" delay={0.8}>
+                      <img src="/lovable-uploads/2a854855-bbe3-4120-b6e7-becc25616bb0.png" alt="FSSAI" className="max-h-full max-w-full" />
+                    </AnimatedElement>
+                  </div>
                   <h3 className="text-xl font-semibold">FSSAI</h3>
                 </div>
                 <p className="text-neutral-600 mb-4">
@@ -106,8 +124,12 @@ const Quality = () => {
             
             <ScrollReveal delay={500}>
               <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full">
-                <div className="flex items-center mb-6">
-                  <Shield className="h-10 w-10 text-vitanium-600 mr-4" />
+                <div className="flex flex-col items-center mb-6">
+                  <div className="mb-4 h-24 w-24 flex items-center justify-center">
+                    <AnimatedElement animation="float" delay={1.0}>
+                      <img src="/lovable-uploads/d808de9e-13d6-4730-a723-30fc5e1e036e.png" alt="ISO 22000:2018" className="max-h-full max-w-full" />
+                    </AnimatedElement>
+                  </div>
                   <h3 className="text-xl font-semibold">ISO 22000:2018</h3>
                 </div>
                 <p className="text-neutral-600 mb-4">

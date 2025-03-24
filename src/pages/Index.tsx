@@ -22,6 +22,7 @@ import StatCard from '@/components/ui/StatCard';
 import CertificationCard from '@/components/ui/CertificationCard';
 import ProductCard from '@/components/ui/ProductCard';
 import HeroSection from '@/components/sections/HeroSection';
+import FloatingCertificationLogo from '@/components/ui/FloatingCertificationLogo';
 
 // Import 3D components
 import MoleculeModel from '@/components/3d/MoleculeModel';
@@ -32,7 +33,7 @@ import NutrientParticles from '@/components/3d/NutrientParticles';
 const Index = () => {
   return (
     <div className="pt-0">
-      {/* 3D Particles in background */}
+      {/* NutrientParticles in background */}
       <NutrientParticles density="low" />
 
       {/* Hero Section using HeroSection component */}
@@ -54,47 +55,42 @@ const Index = () => {
       {/* Certification Banner */}
       <section className="py-8 bg-neutral-50 border-y border-neutral-100">
         <div className="container-wide">
-          <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+          <div className="flex flex-wrap justify-center items-center gap-8">
             <div className="text-lg font-semibold text-neutral-700">Certified By:</div>
             <ScrollReveal delay={100}>
-              <div className="flex items-center justify-center h-20 px-6">
-                <div className="text-center">
-                  <div className="font-bold text-navy-800 text-lg">GMP</div>
-                  <div className="text-xs text-neutral-600">Good Manufacturing Practices</div>
-                </div>
-              </div>
+              <FloatingCertificationLogo 
+                src="/lovable-uploads/b66033d2-e7ea-409f-a2ed-2e7a7b8b3409.png" 
+                alt="GMP Certification" 
+                delay={0.2}
+              />
             </ScrollReveal>
             <ScrollReveal delay={200}>
-              <div className="flex items-center justify-center h-20 px-6">
-                <div className="text-center">
-                  <div className="font-bold text-navy-800 text-lg">ISO 9001:2015</div>
-                  <div className="text-xs text-neutral-600">Quality Management System</div>
-                </div>
-              </div>
+              <FloatingCertificationLogo 
+                src="/lovable-uploads/df1ac649-a94b-4bb9-9366-b01aee375315.png" 
+                alt="ISO 9001:2008 Certification" 
+                delay={0.4}
+              />
             </ScrollReveal>
             <ScrollReveal delay={300}>
-              <div className="flex items-center justify-center h-20 px-6">
-                <div className="text-center">
-                  <div className="font-bold text-navy-800 text-lg">FSSC 22000</div>
-                  <div className="text-xs text-neutral-600">Food Safety System</div>
-                </div>
-              </div>
+              <FloatingCertificationLogo 
+                src="/lovable-uploads/e4aab3cf-b528-4ac6-bf8d-039af06a24e9.png" 
+                alt="FSSC 22000 Certification" 
+                delay={0.6}
+              />
             </ScrollReveal>
             <ScrollReveal delay={400}>
-              <div className="flex items-center justify-center h-20 px-6">
-                <div className="text-center">
-                  <div className="font-bold text-navy-800 text-lg">FSSAI</div>
-                  <div className="text-xs text-neutral-600">Food Safety Authority of India</div>
-                </div>
-              </div>
+              <FloatingCertificationLogo 
+                src="/lovable-uploads/2a854855-bbe3-4120-b6e7-becc25616bb0.png" 
+                alt="FSSAI Certification" 
+                delay={0.8}
+              />
             </ScrollReveal>
             <ScrollReveal delay={500}>
-              <div className="flex items-center justify-center h-20 px-6">
-                <div className="text-center">
-                  <div className="font-bold text-navy-800 text-lg">ISO 22000:2018</div>
-                  <div className="text-xs text-neutral-600">Food Safety Management</div>
-                </div>
-              </div>
+              <FloatingCertificationLogo 
+                src="/lovable-uploads/d808de9e-13d6-4730-a723-30fc5e1e036e.png" 
+                alt="ISO 22000:2018 Certification" 
+                delay={1.0}
+              />
             </ScrollReveal>
           </div>
         </div>
@@ -297,36 +293,41 @@ const Index = () => {
             description="Our commitment to quality is backed by multiple certifications, ensuring our products meet the highest standards of safety and efficacy."
           />
           
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <CertificationCard
               name="GMP"
               description="Good Manufacturing Practices certification, ensuring consistent quality in production."
               icon={<Award className="h-6 w-6" />}
               delay={100}
+              imageSrc="/lovable-uploads/b66033d2-e7ea-409f-a2ed-2e7a7b8b3409.png"
             />
             <CertificationCard
-              name="ISO 9001:2015"
+              name="ISO 9001:2008"
               description="International standard for quality management systems."
               icon={<Shield className="h-6 w-6" />}
               delay={200}
+              imageSrc="/lovable-uploads/df1ac649-a94b-4bb9-9366-b01aee375315.png"
             />
             <CertificationCard
               name="FSSC 22000"
               description="Food Safety System Certification, demonstrating robust food safety management."
               icon={<Shield className="h-6 w-6" />}
               delay={300}
+              imageSrc="/lovable-uploads/e4aab3cf-b528-4ac6-bf8d-039af06a24e9.png"
             />
             <CertificationCard
               name="FSSAI"
               description="Food Safety and Standards Authority of India certification for food safety compliance."
               icon={<Shield className="h-6 w-6" />}
               delay={400}
+              imageSrc="/lovable-uploads/2a854855-bbe3-4120-b6e7-becc25616bb0.png"
             />
             <CertificationCard
               name="ISO 22000:2018"
               description="International standard for food safety management systems."
               icon={<Shield className="h-6 w-6" />}
               delay={500}
+              imageSrc="/lovable-uploads/d808de9e-13d6-4730-a723-30fc5e1e036e.png"
             />
           </div>
         </div>

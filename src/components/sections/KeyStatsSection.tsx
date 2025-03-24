@@ -6,21 +6,11 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 import MoleculeModel from '@/components/3d/MoleculeModel';
 import FloatingPills from '@/components/3d/FloatingPills';
 import ProductShowcase from '@/components/3d/ProductShowcase';
-import IndiaMapSilhouette from '@/components/ui/IndiaMapSilhouette';
 
 const KeyStatsSection = () => {
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
-      {/* Indian Map Background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <IndiaMapSilhouette 
-          className="right-[-5%] top-[5%] w-[60%] h-[90%] md:right-[10%] md:top-[10%]" 
-          opacity={0.04} 
-          color="#172554" 
-        />
-      </div>
-      
-      <div className="container-wide relative z-10">
+    <section className="py-20 bg-white relative">
+      <div className="container-wide">
         <SectionHeading
           subtitle="Our Impact"
           title="Nourishing Millions Across India"

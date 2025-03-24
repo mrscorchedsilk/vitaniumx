@@ -36,7 +36,7 @@ const Index = () => {
       {/* Certification Banner */}
       <CertificationBanner />
 
-      {/* Key Stats Section - now with Indian Map background */}
+      {/* Key Stats Section */}
       <KeyStatsSection />
 
       {/* Quality Assurance Section */}

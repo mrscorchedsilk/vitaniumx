@@ -41,7 +41,7 @@ const StatCard: React.FC<StatCardProps> = ({
   return (
     <ScrollReveal 
       className={cn(
-        'text-center p-6 rounded-lg bg-white/90 backdrop-blur-sm border border-white/20 transition-all duration-300',
+        'text-center p-6 rounded-lg backdrop-blur-sm border border-white/20 transition-all duration-300',
         glowColors[glowColor],
         className
       )}

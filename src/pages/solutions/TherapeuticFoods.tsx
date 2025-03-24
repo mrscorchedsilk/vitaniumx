@@ -19,7 +19,7 @@ const TherapeuticFoods = () => {
         {/* Hero Image */}
         <div className="mt-10 relative rounded-xl overflow-hidden">
           <img 
-            src="/images/food/therapeutic-food.jpg" 
+            src="/lovable-uploads/therapeutic-hero.jpg" 
             alt="Therapeutic food products" 
             className="w-full aspect-[21/9] object-cover"
           />
@@ -57,27 +57,27 @@ const TherapeuticFoods = () => {
           <FoodImageGallery 
             images={[
               {
-                src: "/images/food/therapeutic-paste.jpg",
+                src: "/lovable-uploads/therapeutic-paste-1.jpg",
                 alt: "Ready-to-Use Therapeutic Food"
               },
               {
-                src: "/images/food/supplementary-food.jpg",
+                src: "/lovable-uploads/therapeutic-paste-2.jpg",
                 alt: "Ready-to-Use Supplementary Food"
               },
               {
-                src: "/images/food/f75-f100.jpg",
+                src: "/lovable-uploads/therapeutic-milk.jpg",
                 alt: "Therapeutic Milk F75/F100"
               },
               {
-                src: "/images/food/maternal-nutrition.jpg",
+                src: "/lovable-uploads/maternal-nutrition.jpg",
                 alt: "Maternal Nutrition Supplements"
               },
               {
-                src: "/images/food/pediatric-nutrition.jpg",
+                src: "/lovable-uploads/pediatric-nutrition.jpg",
                 alt: "Pediatric Nutrition Supplements"
               },
               {
-                src: "/images/food/clinical-nutrition.jpg",
+                src: "/lovable-uploads/clinical-nutrition.jpg",
                 alt: "Clinical Nutrition Products"
               }
             ]}
@@ -98,7 +98,7 @@ const TherapeuticFoods = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/images/food/therapeutic-paste.jpg" 
+                    src="/lovable-uploads/therapeutic-paste-1.jpg" 
                     alt="RUTF sachets and packaging" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -163,7 +163,7 @@ const TherapeuticFoods = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(236,72,153,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(236,72,153,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/images/food/supplementary-food.jpg" 
+                    src="/lovable-uploads/therapeutic-paste-2.jpg" 
                     alt="RUSF products and application" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -229,7 +229,7 @@ const TherapeuticFoods = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(14,165,233,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/images/food/clinical-nutrition.jpg" 
+                    src="/lovable-uploads/specialized-nutrition.jpg" 
                     alt="Specialized nutritional supplements" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -358,7 +358,7 @@ const TherapeuticFoods = () => {
               <div className="col-span-1 lg:col-span-2">
                 <div className="aspect-square rounded-lg overflow-hidden">
                   <img 
-                    src="/images/food/nutrition-program.jpg" 
+                    src="/lovable-uploads/success-story.jpg" 
                     alt="Children receiving therapeutic foods" 
                     className="w-full h-full object-cover"
                   />

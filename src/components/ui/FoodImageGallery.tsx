@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { AspectRatio } from './aspect-ratio';
 
 interface FoodImageGalleryProps {
   images: Array<{
@@ -12,6 +13,7 @@ interface FoodImageGalleryProps {
   columns?: 1 | 2 | 3 | 4;
   hoverEffect?: 'zoom' | 'lift' | 'both';
   showCaption?: boolean;
+  imageHeight?: 'square' | 'auto' | 'video';
 }
 
 const FoodImageGallery: React.FC<FoodImageGalleryProps> = ({ 
@@ -19,7 +21,8 @@ const FoodImageGallery: React.FC<FoodImageGalleryProps> = ({
   className,
   columns = 3,
   hoverEffect = 'both',
-  showCaption = true
+  showCaption = true,
+  imageHeight = 'square'
 }) => {
   const columnClasses = {
     1: 'grid-cols-1',
@@ -27,6 +30,8 @@ const FoodImageGallery: React.FC<FoodImageGalleryProps> = ({
     3: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
     4: 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4',
   };
+
+  const aspectRatioValue = imageHeight === 'square' ? 1 : imageHeight === 'video' ? 16/9 : undefined;
 
   const container = {
     hidden: { opacity: 0 },
@@ -105,15 +110,28 @@ const FoodImageGallery: React.FC<FoodImageGalleryProps> = ({
               transition: { duration: 0.3 } 
             }}
           >
-            <div className="aspect-square overflow-hidden">
-              <img 
-                src={image.src} 
-                alt={image.alt} 
-                className={cn(
-                  "object-cover w-full h-full transition-transform duration-500", 
-                  hoverImageClass
-                )} 
-              />
+            <div className={imageHeight === 'auto' ? "" : "overflow-hidden"}>
+              {aspectRatioValue ? (
+                <AspectRatio ratio={aspectRatioValue} className="overflow-hidden">
+                  <img 
+                    src={image.src} 
+                    alt={image.alt} 
+                    className={cn(
+                      "object-cover w-full h-full transition-transform duration-500", 
+                      hoverImageClass
+                    )} 
+                  />
+                </AspectRatio>
+              ) : (
+                <img 
+                  src={image.src} 
+                  alt={image.alt} 
+                  className={cn(
+                    "w-full h-auto transition-transform duration-500", 
+                    hoverImageClass
+                  )} 
+                />
+              )}
             </div>
             {showCaption && (
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">

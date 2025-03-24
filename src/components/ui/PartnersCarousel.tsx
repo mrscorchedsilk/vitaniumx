@@ -30,7 +30,7 @@ const PartnersCarousel: React.FC<PartnersCarouselProps> = ({ logos, className })
     },
     [
       Autoplay({ 
-        delay: 0, // No delay between movements for continuous scrolling
+        delay: 2000, // Adjusted: A longer delay between movements for slower scrolling
         stopOnInteraction: false,
         stopOnMouseEnter: true,
         playOnInit: true,
@@ -39,15 +39,15 @@ const PartnersCarousel: React.FC<PartnersCarouselProps> = ({ logos, className })
     ]
   );
 
-  // Adjust the autoplay speed after initialization for smoother, slower scrolling
+  // Adjust the autoplay behavior after initialization
   useEffect(() => {
     if (emblaApi) {
       const autoplay = emblaApi.plugins().autoplay;
       if (autoplay) {
-        // Set a slower scroll speed by adjusting the delay between frames
-        // This is the correct property to adjust, not 'playbackSpeed'
-        emblaApi.reInit({ 
-          speed: 10 // Higher number = slower speed (in embla-carousel v7+)
+        // Set slower scrolling by modifying autoplay plugin options
+        // This is the correct approach for embla-carousel
+        autoplay.play({ 
+          interval: 5000 // Much longer interval for slower scrolling (5 seconds)
         });
       }
     }

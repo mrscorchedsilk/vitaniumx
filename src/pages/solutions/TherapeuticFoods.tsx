@@ -19,8 +19,8 @@ const TherapeuticFoods = () => {
         {/* Hero Image */}
         <div className="mt-10 relative rounded-xl overflow-hidden">
           <img 
-            src="/lovable-uploads/therapeutic-hero.jpg" 
-            alt="Therapeutic food products" 
+            src="/lovable-uploads/b1791aa1-89e1-4da5-bb51-8e8e82c03554.png" 
+            alt="Nutrient-filled capsule with fresh fruits and vegetables" 
             className="w-full aspect-[21/9] object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
@@ -57,32 +57,33 @@ const TherapeuticFoods = () => {
           <FoodImageGallery 
             images={[
               {
-                src: "/lovable-uploads/therapeutic-paste-1.jpg",
-                alt: "Ready-to-Use Therapeutic Food"
+                src: "/lovable-uploads/8d759c8c-d287-4991-9717-a30ccaf79af0.png",
+                alt: "Dairy products rich in nutrients for therapeutic formulations"
               },
               {
-                src: "/lovable-uploads/therapeutic-paste-2.jpg",
-                alt: "Ready-to-Use Supplementary Food"
+                src: "/lovable-uploads/5c7accf9-77ec-4d24-8c6c-ec4d7d12cdcf.png",
+                alt: "Healthy salad bowl with heart shapes signifying nutritional benefits"
               },
               {
-                src: "/lovable-uploads/therapeutic-milk.jpg",
-                alt: "Therapeutic Milk F75/F100"
+                src: "/lovable-uploads/6e61901d-0db2-418b-b827-60107d7b2a44.png",
+                alt: "Pregnant woman holding nutritious fruit salad"
               },
               {
-                src: "/lovable-uploads/maternal-nutrition.jpg",
-                alt: "Maternal Nutrition Supplements"
+                src: "/lovable-uploads/409dd74e-f138-4bf8-8e6d-0fe4e0cb5777.png",
+                alt: "Fresh milk in various containers for therapeutic milk formulas"
               },
               {
-                src: "/lovable-uploads/pediatric-nutrition.jpg",
-                alt: "Pediatric Nutrition Supplements"
+                src: "/lovable-uploads/75c8d526-9643-4762-b647-c7248a5d6bbd.png",
+                alt: "Child with nutritious vegetables for pediatric nutrition"
               },
               {
-                src: "/lovable-uploads/clinical-nutrition.jpg",
-                alt: "Clinical Nutrition Products"
+                src: "/lovable-uploads/5382abee-9878-4565-8122-b86d9255baf0.png",
+                alt: "Balanced protein meal with eggs, chicken, and vegetables"
               }
             ]}
             columns={3}
-            className="mb-12"
+            className="mt-6"
+            hoverEffect="both"
           />
         </div>
         
@@ -98,8 +99,8 @@ const TherapeuticFoods = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/therapeutic-paste-1.jpg" 
-                    alt="RUTF sachets and packaging" 
+                    src="/lovable-uploads/3eb0835b-5ca5-4842-b678-ce01b41639e6.png" 
+                    alt="Child receiving therapeutic food packets" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
                 </div>
@@ -163,8 +164,8 @@ const TherapeuticFoods = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(236,72,153,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(236,72,153,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/therapeutic-paste-2.jpg" 
-                    alt="RUSF products and application" 
+                    src="/lovable-uploads/5d1395f9-6745-44ee-a3ab-e906f439b4ab.png" 
+                    alt="Mother helping child with therapeutic food supplement" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
                 </div>
@@ -229,8 +230,8 @@ const TherapeuticFoods = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(14,165,233,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/specialized-nutrition.jpg" 
-                    alt="Specialized nutritional supplements" 
+                    src="/lovable-uploads/43d2713f-400d-4115-8098-ee2b38224065.png" 
+                    alt="Infant being fed therapeutic milk formula" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
                 </div>
@@ -358,8 +359,8 @@ const TherapeuticFoods = () => {
               <div className="col-span-1 lg:col-span-2">
                 <div className="aspect-square rounded-lg overflow-hidden">
                   <img 
-                    src="/lovable-uploads/success-story.jpg" 
-                    alt="Children receiving therapeutic foods" 
+                    src="/lovable-uploads/9081fb71-845c-4105-903a-fc00fb2ba426.png" 
+                    alt="Children receiving nutritious meal in humanitarian setting" 
                     className="w-full h-full object-cover"
                   />
                 </div>

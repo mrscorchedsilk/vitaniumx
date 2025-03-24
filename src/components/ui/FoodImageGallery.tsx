@@ -14,6 +14,8 @@ interface FoodImageGalleryProps {
   hoverEffect?: 'zoom' | 'lift' | 'both';
   showCaption?: boolean;
   imageHeight?: 'square' | 'auto' | 'video';
+  captionStyle?: 'hover' | 'permanent';
+  imageFit?: 'cover' | 'contain';
 }
 
 const FoodImageGallery: React.FC<FoodImageGalleryProps> = ({ 
@@ -22,7 +24,9 @@ const FoodImageGallery: React.FC<FoodImageGalleryProps> = ({
   columns = 3,
   hoverEffect = 'both',
   showCaption = true,
-  imageHeight = 'square'
+  imageHeight = 'square',
+  captionStyle = 'hover',
+  imageFit = 'cover'
 }) => {
   const columnClasses = {
     1: 'grid-cols-1',
@@ -117,7 +121,7 @@ const FoodImageGallery: React.FC<FoodImageGalleryProps> = ({
                     src={image.src} 
                     alt={image.alt} 
                     className={cn(
-                      "object-cover w-full h-full transition-transform duration-500", 
+                      `w-full h-full transition-transform duration-500 object-${imageFit}`, 
                       hoverImageClass
                     )} 
                   />
@@ -127,14 +131,19 @@ const FoodImageGallery: React.FC<FoodImageGalleryProps> = ({
                   src={image.src} 
                   alt={image.alt} 
                   className={cn(
-                    "w-full h-auto transition-transform duration-500", 
+                    `w-full h-auto transition-transform duration-500 object-${imageFit}`, 
                     hoverImageClass
                   )} 
                 />
               )}
             </div>
             {showCaption && (
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+              <div className={cn(
+                "bg-gradient-to-t from-black/60 to-transparent flex items-end p-4",
+                captionStyle === 'hover' 
+                  ? "absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300" 
+                  : "relative"
+              )}>
                 <span className="text-white font-medium text-sm">{image.alt}</span>
               </div>
             )}

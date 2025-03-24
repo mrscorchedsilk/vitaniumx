@@ -13,7 +13,7 @@ const NavbarLogo = ({ className }: { className?: string }) => {
     >
       <Link to="/" className="inline-block">
         <motion.img
-          src="/lovable-uploads/c024433a-6385-4f2b-9332-9dbeae45790e.png"
+          src="/lovable-uploads/329fbec4-31ea-437c-a12c-2f9010002138.png"
           alt="VITANIUMX Logo"
           className="h-10 md:h-12 w-auto"
           whileHover={{ scale: 1.03 }}

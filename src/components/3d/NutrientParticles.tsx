@@ -1,4 +1,3 @@
-
 import { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, Point, useTexture, Environment } from '@react-three/drei';
@@ -6,19 +5,16 @@ import { Suspense } from 'react';
 import { Group, Object3D, MathUtils } from 'three';
 import { useIsMobile } from '@/hooks/use-mobile';
 
-// Simple fallback
 const ParticlesFallback = () => (
   <div className="bg-transparent w-full h-full" />
 );
 
-// Random position generator within bounds
 const randomPosition = (scale = 10) => [
   (Math.random() - 0.5) * scale,
   (Math.random() - 0.5) * scale,
   (Math.random() - 0.5) * scale
 ];
 
-// Color palette for different nutrients
 const nutrientColors = [
   '#22c55e', // Vitamin A (Green)
   '#3b82f6', // Vitamin B (Blue)
@@ -32,7 +28,6 @@ const nutrientColors = [
   '#d946ef'  // Iodine (Fuchsia)
 ];
 
-// Blue-themed colors for the blue color option
 const blueColors = [
   '#0ea5e9', // Sky blue
   '#2563eb', // Blue
@@ -46,7 +41,6 @@ const blueColors = [
   '#7dd3fc'  // Sky 300
 ];
 
-// Green-themed colors for the green color option
 const greenColors = [
   '#22c55e', // Green 500
   '#16a34a', // Green 600
@@ -60,8 +54,9 @@ const greenColors = [
   '#6ee7b7'  // Emerald 300
 ];
 
-// Get color palette based on color prop
-const getColorPalette = (color: 'multi' | 'blue' | 'green') => {
+type ColorType = 'multi' | 'blue' | 'green';
+
+const getColorPalette = (color: ColorType) => {
   switch (color) {
     case 'blue': return blueColors;
     case 'green': return greenColors;
@@ -72,7 +67,7 @@ const getColorPalette = (color: 'multi' | 'blue' | 'green') => {
 const ParticleField = ({ 
   count = 100, 
   size = 0.2, 
-  color = 'multi',
+  color = 'multi' as ColorType,
   animationSpeed = 1 
 }) => {
   const pointsRef = useRef<any>();
@@ -80,25 +75,20 @@ const ParticleField = ({
   const [colors, setColors] = useState<number[]>([]);
   const isMobile = useIsMobile();
   
-  // Adjust count based on device capability
   const adjustedCount = isMobile ? Math.floor(count * 0.5) : count;
-  // Adjust animation speed for reduced motion
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const effectiveAnimationSpeed = prefersReducedMotion ? 0.2 : animationSpeed;
   
   useEffect(() => {
-    // Generate random positions for particles
     const positions: number[] = [];
     const colors: number[] = [];
-    const colorPalette = getColorPalette(color);
+    const colorPalette = getColorPalette(color as ColorType);
     
     for (let i = 0; i < adjustedCount; i++) {
       const [x, y, z] = randomPosition();
       positions.push(x, y, z);
       
-      // Select a random color from our palette
       const selectedColor = colorPalette[Math.floor(Math.random() * colorPalette.length)];
-      // Convert hex to RGB
       const r = parseInt(selectedColor.slice(1, 3), 16) / 255;
       const g = parseInt(selectedColor.slice(3, 5), 16) / 255;
       const b = parseInt(selectedColor.slice(5, 7), 16) / 255;
@@ -123,15 +113,12 @@ const ParticleField = ({
       0.01 * effectiveAnimationSpeed
     );
     
-    // Slow rotation over time
     pointsRef.current.rotation.y += 0.001 * effectiveAnimationSpeed;
     
-    // Update particle positions - only if not in reduced motion mode
     if (!prefersReducedMotion) {
       const positions = pointsRef.current.geometry.attributes.position.array;
       for (let i = 0; i < positions.length; i += 3) {
         const i3 = i / 3;
-        // Add gentle wave motion
         positions[i + 1] += Math.sin(state.clock.elapsedTime * 0.5 + i3) * 0.003 * effectiveAnimationSpeed;
       }
       pointsRef.current.geometry.attributes.position.needsUpdate = true;
@@ -171,7 +158,7 @@ interface NutrientParticlesProps {
   className?: string;
   density?: 'low' | 'medium' | 'high';
   interactive?: boolean;
-  color?: 'multi' | 'blue' | 'green';
+  color?: ColorType;
   reducedMotion?: boolean;
 }
 
@@ -186,7 +173,6 @@ const NutrientParticles = ({
   const [isWebGLAvailable, setIsWebGLAvailable] = useState(true);
   const isMobile = useIsMobile();
   
-  // Calculate particle count based on density
   const getParticleCount = () => {
     const baseCounts = {
       low: 50,
@@ -194,7 +180,6 @@ const NutrientParticles = ({
       high: 200
     };
     
-    // Reduce count on mobile
     if (isMobile) {
       return Math.floor(baseCounts[density] * 0.5);
     }
@@ -202,11 +187,9 @@ const NutrientParticles = ({
     return baseCounts[density];
   };
 
-  // Check for WebGL support
   useEffect(() => {
     setIsClient(true);
     
-    // Check if WebGL is available
     try {
       const canvas = document.createElement('canvas');
       const gl = canvas.getContext('webgl') || 
@@ -218,12 +201,10 @@ const NutrientParticles = ({
     }
   }, []);
   
-  // Don't render on server or if WebGL is not available
   if (!isClient || !isWebGLAvailable) {
     return <ParticlesFallback />;
   }
   
-  // Skip rendering if user prefers reduced motion and component is configured to respect that
   const systemReducedMotion = typeof window !== 'undefined' && 
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   
@@ -231,7 +212,6 @@ const NutrientParticles = ({
     return <ParticlesFallback />;
   }
   
-  // Adjust animation speed based on device and motion preferences
   const getAnimationSpeed = () => {
     if (systemReducedMotion) return 0.2;
     if (isMobile) return 0.7;

@@ -59,15 +59,15 @@ const Index = () => {
             <div className="text-lg font-semibold text-neutral-700">Certified By:</div>
             <ScrollReveal delay={100}>
               <FloatingCertificationLogo 
-                src="/lovable-uploads/b66033d2-e7ea-409f-a2ed-2e7a7b8b3409.png" 
+                src="/lovable-uploads/31315a0c-68fe-442c-9d74-dd8c22a5c0d3.png" 
                 alt="GMP Certification" 
                 delay={0.2}
               />
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <FloatingCertificationLogo 
-                src="/lovable-uploads/df1ac649-a94b-4bb9-9366-b01aee375315.png" 
-                alt="ISO 9001:2008 Certification" 
+                src="/lovable-uploads/b7e9e76c-af31-4725-a211-4ec5d4ed72ff.png" 
+                alt="ISO 9001:2015 Certification" 
                 delay={0.4}
               />
             </ScrollReveal>
@@ -299,14 +299,14 @@ const Index = () => {
               description="Good Manufacturing Practices certification, ensuring consistent quality in production."
               icon={<Award className="h-6 w-6" />}
               delay={100}
-              imageSrc="/lovable-uploads/b66033d2-e7ea-409f-a2ed-2e7a7b8b3409.png"
+              imageSrc="/lovable-uploads/31315a0c-68fe-442c-9d74-dd8c22a5c0d3.png"
             />
             <CertificationCard
-              name="ISO 9001:2008"
+              name="ISO 9001:2015"
               description="International standard for quality management systems."
               icon={<Shield className="h-6 w-6" />}
               delay={200}
-              imageSrc="/lovable-uploads/df1ac649-a94b-4bb9-9366-b01aee375315.png"
+              imageSrc="/lovable-uploads/b7e9e76c-af31-4725-a211-4ec5d4ed72ff.png"
             />
             <CertificationCard
               name="FSSC 22000"

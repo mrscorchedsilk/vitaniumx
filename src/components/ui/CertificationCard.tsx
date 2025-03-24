@@ -23,7 +23,7 @@ const CertificationCard: React.FC<CertificationCardProps> = ({
       <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full hover:shadow-md transition-shadow duration-300">
         <div className="flex flex-col items-center">
           {imageSrc ? (
-            <div className="mb-4 h-20 w-20 flex items-center justify-center">
+            <div className="mb-4 h-24 w-24 flex items-center justify-center">
               <img src={imageSrc} alt={name} className="max-h-full max-w-full object-contain" />
             </div>
           ) : (

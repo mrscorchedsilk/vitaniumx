@@ -51,7 +51,7 @@ const Quality = () => {
                 <div className="flex flex-col items-center mb-6">
                   <div className="mb-4 h-24 w-24 flex items-center justify-center">
                     <AnimatedElement animation="float" delay={0.2}>
-                      <img src="/lovable-uploads/b66033d2-e7ea-409f-a2ed-2e7a7b8b3409.png" alt="GMP" className="max-h-full max-w-full" />
+                      <img src="/lovable-uploads/31315a0c-68fe-442c-9d74-dd8c22a5c0d3.png" alt="GMP" className="max-h-full max-w-full" />
                     </AnimatedElement>
                   </div>
                   <h3 className="text-xl font-semibold">GMP</h3>
@@ -70,10 +70,10 @@ const Quality = () => {
                 <div className="flex flex-col items-center mb-6">
                   <div className="mb-4 h-24 w-24 flex items-center justify-center">
                     <AnimatedElement animation="float" delay={0.4}>
-                      <img src="/lovable-uploads/df1ac649-a94b-4bb9-9366-b01aee375315.png" alt="ISO 9001:2008" className="max-h-full max-w-full" />
+                      <img src="/lovable-uploads/b7e9e76c-af31-4725-a211-4ec5d4ed72ff.png" alt="ISO 9001:2015" className="max-h-full max-w-full" />
                     </AnimatedElement>
                   </div>
-                  <h3 className="text-xl font-semibold">ISO 9001:2008</h3>
+                  <h3 className="text-xl font-semibold">ISO 9001:2015</h3>
                 </div>
                 <p className="text-neutral-600 mb-4">
                   International standard for quality management systems, demonstrating our commitment to consistently meeting customer requirements.

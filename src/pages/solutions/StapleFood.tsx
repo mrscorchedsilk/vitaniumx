@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Wheat, ArrowRight, CheckCircle, BarChart3, Tablet, Utensils } from 'lucide-react';
@@ -6,6 +5,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import FoodImageGallery from '@/components/ui/FoodImageGallery';
 import StatCard from '@/components/ui/StatCard';
+import { Button } from '@/components/ui/button';
 
 const StapleFood = () => {
   return (
@@ -178,9 +178,11 @@ const StapleFood = () => {
                   </ul>
                   
                   <div className="mt-6">
-                    <Link to="/get-quote" className="btn-primary">
-                      Request Information
-                    </Link>
+                    <Button asChild>
+                      <Link to="/get-quote">
+                        Request Information
+                      </Link>
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -243,9 +245,11 @@ const StapleFood = () => {
                   </ul>
                   
                   <div className="mt-6">
-                    <Link to="/get-quote" className="btn-primary">
-                      Request Information
-                    </Link>
+                    <Button asChild>
+                      <Link to="/get-quote">
+                        Request Information
+                      </Link>
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -302,9 +306,11 @@ const StapleFood = () => {
                   </ul>
                   
                   <div className="mt-6">
-                    <Link to="/get-quote" className="btn-primary">
-                      Request Information
-                    </Link>
+                    <Button asChild>
+                      <Link to="/get-quote">
+                        Request Information
+                      </Link>
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -359,9 +365,11 @@ const StapleFood = () => {
                   </ul>
                   
                   <div className="mt-6">
-                    <Link to="/get-quote" className="btn-primary">
-                      Request Information
-                    </Link>
+                    <Button asChild>
+                      <Link to="/get-quote">
+                        Request Information
+                      </Link>
+                    </Button>
                   </div>
                 </div>
               </div>

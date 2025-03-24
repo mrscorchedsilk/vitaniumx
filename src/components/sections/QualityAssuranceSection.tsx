@@ -6,12 +6,24 @@ import { Link } from 'react-router-dom';
 
 const QualityAssuranceSection = () => {
   return (
-    <section className="py-20 bg-neutral-50">
-      <div className="container-wide">
+    <section className="py-20 relative overflow-hidden">
+      {/* Futuristic Laboratory Background */}
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
+          style={{ 
+            backgroundImage: 'url(/lovable-uploads/5382abee-9878-4565-8122-b86d9255baf0.png)',
+            filter: 'brightness(1.2) contrast(0.9) saturate(0.8)'
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-neutral-50 to-transparent" />
+      </div>
+      
+      <div className="container-wide relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <ScrollReveal animation="slide-in-right">
-              <div className="bg-white p-8 rounded-xl shadow-elevated border border-neutral-100 relative h-80">
+              <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-elevated border border-neutral-100 relative h-80">
                 <div className="flex justify-center items-center h-full">
                   <TestTube className="h-20 w-20 text-vitanium-600" />
                 </div>

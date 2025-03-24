@@ -21,56 +21,35 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import StatCard from '@/components/ui/StatCard';
 import CertificationCard from '@/components/ui/CertificationCard';
 import ProductCard from '@/components/ui/ProductCard';
+import HeroSection from '@/components/sections/HeroSection';
+
+// Import 3D components
+import MoleculeModel from '@/components/3d/MoleculeModel';
+import FloatingPills from '@/components/3d/FloatingPills';
+import ProductShowcase from '@/components/3d/ProductShowcase';
+import NutrientParticles from '@/components/3d/NutrientParticles';
 
 const Index = () => {
   return (
     <div className="pt-0">
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-r from-vitanium-50 to-navy-50">
-        <div className="container-wide relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="lg:pr-8">
-              <ScrollReveal>
-                <span className="inline-block text-sm font-semibold uppercase tracking-wider text-vitanium-600 mb-4">
-                  Progressive Processors Private Limited
-                </span>
-              </ScrollReveal>
-              <ScrollReveal delay={100}>
-                <h1 className="heading-xl mb-6 text-balance">
-                  Precision Fortification for a Healthier World
-                </h1>
-              </ScrollReveal>
-              <ScrollReveal delay={200}>
-                <p className="text-xl text-neutral-700 mb-8 max-w-2xl text-balance">
-                  At VitaniumX, we're at the forefront of micronutrient premix manufacturing, dedicated to combating hidden hunger and enhancing nutrition across India and beyond.
-                </p>
-              </ScrollReveal>
-              <ScrollReveal delay={300}>
-                <div className="flex flex-wrap gap-4">
-                  <Link to="/get-quote" className="btn-primary">
-                    Get a Quote
-                  </Link>
-                  <Link to="/expertise" className="btn-secondary">
-                    Explore Our Expertise
-                  </Link>
-                </div>
-              </ScrollReveal>
-            </div>
-            <div className="relative">
-              <ScrollReveal animation="scale-in">
-                <div className="bg-white p-8 rounded-xl shadow-elevated border border-neutral-100 text-center">
-                  <div className="text-3xl font-bold text-vitanium-600 mb-4">Combating Hidden Hunger</div>
-                  <p className="text-neutral-600 mb-6">Our micronutrient premixes have reached millions through government partnerships and food fortification initiatives.</p>
-                  <div className="bg-neutral-50 p-4 rounded-lg inline-block">
-                    <div className="font-semibold text-navy-800">GMP Certified</div>
-                    <div className="text-sm text-neutral-600">ISO 9001:2015 | FSSC 22000</div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 3D Particles in background */}
+      <NutrientParticles density="low" />
+
+      {/* Hero Section using HeroSection component */}
+      <HeroSection
+        title="Precision Fortification for a Healthier World"
+        subtitle="Progressive Processors Private Limited"
+        description="At VitaniumX, we're at the forefront of micronutrient premix manufacturing, dedicated to combating hidden hunger and enhancing nutrition across India and beyond."
+        primaryCta={{
+          text: "Get a Quote",
+          href: "/get-quote"
+        }}
+        secondaryCta={{
+          text: "Explore Our Expertise",
+          href: "/expertise"
+        }}
+        imageSrc="/lovable-uploads/56f3fb63-53ab-4683-97e9-0203881db931.png"
+      />
 
       {/* Certification Banner */}
       <section className="py-8 bg-neutral-50 border-y border-neutral-100">
@@ -121,8 +100,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Key Stats Section */}
-      <section className="py-20 bg-white">
+      {/* Key Stats Section with 3D molecules */}
+      <section className="py-20 bg-white relative">
         <div className="container-wide">
           <SectionHeading
             subtitle="Our Impact"
@@ -152,6 +131,13 @@ const Index = () => {
               delay={400}
             />
           </div>
+          
+          {/* Add 3D Molecule visualization */}
+          <div className="mt-16 relative h-64 md:h-80">
+            <ScrollReveal animation="fade-in">
+              <MoleculeModel className="h-full" autoRotate={true} />
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
@@ -161,14 +147,19 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <ScrollReveal animation="slide-in-right">
-                <div className="bg-white p-8 rounded-xl shadow-elevated border border-neutral-100">
-                  <div className="flex justify-center mb-6">
-                    <TestTube className="h-16 w-16 text-vitanium-600" />
+                <div className="bg-white p-8 rounded-xl shadow-elevated border border-neutral-100 relative h-80">
+                  <div className="absolute inset-0 rounded-xl overflow-hidden">
+                    <FloatingPills className="h-full" />
                   </div>
-                  <h3 className="text-xl font-semibold text-center mb-4">State-of-the-Art Laboratory</h3>
-                  <p className="text-neutral-600 text-center">
-                    Our advanced testing equipment includes HPLC, ICP-OES, AAS, and more for comprehensive analysis.
-                  </p>
+                  <div className="relative z-10 h-full flex flex-col justify-end bg-gradient-to-t from-white via-white/90 to-transparent">
+                    <div className="flex justify-center mb-6">
+                      <TestTube className="h-16 w-16 text-vitanium-600" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-center mb-4">State-of-the-Art Laboratory</h3>
+                    <p className="text-neutral-600 text-center">
+                      Our advanced testing equipment includes HPLC, ICP-OES, AAS, and more for comprehensive analysis.
+                    </p>
+                  </div>
                 </div>
               </ScrollReveal>
             </div>
@@ -229,8 +220,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Our Solutions Section */}
-      <section className="py-20 bg-white">
+      {/* Our Solutions Section with 3D Product Showcase */}
+      <section className="py-20 bg-white relative">
         <div className="container-wide">
           <SectionHeading
             subtitle="Our Solutions"
@@ -238,7 +229,13 @@ const Index = () => {
             description="We offer a wide range of micronutrient premixes designed for various applications across the food industry."
           />
           
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="my-14 h-64 md:h-80">
+            <ScrollReveal animation="fade-in">
+              <ProductShowcase className="h-full" />
+            </ScrollReveal>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <ProductCard
               title="Staple Food Fortification"
               description="Premixes for rice, wheat flour, milk, and oil fortification to address micronutrient deficiencies."
@@ -335,7 +332,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Innovation Section */}
+      {/* Innovation Section with 3D Molecule */}
       <section className="py-20 bg-white">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -394,14 +391,10 @@ const Index = () => {
             </div>
             <div className="order-1 lg:order-2">
               <ScrollReveal animation="slide-in-right">
-                <div className="bg-white p-8 rounded-xl shadow-elevated border border-neutral-100">
-                  <div className="flex justify-center mb-6">
-                    <Beaker className="h-16 w-16 text-vitanium-600" />
+                <div className="bg-white p-8 rounded-xl shadow-elevated border border-neutral-100 h-80">
+                  <div className="h-full">
+                    <MoleculeModel className="h-full" autoRotate={true} />
                   </div>
-                  <h3 className="text-xl font-semibold text-center mb-4">Cutting-Edge Research</h3>
-                  <p className="text-neutral-600 text-center">
-                    Our innovation lab is equipped with the latest technology to develop and test new fortification solutions.
-                  </p>
                 </div>
               </ScrollReveal>
             </div>
@@ -410,8 +403,13 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-navy-900 text-white">
-        <div className="container-wide">
+      <section className="py-20 bg-navy-900 text-white relative overflow-hidden">
+        {/* Add subtle particle background */}
+        <div className="absolute inset-0 opacity-40">
+          <NutrientParticles density="high" color="multi" />
+        </div>
+        
+        <div className="container-wide relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <ScrollReveal>
               <h2 className="heading-lg mb-6">Ready to Transform Your Products?</h2>

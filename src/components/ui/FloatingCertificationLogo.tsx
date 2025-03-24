@@ -7,7 +7,7 @@ interface FloatingCertificationLogoProps {
   alt: string;
   className?: string;
   delay?: number;
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
 }
 
 const FloatingCertificationLogo: React.FC<FloatingCertificationLogoProps> = ({
@@ -19,8 +19,9 @@ const FloatingCertificationLogo: React.FC<FloatingCertificationLogoProps> = ({
 }) => {
   const sizeClasses = {
     sm: 'h-12 w-12',
-    md: 'h-16 w-16',
-    lg: 'h-20 w-20'
+    md: 'h-20 w-20',
+    lg: 'h-24 w-24',
+    xl: 'h-28 w-28'
   };
 
   return (
@@ -28,7 +29,7 @@ const FloatingCertificationLogo: React.FC<FloatingCertificationLogoProps> = ({
       animation="float" 
       delay={delay} 
       className={`rounded-full flex items-center justify-center ${className}`}
-      viewportOnce={false}
+      viewportOnce={true}
     >
       <img 
         src={src} 

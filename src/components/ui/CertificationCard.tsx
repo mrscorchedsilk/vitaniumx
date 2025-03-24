@@ -20,10 +20,10 @@ const CertificationCard: React.FC<CertificationCardProps> = ({
 }) => {
   return (
     <ScrollReveal delay={delay}>
-      <div className="bg-white p-6 rounded-lg shadow-subtle border border-neutral-100 h-full hover:shadow-md transition-shadow duration-300">
+      <div className="bg-white p-8 rounded-lg shadow-subtle border border-neutral-100 h-full hover:shadow-md transition-shadow duration-300">
         <div className="flex flex-col items-center">
           {imageSrc ? (
-            <div className="mb-4 h-24 w-24 flex items-center justify-center">
+            <div className="mb-6 h-32 w-32 flex items-center justify-center">
               <img src={imageSrc} alt={name} className="max-h-full max-w-full object-contain" />
             </div>
           ) : (
@@ -31,7 +31,7 @@ const CertificationCard: React.FC<CertificationCardProps> = ({
               {icon}
             </div>
           )}
-          <h3 className="text-xl font-semibold mb-2 text-center">{name}</h3>
+          <h3 className="text-xl font-semibold mb-3 text-center">{name}</h3>
           <p className="text-neutral-600 text-center">{description}</p>
         </div>
       </div>

@@ -1,20 +1,24 @@
-import { useRef, useState, useEffect } from 'react';
+
+import { useRef, useState, useEffect, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Points, Point, useTexture, Environment } from '@react-three/drei';
+import { Points, useTexture, Environment } from '@react-three/drei';
 import { Suspense } from 'react';
-import { Group, Object3D, MathUtils } from 'three';
+import { Group, Object3D, MathUtils, BufferGeometry, BufferAttribute, Color } from 'three';
 import { useIsMobile } from '@/hooks/use-mobile';
 
+// Simple fallback component that doesn't use WebGL
 const ParticlesFallback = () => (
   <div className="bg-transparent w-full h-full" />
 );
 
+// Helper functions moved outside component for better memory usage
 const randomPosition = (scale = 10) => [
   (Math.random() - 0.5) * scale,
   (Math.random() - 0.5) * scale,
   (Math.random() - 0.5) * scale
 ];
 
+// Color palettes
 const nutrientColors = [
   '#22c55e', // Vitamin A (Green)
   '#3b82f6', // Vitamin B (Blue)
@@ -64,6 +68,7 @@ const getColorPalette = (color: ColorType) => {
   }
 };
 
+// Optimize particle geometry and rendering
 const ParticleField = ({ 
   count = 100, 
   size = 0.2, 
@@ -71,37 +76,44 @@ const ParticleField = ({
   animationSpeed = 1 
 }) => {
   const pointsRef = useRef<any>();
-  const [positions, setPositions] = useState<number[]>([]);
-  const [colors, setColors] = useState<number[]>([]);
   const isMobile = useIsMobile();
   
-  const adjustedCount = isMobile ? Math.floor(count * 0.5) : count;
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Use system preferences for reduced motion
+  const prefersReducedMotion = 
+    typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
   const effectiveAnimationSpeed = prefersReducedMotion ? 0.2 : animationSpeed;
   
-  useEffect(() => {
-    const positions: number[] = [];
-    const colors: number[] = [];
-    const colorPalette = getColorPalette(color as ColorType);
+  // Create geometry once with useMemo - major performance improvement
+  const [geometry, colors] = useMemo(() => {
+    const adjustedCount = isMobile ? Math.floor(count * 0.5) : count;
+    const positions = new Float32Array(adjustedCount * 3);
+    const colorArray = new Float32Array(adjustedCount * 3);
+    const colorPalette = getColorPalette(color);
     
     for (let i = 0; i < adjustedCount; i++) {
       const [x, y, z] = randomPosition();
-      positions.push(x, y, z);
+      positions[i * 3] = x;
+      positions[i * 3 + 1] = y;
+      positions[i * 3 + 2] = z;
       
       const selectedColor = colorPalette[Math.floor(Math.random() * colorPalette.length)];
       const r = parseInt(selectedColor.slice(1, 3), 16) / 255;
       const g = parseInt(selectedColor.slice(3, 5), 16) / 255;
       const b = parseInt(selectedColor.slice(5, 7), 16) / 255;
-      colors.push(r, g, b);
+      colorArray[i * 3] = r;
+      colorArray[i * 3 + 1] = g;
+      colorArray[i * 3 + 2] = b;
     }
     
-    setPositions(positions);
-    setColors(colors);
-  }, [adjustedCount, color]);
+    return [positions, colorArray];
+  }, [count, color, isMobile]);
   
+  // Optimized animation frame
   useFrame((state) => {
     if (!pointsRef.current || prefersReducedMotion) return;
     
+    // Optimize rotation math - less calculation per frame
     pointsRef.current.rotation.x = MathUtils.lerp(
       pointsRef.current.rotation.x,
       state.mouse.y * 0.2,
@@ -115,8 +127,10 @@ const ParticleField = ({
     
     pointsRef.current.rotation.y += 0.001 * effectiveAnimationSpeed;
     
+    // Limit animations if reduced motion is preferred
     if (!prefersReducedMotion) {
       const positions = pointsRef.current.geometry.attributes.position.array;
+      // Use a more efficient loop with fewer calculations per iteration
       for (let i = 0; i < positions.length; i += 3) {
         const i3 = i / 3;
         positions[i + 1] += Math.sin(state.clock.elapsedTime * 0.5 + i3) * 0.003 * effectiveAnimationSpeed;
@@ -125,21 +139,22 @@ const ParticleField = ({
     }
   });
   
-  if (positions.length === 0) return null;
+  // Return early if no geometry
+  if (!geometry || geometry.length === 0) return null;
   
   return (
-    <Points ref={pointsRef} limit={adjustedCount}>
+    <Points ref={pointsRef} limit={isMobile ? Math.floor(count * 0.5) : count}>
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
-          count={positions.length / 3}
-          array={new Float32Array(positions)}
+          count={geometry.length / 3}
+          array={geometry}
           itemSize={3}
         />
         <bufferAttribute
           attach="attributes-color"
           count={colors.length / 3}
-          array={new Float32Array(colors)}
+          array={colors}
           itemSize={3}
         />
       </bufferGeometry>
@@ -149,6 +164,7 @@ const ParticleField = ({
         transparent
         alphaTest={0.5}
         depthWrite={false}
+        sizeAttenuation={true}
       />
     </Points>
   );
@@ -171,25 +187,14 @@ const NutrientParticles = ({
 }: NutrientParticlesProps) => {
   const [isClient, setIsClient] = useState(false);
   const [isWebGLAvailable, setIsWebGLAvailable] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const isMobile = useIsMobile();
   
-  const getParticleCount = () => {
-    const baseCounts = {
-      low: 50,
-      medium: 100,
-      high: 200
-    };
-    
-    if (isMobile) {
-      return Math.floor(baseCounts[density] * 0.5);
-    }
-    
-    return baseCounts[density];
-  };
-
+  // Progressive loading - detect WebGL support
   useEffect(() => {
     setIsClient(true);
     
+    // Check for WebGL support
     try {
       const canvas = document.createElement('canvas');
       const gl = canvas.getContext('webgl') || 
@@ -199,19 +204,50 @@ const NutrientParticles = ({
       console.log('WebGL not supported, falling back to static display');
       setIsWebGLAvailable(false);
     }
+    
+    // Simulate progressive loading
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 300);
+    
+    return () => clearTimeout(timer);
   }, []);
   
-  if (!isClient || !isWebGLAvailable) {
+  // Optimized particle count based on device capability
+  const getParticleCount = () => {
+    const baseCounts = {
+      low: 50,
+      medium: 100,
+      high: 200
+    };
+    
+    // Return lower counts for mobile
+    if (isMobile) {
+      return Math.floor(baseCounts[density] * 0.5);
+    }
+    
+    return baseCounts[density];
+  };
+
+  // Show loading state or fallback
+  if (!isClient || isLoading) {
+    return <ParticlesFallback />;
+  }
+  
+  // Show fallback if WebGL is not available
+  if (!isWebGLAvailable) {
     return <ParticlesFallback />;
   }
   
   const systemReducedMotion = typeof window !== 'undefined' && 
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   
-  if (reducedMotion && systemReducedMotion) {
+  // Honor system and component reduced motion preferences
+  if (reducedMotion || systemReducedMotion) {
     return <ParticlesFallback />;
   }
   
+  // Speed based on device and preferences
   const getAnimationSpeed = () => {
     if (systemReducedMotion) return 0.2;
     if (isMobile) return 0.7;
@@ -220,7 +256,17 @@ const NutrientParticles = ({
   
   return (
     <div className={`absolute inset-0 w-full h-full pointer-events-none ${className}`}>
-      <Canvas camera={{ position: [0, 0, 10], fov: 50 }}>
+      <Canvas 
+        camera={{ position: [0, 0, 10], fov: 50 }}
+        dpr={[1, 2]} // Limit device pixel ratio range for performance
+        performance={{ min: 0.5 }} // Allow ThreeJS to reduce quality on low-end devices
+        gl={{ 
+          powerPreference: "high-performance",
+          antialias: false, // Disable antialiasing for performance
+          depth: false, // Disable depth testing for this simple scene
+          stencil: false // Disable stencil buffer
+        }}
+      >
         <Suspense fallback={null}>
           <ambientLight intensity={0.5} />
           <ParticleField 

@@ -19,7 +19,7 @@ const FmcgFortification = () => {
         {/* Hero Image */}
         <div className="mt-10 relative rounded-xl overflow-hidden">
           <img 
-            src="/images/food/fmcg-products.jpg" 
+            src="/lovable-uploads/a0ca40ec-6152-480d-8917-ad9c1ac9dbd2.png" 
             alt="Various FMCG products on retail shelves" 
             className="w-full aspect-[21/9] object-cover"
           />
@@ -57,27 +57,27 @@ const FmcgFortification = () => {
           <FoodImageGallery 
             images={[
               {
-                src: "/images/food/fortified-bread.jpg",
+                src: "/lovable-uploads/0a0f90ca-61ce-4de1-9cbe-0f33664555f9.png",
                 alt: "Fortified Bakery Products"
               },
               {
-                src: "/images/food/breakfast-cereal.jpg",
+                src: "/lovable-uploads/cd3a1c8b-d5f6-4cd7-a3d6-39e0b727d689.png",
                 alt: "Fortified Breakfast Cereals"
               },
               {
-                src: "/images/food/fortified-beverage.jpg",
+                src: "/lovable-uploads/9935357e-e5dc-4e78-aaa2-74bf3bec2c52.png",
                 alt: "Fortified Beverages"
               },
               {
-                src: "/images/food/fortified-cookies.jpg",
+                src: "/lovable-uploads/56f3fb63-53ab-4683-97e9-0203881db931.png",
                 alt: "Fortified Biscuits & Cookies"
               },
               {
-                src: "/images/food/fortified-noodles.jpg",
+                src: "/lovable-uploads/2ca41337-27d1-496a-8cf1-0ea6d1624fed.png",
                 alt: "Fortified Noodles & Pasta"
               },
               {
-                src: "/images/food/fortified-snacks.jpg",
+                src: "/lovable-uploads/2d865ce1-0dc4-4d49-ac5f-73cc566caa2c.png",
                 alt: "Fortified Snack Foods"
               }
             ]}
@@ -98,7 +98,7 @@ const FmcgFortification = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
                 <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(14,165,233,0.3)]">
                   <img 
-                    src="/images/food/fortified-bread.jpg" 
+                    src="/lovable-uploads/0a0f90ca-61ce-4de1-9cbe-0f33664555f9.png" 
                     alt="Bakery Products" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -131,7 +131,7 @@ const FmcgFortification = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
                 <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)]">
                   <img 
-                    src="/images/food/fortified-cookies.jpg" 
+                    src="/lovable-uploads/56f3fb63-53ab-4683-97e9-0203881db931.png" 
                     alt="Biscuits & Cookies" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -164,7 +164,7 @@ const FmcgFortification = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
                 <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(245,158,11,0.3)]">
                   <img 
-                    src="/images/food/breakfast-cereal.jpg" 
+                    src="/lovable-uploads/cd3a1c8b-d5f6-4cd7-a3d6-39e0b727d689.png" 
                     alt="Breakfast Cereals" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -197,7 +197,7 @@ const FmcgFortification = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
                 <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)]">
                   <img 
-                    src="/images/food/fortified-beverage.jpg" 
+                    src="/lovable-uploads/9935357e-e5dc-4e78-aaa2-74bf3bec2c52.png" 
                     alt="Beverages" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -230,7 +230,7 @@ const FmcgFortification = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
                 <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(236,72,153,0.3)]">
                   <img 
-                    src="/images/food/fortified-noodles.jpg" 
+                    src="/lovable-uploads/2ca41337-27d1-496a-8cf1-0ea6d1624fed.png" 
                     alt="Noodles & Pasta" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -263,7 +263,7 @@ const FmcgFortification = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
                 <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(34,197,94,0.3)]">
                   <img 
-                    src="/images/food/fortified-snacks.jpg" 
+                    src="/lovable-uploads/2d865ce1-0dc4-4d49-ac5f-73cc566caa2c.png" 
                     alt="Snack Foods" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -373,7 +373,7 @@ const FmcgFortification = () => {
               <div className="col-span-1 lg:col-span-2">
                 <div className="aspect-square rounded-lg overflow-hidden">
                   <img 
-                    src="/images/food/fortified-biscuits.jpg" 
+                    src="/lovable-uploads/56f3fb63-53ab-4683-97e9-0203881db931.png" 
                     alt="Fortified biscuit retail packaging" 
                     className="w-full h-full object-cover"
                   />

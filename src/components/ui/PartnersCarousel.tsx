@@ -29,7 +29,7 @@ const PartnersCarousel: React.FC<PartnersCarouselProps> = ({ logos, className })
     },
     [
       Autoplay({
-        delay: 3000,
+        delay: 1000,
         stopOnInteraction: false,
         stopOnMouseEnter: true,
       })

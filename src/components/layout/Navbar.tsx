@@ -174,7 +174,7 @@ const Navbar = () => {
           </div>
 
           <button
-            className="lg:hidden rounded-md p-2 text-neutral-800 hover:bg-neutral-100/50 backdrop-blur-md bg-white/30 focus:outline-none"
+            className="lg:hidden rounded-md p-2 text-neutral-800 backdrop-blur-md bg-white/30 hover:bg-white/40 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -186,36 +186,37 @@ const Navbar = () => {
           </button>
         </div>
 
+        {/* Mobile menu - fixed position outside the flow */}
         <div
           className={cn(
             "lg:hidden fixed inset-0 backdrop-blur-lg bg-white/60 z-40 transition-transform ease-in-out duration-300 transform",
             isOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
-          <div className="pt-20 pb-6 px-4 max-h-screen overflow-y-auto glass-card bg-white/70 backdrop-blur-xl h-full">
+          <div className="pt-24 pb-6 px-6 max-h-screen overflow-y-auto bg-white/70 backdrop-blur-xl h-full">
             <button 
               onClick={handleBackButton}
-              className="absolute top-4 left-4 p-2 rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
+              className="absolute top-6 left-6 p-2 rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
               aria-label="Back"
             >
               <ArrowLeft className="h-6 w-6" />
             </button>
             
-            <div className="space-y-1">
+            <div className="space-y-4 mt-4">
               {navItems.map((item) => 
                 item.submenu ? (
                   <div key={item.name} className="py-2">
                     <div className={cn(
-                      "font-medium text-lg mb-2",
+                      "font-medium text-lg mb-3",
                       hasActivePath(item.submenu) ? "text-emerald-700" : "text-neutral-700"
                     )}>{item.name}</div>
-                    <div className="ml-4 border-l-2 border-emerald-200 pl-4 space-y-2">
+                    <div className="ml-4 border-l-2 border-emerald-200 pl-4 space-y-3">
                       {item.submenu.map((subitem) => (
                         <Link
                           key={subitem.name}
                           to={subitem.path}
                           className={cn(
-                            "block py-1",
+                            "block py-1.5",
                             isActivePath(subitem.path)
                               ? "text-emerald-600 font-medium"
                               : "text-neutral-600 hover:text-emerald-600"
@@ -243,7 +244,7 @@ const Navbar = () => {
                   </Link>
                 )
               )}
-              <div className="pt-4 mt-4 border-t border-neutral-200">
+              <div className="pt-6 mt-6 border-t border-neutral-200">
                 <Link 
                   to="/get-quote" 
                   className={cn(

@@ -101,7 +101,7 @@ const Navbar = () => {
       </div>
       <nav 
         className={cn(
-          "fixed top-0 w-full z-50 transition-all duration-300 mt-12",
+          "fixed top-0 w-full z-40 transition-all duration-300 mt-12",
           scrolled 
             ? "backdrop-blur-md bg-white/70 shadow-subtle py-2" 
             : "backdrop-blur-md bg-white/50 py-4"
@@ -185,81 +185,85 @@ const Navbar = () => {
             )}
           </button>
         </div>
+      </nav>
 
-        {/* Mobile menu - fixed position outside the flow */}
-        <div
-          className={cn(
-            "lg:hidden fixed inset-0 backdrop-blur-lg bg-white/60 z-40 transition-transform ease-in-out duration-300 transform",
-            isOpen ? "translate-x-0" : "translate-x-full"
-          )}
-        >
-          <div className="pt-24 pb-6 px-6 max-h-screen overflow-y-auto bg-white/70 backdrop-blur-xl h-full">
-            <button 
-              onClick={handleBackButton}
-              className="absolute top-6 left-6 p-2 rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
-              aria-label="Back"
-            >
-              <ArrowLeft className="h-6 w-6" />
-            </button>
-            
-            <div className="space-y-4 mt-4">
-              {navItems.map((item) => 
-                item.submenu ? (
-                  <div key={item.name} className="py-2">
-                    <div className={cn(
-                      "font-medium text-lg mb-3",
-                      hasActivePath(item.submenu) ? "text-emerald-700" : "text-neutral-700"
-                    )}>{item.name}</div>
-                    <div className="ml-4 border-l-2 border-emerald-200 pl-4 space-y-3">
-                      {item.submenu.map((subitem) => (
-                        <Link
-                          key={subitem.name}
-                          to={subitem.path}
-                          className={cn(
-                            "block py-1.5",
-                            isActivePath(subitem.path)
-                              ? "text-emerald-600 font-medium"
-                              : "text-neutral-600 hover:text-emerald-600"
-                          )}
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {subitem.name}
-                        </Link>
-                      ))}
-                    </div>
+      {/* Mobile menu overlay - separate from the nav element */}
+      <div
+        className={cn(
+          "fixed inset-0 z-50 transition-opacity duration-300",
+          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        )}
+      >
+        {/* Frosted glass background */}
+        <div className="absolute inset-0 backdrop-blur-xl bg-white/70"></div>
+        
+        {/* Menu content */}
+        <div className="relative w-full h-full pt-28 pb-6 px-6 overflow-y-auto">
+          <button 
+            onClick={handleBackButton}
+            className="absolute top-20 left-6 p-2 rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
+            aria-label="Back"
+          >
+            <ArrowLeft className="h-6 w-6" />
+          </button>
+          
+          <div className="space-y-4 mt-8">
+            {navItems.map((item) => 
+              item.submenu ? (
+                <div key={item.name} className="py-2">
+                  <div className={cn(
+                    "font-medium text-lg mb-3",
+                    hasActivePath(item.submenu) ? "text-emerald-700" : "text-neutral-700"
+                  )}>{item.name}</div>
+                  <div className="ml-4 border-l-2 border-emerald-200 pl-4 space-y-3">
+                    {item.submenu.map((subitem) => (
+                      <Link
+                        key={subitem.name}
+                        to={subitem.path}
+                        className={cn(
+                          "block py-1.5",
+                          isActivePath(subitem.path)
+                            ? "text-emerald-600 font-medium"
+                            : "text-neutral-600 hover:text-emerald-600"
+                        )}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {subitem.name}
+                      </Link>
+                    ))}
                   </div>
-                ) : (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    className={cn(
-                      "block py-2 text-lg font-medium",
-                      isActivePath(item.path)
-                        ? "text-emerald-600"
-                        : "text-neutral-800 hover:text-emerald-600"
-                    )}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                )
-              )}
-              <div className="pt-6 mt-6 border-t border-neutral-200">
-                <Link 
-                  to="/get-quote" 
+                </div>
+              ) : (
+                <Link
+                  key={item.name}
+                  to={item.path}
                   className={cn(
-                    "btn-primary w-full flex justify-center",
-                    location.pathname === "/get-quote" && "bg-emerald-700 hover:bg-emerald-800"
+                    "block py-2 text-lg font-medium",
+                    isActivePath(item.path)
+                      ? "text-emerald-600"
+                      : "text-neutral-800 hover:text-emerald-600"
                   )}
                   onClick={() => setIsOpen(false)}
                 >
-                  Get a Quote
+                  {item.name}
                 </Link>
-              </div>
+              )
+            )}
+            <div className="pt-6 mt-6 border-t border-neutral-200">
+              <Link 
+                to="/get-quote" 
+                className={cn(
+                  "btn-primary w-full flex justify-center",
+                  location.pathname === "/get-quote" && "bg-emerald-700 hover:bg-emerald-800"
+                )}
+                onClick={() => setIsOpen(false)}
+              >
+                Get a Quote
+              </Link>
             </div>
           </div>
         </div>
-      </nav>
+      </div>
     </>
   );
 };

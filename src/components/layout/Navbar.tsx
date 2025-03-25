@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Phone, Mail } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Menu, X, ChevronDown, Phone, Mail, ArrowLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import NavbarLogo from '../ui/NavbarLogo';
 
@@ -8,6 +9,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -63,6 +65,10 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
+  const handleBackButton = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
       <div className="bg-gradient-to-r from-emerald-900 to-vitanium-800 text-white py-3 relative overflow-hidden">
@@ -81,10 +87,10 @@ const Navbar = () => {
       
       <nav 
         className={cn(
-          "sticky top-0 w-full z-50 transition-all duration-300",
+          "fixed top-0 w-full z-50 transition-all duration-300 mt-12",
           scrolled 
             ? "glass shadow-subtle py-2" 
-            : "bg-white py-4"
+            : "glass py-4"
         )}
       >
         <div className="container-wide flex items-center justify-between">
@@ -159,6 +165,13 @@ const Navbar = () => {
           )}
         >
           <div className="pt-20 pb-6 px-4 max-h-screen overflow-y-auto">
+            <button 
+              onClick={handleBackButton}
+              className="absolute top-4 left-4 p-2 rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
+            >
+              <ArrowLeft className="h-6 w-6" />
+            </button>
+            
             <div className="space-y-1">
               {navItems.map((item) => 
                 item.submenu ? (

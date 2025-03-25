@@ -45,10 +45,10 @@ const TrustedPartnersSection = () => {
   ];
 
   return (
-    <section className="py-12 bg-neutral-50">
+    <section className="py-16 bg-neutral-50">
       <div className="container-wide">
         <motion.div 
-          className="text-center mb-10"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -65,9 +65,9 @@ const TrustedPartnersSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="py-8" // Added more padding for better visual spacing
+          className="px-4"
         >
-          <PartnersCarousel logos={partnerLogos} className="py-4" />
+          <PartnersCarousel logos={partnerLogos} />
         </motion.div>
       </div>
     </section>

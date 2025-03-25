@@ -69,7 +69,7 @@ const InnovationSection = () => {
           <div className="order-1 lg:order-2">
             <ScrollReveal animation="slide-in-right">
               <div className="rounded-xl overflow-hidden bg-gradient-to-r from-neutral-50 to-vitanium-50 p-4 shadow-subtle border border-neutral-100">
-                <FloatingVitaminSpheres height={400} />
+                <FloatingVitaminSpheres height={400} interactive={true} />
               </div>
             </ScrollReveal>
           </div>

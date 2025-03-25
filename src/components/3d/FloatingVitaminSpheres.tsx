@@ -1,7 +1,7 @@
 
 import { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, Environment, Text } from '@react-three/drei';
+import { Float, Environment, Text, OrbitControls } from '@react-three/drei';
 import { Suspense } from 'react';
 import { Group, MathUtils } from 'three';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -51,12 +51,11 @@ const VitaminSphere = ({
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
   
+  // For auto-rotation when not being controlled interactively
   useFrame((state) => {
     if (!sphereRef.current) return;
     // Gentle movement
     sphereRef.current.position.y += Math.sin(state.clock.getElapsedTime() * 0.5) * 0.002;
-    // Gentle rotation
-    sphereRef.current.rotation.y += 0.002;
   });
   
   return (
@@ -124,21 +123,6 @@ const VitaminSpheresGroup = () => {
     ? ['vitamin-a', 'vitamin-c', 'iron', 'zinc', 'calcium']
     : ['vitamin-a', 'vitamin-b', 'vitamin-c', 'vitamin-d', 'iron', 'zinc', 'iodine', 'calcium', 'folic-acid', 'protein'];
   
-  useFrame((state) => {
-    if (!groupRef.current) return;
-    // Make the group respond subtly to mouse movement
-    groupRef.current.rotation.y = MathUtils.lerp(
-      groupRef.current.rotation.y,
-      state.mouse.x * Math.PI * 0.1,
-      0.05
-    );
-    groupRef.current.rotation.x = MathUtils.lerp(
-      groupRef.current.rotation.x,
-      state.mouse.y * Math.PI * 0.05,
-      0.05
-    );
-  });
-  
   return (
     <group ref={groupRef}>
       {/* Place spheres in a circular pattern */}
@@ -171,13 +155,16 @@ const VitaminSpheresGroup = () => {
 interface FloatingVitaminSpheresProps {
   className?: string;
   height?: number | string;
+  interactive?: boolean;
 }
 
 const FloatingVitaminSpheres = ({ 
   className = "", 
-  height = 400 
+  height = 400,
+  interactive = true
 }: FloatingVitaminSpheresProps) => {
   const [isClient, setIsClient] = useState(false);
+  const isMobile = useIsMobile();
 
   // Only render canvas on client side
   useEffect(() => {
@@ -196,16 +183,38 @@ const FloatingVitaminSpheres = ({
       {/* Added visible elements as fallback background */}
       <div className="absolute inset-0 bg-gradient-to-r from-vitanium-50 to-emerald-50 z-0"></div>
       
+      {/* Touch instruction overlay for mobile */}
+      {isMobile && interactive && (
+        <div className="absolute top-2 left-0 right-0 z-20 text-center text-xs text-white bg-black/30 backdrop-blur-sm py-1 mx-auto w-40 rounded-full">
+          Touch to rotate
+        </div>
+      )}
+      
       <Canvas 
         className="z-10"
         camera={{ position: [0, 0, 6], fov: 50 }}
         dpr={[1, 2]} // Limit device pixel ratio for performance
+        // Allow touch events to be captured
+        onCreated={({ gl }) => {
+          if (gl.domElement) {
+            gl.domElement.style.touchAction = 'none';
+          }
+        }}
       >
         <Suspense fallback={null}>
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 10, 10]} intensity={1} />
           <VitaminSpheresGroup />
           <Environment preset="city" />
+          {interactive && (
+            <OrbitControls 
+              enablePan={false}
+              enableZoom={false}
+              rotateSpeed={0.8}
+              dampingFactor={0.1}
+              enableDamping
+            />
+          )}
         </Suspense>
       </Canvas>
     </div>

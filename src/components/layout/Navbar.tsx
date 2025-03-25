@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Phone, Mail } from 'lucide-react';
@@ -7,6 +6,7 @@ import NavbarLogo from '../ui/NavbarLogo';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   const navItems = [
@@ -36,35 +36,30 @@ const Navbar = () => {
     { name: 'Contact Us', path: '/contact' },
   ];
 
-  // Handle body scrolling when menu is open
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   useEffect(() => {
     if (isOpen) {
-      // Prevent scrolling on body when menu is open
       document.body.style.overflow = 'hidden';
-      // Save current scroll position
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
-      document.body.style.top = `-${window.scrollY}px`;
     } else {
-      // Re-enable scrolling when menu is closed
-      const scrollY = document.body.style.top;
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.top = '';
-      
-      // Restore scroll position
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
-      }
     }
 
     return () => {
-      // Cleanup on unmount
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.top = '';
     };
   }, [isOpen]);
 
@@ -85,7 +80,12 @@ const Navbar = () => {
       </div>
       
       <nav 
-        className="sticky top-0 w-full z-50 backdrop-blur-md bg-white/80 py-3 shadow-sm transition-all duration-300"
+        className={cn(
+          "sticky top-0 w-full z-50 transition-all duration-300",
+          scrolled 
+            ? "glass shadow-subtle py-2" 
+            : "bg-white py-4"
+        )}
       >
         <div className="container-wide flex items-center justify-between">
           <Link to="/" className="flex-shrink-0">
@@ -100,7 +100,7 @@ const Navbar = () => {
                     {item.name}
                     <ChevronDown className="ml-1 h-4 w-4 group-hover:rotate-180 transition-transform duration-200" />
                   </button>
-                  <div className="absolute left-0 mt-2 w-56 backdrop-blur-md bg-white/90 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform -translate-y-2 group-hover:translate-y-0">
+                  <div className="absolute left-0 mt-2 w-56 glass rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform -translate-y-2 group-hover:translate-y-0">
                     <div className="py-1 rounded-lg overflow-hidden">
                       {item.submenu.map((subitem) => (
                         <Link
@@ -154,7 +154,7 @@ const Navbar = () => {
 
         <div
           className={cn(
-            "lg:hidden fixed inset-0 backdrop-blur-md bg-white/90 z-40 transition-transform ease-in-out duration-300 transform",
+            "lg:hidden fixed inset-0 glass z-40 transition-transform ease-in-out duration-300 transform",
             isOpen ? "translate-x-0" : "translate-x-full"
           )}
         >

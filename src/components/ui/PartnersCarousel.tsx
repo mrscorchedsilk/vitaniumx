@@ -20,7 +20,7 @@ const PartnersCarousel: React.FC<PartnersCarouselProps> = ({ logos, className })
   
   const autoplayOptions = React.useMemo(() => 
     Autoplay({
-      delay: 3000,
+      delay: 1000,
       stopOnInteraction: false,
       stopOnMouseEnter: true,
     }), 

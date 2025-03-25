@@ -188,11 +188,11 @@ const Navbar = () => {
 
         <div
           className={cn(
-            "lg:hidden fixed inset-0 backdrop-blur-md bg-white/90 z-40 transition-transform ease-in-out duration-300 transform",
+            "lg:hidden fixed inset-0 backdrop-blur-lg bg-white/60 z-40 transition-transform ease-in-out duration-300 transform",
             isOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
-          <div className="pt-20 pb-6 px-4 max-h-screen overflow-y-auto">
+          <div className="pt-20 pb-6 px-4 max-h-screen overflow-y-auto glass-card bg-white/70 backdrop-blur-xl h-full">
             <button 
               onClick={handleBackButton}
               className="absolute top-4 left-4 p-2 rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-100"

@@ -84,7 +84,7 @@ const Navbar = () => {
           </a>
         </div>
       </div>
-      
+      <div className="h-6"></div> {/* Adds vertical space between elements */}
       <nav 
         className={cn(
           "fixed top-0 w-full z-50 transition-all duration-300 mt-12",

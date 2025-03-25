@@ -55,8 +55,10 @@ const Navbar = () => {
 
   useEffect(() => {
     if (isOpen) {
+      // Prevent scrolling when menu is open
       document.body.style.overflow = 'hidden';
     } else {
+      // Allow scrolling when menu is closed
       document.body.style.overflow = '';
     }
 
@@ -67,6 +69,19 @@ const Navbar = () => {
 
   const handleBackButton = () => {
     setIsOpen(false);
+  };
+
+  // Check if path is current location or if it's a parent path of the current location
+  const isActivePath = (path: string) => {
+    if (path === '#') return false;
+    if (path === '/' && location.pathname !== '/') return false;
+    return location.pathname === path || 
+           (path !== '/' && location.pathname.startsWith(path));
+  };
+
+  // Check if the submenu contains the current page
+  const hasActivePath = (submenu: {name: string, path: string}[]) => {
+    return submenu.some(item => isActivePath(item.path));
   };
 
   return (
@@ -84,13 +99,12 @@ const Navbar = () => {
           </a>
         </div>
       </div>
-      <div className="h-6"></div> {/* Adds vertical space between elements */}
       <nav 
         className={cn(
           "fixed top-0 w-full z-50 transition-all duration-300 mt-12",
           scrolled 
-            ? "glass shadow-subtle py-2" 
-            : "glass py-4"
+            ? "backdrop-blur-md bg-white/70 shadow-subtle py-2" 
+            : "backdrop-blur-md bg-white/50 py-4"
         )}
       >
         <div className="container-wide flex items-center justify-between">
@@ -102,17 +116,27 @@ const Navbar = () => {
             {navItems.map((item) => 
               item.submenu ? (
                 <div key={item.name} className="relative group">
-                  <button className="flex items-center text-neutral-800 font-medium hover:text-emerald-600 transition-colors">
+                  <button className={cn(
+                    "flex items-center font-medium transition-colors",
+                    hasActivePath(item.submenu)
+                      ? "text-emerald-600" 
+                      : "text-neutral-800 hover:text-emerald-600"
+                  )}>
                     {item.name}
                     <ChevronDown className="ml-1 h-4 w-4 group-hover:rotate-180 transition-transform duration-200" />
                   </button>
-                  <div className="absolute left-0 mt-2 w-56 glass rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform -translate-y-2 group-hover:translate-y-0">
+                  <div className="absolute left-0 mt-2 w-56 backdrop-blur-md bg-white/90 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 transform -translate-y-2 group-hover:translate-y-0">
                     <div className="py-1 rounded-lg overflow-hidden">
                       {item.submenu.map((subitem) => (
                         <Link
                           key={subitem.name}
                           to={subitem.path}
-                          className="block px-4 py-2 text-sm text-neutral-800 hover:bg-emerald-50/50 hover:text-emerald-600"
+                          className={cn(
+                            "block px-4 py-2 text-sm hover:bg-emerald-50/50 hover:text-emerald-600",
+                            isActivePath(subitem.path)
+                              ? "text-emerald-600 bg-emerald-50/50"
+                              : "text-neutral-800"
+                          )}
                         >
                           {subitem.name}
                         </Link>
@@ -126,7 +150,7 @@ const Navbar = () => {
                   to={item.path}
                   className={cn(
                     "text-neutral-800 font-medium transition-colors",
-                    location.pathname === item.path 
+                    isActivePath(item.path)
                       ? "text-emerald-600" 
                       : "hover:text-emerald-600"
                   )}
@@ -140,15 +164,19 @@ const Navbar = () => {
           <div className="hidden lg:block">
             <Link 
               to="/get-quote" 
-              className="btn-primary"
+              className={cn(
+                "btn-primary",
+                location.pathname === "/get-quote" && "bg-emerald-700 hover:bg-emerald-800"
+              )}
             >
               Get a Quote
             </Link>
           </div>
 
           <button
-            className="lg:hidden rounded-md p-2 text-neutral-800 hover:bg-neutral-100 focus:outline-none"
+            className="lg:hidden rounded-md p-2 text-neutral-800 hover:bg-neutral-100/50 backdrop-blur-md bg-white/30 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
           >
             {isOpen ? (
               <X className="h-6 w-6" />
@@ -160,7 +188,7 @@ const Navbar = () => {
 
         <div
           className={cn(
-            "lg:hidden fixed inset-0 glass z-40 transition-transform ease-in-out duration-300 transform",
+            "lg:hidden fixed inset-0 backdrop-blur-md bg-white/90 z-40 transition-transform ease-in-out duration-300 transform",
             isOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
@@ -168,6 +196,7 @@ const Navbar = () => {
             <button 
               onClick={handleBackButton}
               className="absolute top-4 left-4 p-2 rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
+              aria-label="Back"
             >
               <ArrowLeft className="h-6 w-6" />
             </button>
@@ -176,13 +205,21 @@ const Navbar = () => {
               {navItems.map((item) => 
                 item.submenu ? (
                   <div key={item.name} className="py-2">
-                    <div className="font-medium text-lg mb-2 text-emerald-700">{item.name}</div>
+                    <div className={cn(
+                      "font-medium text-lg mb-2",
+                      hasActivePath(item.submenu) ? "text-emerald-700" : "text-neutral-700"
+                    )}>{item.name}</div>
                     <div className="ml-4 border-l-2 border-emerald-200 pl-4 space-y-2">
                       {item.submenu.map((subitem) => (
                         <Link
                           key={subitem.name}
                           to={subitem.path}
-                          className="block py-1 text-neutral-600 hover:text-emerald-600"
+                          className={cn(
+                            "block py-1",
+                            isActivePath(subitem.path)
+                              ? "text-emerald-600 font-medium"
+                              : "text-neutral-600 hover:text-emerald-600"
+                          )}
                           onClick={() => setIsOpen(false)}
                         >
                           {subitem.name}
@@ -196,8 +233,8 @@ const Navbar = () => {
                     to={item.path}
                     className={cn(
                       "block py-2 text-lg font-medium",
-                      location.pathname === item.path 
-                        ? "text-emerald-600" 
+                      isActivePath(item.path)
+                        ? "text-emerald-600"
                         : "text-neutral-800 hover:text-emerald-600"
                     )}
                     onClick={() => setIsOpen(false)}
@@ -209,7 +246,10 @@ const Navbar = () => {
               <div className="pt-4 mt-4 border-t border-neutral-200">
                 <Link 
                   to="/get-quote" 
-                  className="btn-primary w-full flex justify-center"
+                  className={cn(
+                    "btn-primary w-full flex justify-center",
+                    location.pathname === "/get-quote" && "bg-emerald-700 hover:bg-emerald-800"
+                  )}
                   onClick={() => setIsOpen(false)}
                 >
                   Get a Quote

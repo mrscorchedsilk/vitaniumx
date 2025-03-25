@@ -4,6 +4,7 @@ import { Beaker, TestTube, FlaskConical } from 'lucide-react';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import FloatingVitaminSpheres from '@/components/3d/FloatingVitaminSpheres';
 
 const InnovationSection = () => {
   return (
@@ -67,8 +68,8 @@ const InnovationSection = () => {
           </div>
           <div className="order-1 lg:order-2">
             <ScrollReveal animation="slide-in-right">
-              <div className="bg-white p-8 rounded-xl shadow-elevated border border-neutral-100 h-80 flex items-center justify-center">
-                <FlaskConical className="h-24 w-24 text-vitanium-600" />
+              <div className="rounded-xl overflow-hidden bg-gradient-to-r from-neutral-50 to-vitanium-50 p-4 shadow-subtle border border-neutral-100">
+                <FloatingVitaminSpheres height={400} interactive={true} />
               </div>
             </ScrollReveal>
           </div>

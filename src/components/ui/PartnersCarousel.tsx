@@ -1,7 +1,6 @@
 
-import React, { useEffect, useCallback, useState } from 'react';
+import React from 'react';
 import { cn } from '@/lib/utils';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
@@ -19,6 +18,15 @@ const PartnersCarousel: React.FC<PartnersCarouselProps> = ({ logos, className })
   // Duplicate logos to create a seamless loop effect
   const extendedLogos = [...logos, ...logos];
   
+  const autoplayOptions = React.useMemo(() => 
+    Autoplay({
+      delay: 3000,
+      stopOnInteraction: false,
+      stopOnMouseEnter: true,
+    }), 
+    []
+  );
+  
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { 
       loop: true,
@@ -27,13 +35,7 @@ const PartnersCarousel: React.FC<PartnersCarouselProps> = ({ logos, className })
       skipSnaps: false,
       dragFree: true,
     },
-    [
-      Autoplay({
-        delay: 1000,
-        stopOnInteraction: false,
-        stopOnMouseEnter: true,
-      })
-    ]
+    [autoplayOptions]
   );
 
   return (

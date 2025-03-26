@@ -86,28 +86,31 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="bg-gradient-to-r from-emerald-900 to-vitanium-800 text-white py-3 relative overflow-hidden">
-        <div className="absolute inset-0 bg-dots opacity-10"></div>
-        <div className="container-wide flex justify-center items-center space-x-10">
-          <a href="tel:+919429694121" className="flex items-center text-sm hover:text-emerald-300 transition-colors">
-            <Phone className="h-4 w-4 mr-2" />
-            +91 9429694121
-          </a>
-          <a href="mailto:hello@vitaniumx.com" className="flex items-center text-sm hover:text-emerald-300 transition-colors">
-            <Mail className="h-4 w-4 mr-2" />
-            hello@vitaniumx.com
-          </a>
-        </div>
-      </div>
       <nav 
         className={cn(
-          "fixed top-0 w-full z-40 transition-all duration-300 mt-10",
+          "fixed top-0 w-full z-40 transition-all duration-300",
           scrolled 
-            ? "backdrop-blur-md bg-white/70 shadow-subtle py-2" 
-            : "backdrop-blur-md bg-white/50 py-4"
+            ? "backdrop-blur-md bg-white/70 shadow-subtle" 
+            : "backdrop-blur-md bg-white/50"
         )}
       >
-        <div className="container-wide flex items-center justify-between">
+        {/* Top bar with contact info */}
+        <div className="bg-gradient-to-r from-emerald-900 to-vitanium-800 text-white py-2 relative overflow-hidden">
+          <div className="absolute inset-0 bg-dots opacity-10"></div>
+          <div className="container-wide flex justify-center md:justify-end items-center space-x-6 md:space-x-10">
+            <a href="tel:+919429694121" className="flex items-center text-sm hover:text-emerald-300 transition-colors">
+              <Phone className="h-4 w-4 mr-2" />
+              +91 9429694121
+            </a>
+            <a href="mailto:hello@vitaniumx.com" className="flex items-center text-sm hover:text-emerald-300 transition-colors">
+              <Mail className="h-4 w-4 mr-2" />
+              hello@vitaniumx.com
+            </a>
+          </div>
+        </div>
+        
+        {/* Main navbar content */}
+        <div className="container-wide flex items-center justify-between py-4">
           <Link to="/" className="flex-shrink-0">
             <NavbarLogo />
           </Link>
@@ -249,11 +252,22 @@ const Navbar = () => {
                 </Link>
               )
             )}
-            <div className="pt-6 mt-6 border-t border-neutral-200">
+            
+            {/* Contact information in mobile menu */}
+            <div className="pt-6 mt-6 border-t border-neutral-200 space-y-4">
+              <a href="tel:+919429694121" className="flex items-center text-neutral-700 hover:text-emerald-600 transition-colors">
+                <Phone className="h-5 w-5 mr-3" />
+                +91 9429694121
+              </a>
+              <a href="mailto:hello@vitaniumx.com" className="flex items-center text-neutral-700 hover:text-emerald-600 transition-colors">
+                <Mail className="h-5 w-5 mr-3" />
+                hello@vitaniumx.com
+              </a>
+              
               <Link 
                 to="/get-quote" 
                 className={cn(
-                  "btn-primary w-full flex justify-center",
+                  "btn-primary w-full flex justify-center mt-4",
                   location.pathname === "/get-quote" && "bg-emerald-700 hover:bg-emerald-800"
                 )}
                 onClick={() => setIsOpen(false)}

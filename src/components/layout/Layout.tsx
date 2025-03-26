@@ -78,7 +78,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </div>
       
       <Navbar />
-      <main className="flex-grow relative overflow-hidden">{children}</main>
+      <main className="flex-grow relative overflow-hidden pt-[110px]">{children}</main>
       <Footer />
       <Toaster position="top-right" />
     </div>

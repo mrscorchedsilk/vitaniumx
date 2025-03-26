@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, forwardRef } from 'react';
 import { cn } from '@/lib/utils';
 
 interface ScrollRevealProps {
@@ -11,24 +11,26 @@ interface ScrollRevealProps {
   animation?: 'fade-in' | 'fade-in-up' | 'slide-in-right' | 'scale-in';
 }
 
-const ScrollReveal: React.FC<ScrollRevealProps> = ({
+const ScrollReveal = forwardRef<HTMLDivElement, ScrollRevealProps>(({
   children,
   className,
   threshold = 0.1,
   delay = 0,
   once = true,
   animation = 'fade-in-up',
-}) => {
+}, ref) => {
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
+  const localRef = useRef<HTMLDivElement>(null);
+  // Use the provided ref if available, otherwise use the local one
+  const elementRef = (ref as React.RefObject<HTMLDivElement>) || localRef;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          if (once && ref.current) {
-            observer.unobserve(ref.current);
+          if (once && elementRef.current) {
+            observer.unobserve(elementRef.current);
           }
         } else if (!once) {
           setIsVisible(false);
@@ -40,7 +42,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
       }
     );
 
-    const currentRef = ref.current;
+    const currentRef = elementRef.current;
     if (currentRef) {
       observer.observe(currentRef);
     }
@@ -50,7 +52,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
         observer.unobserve(currentRef);
       }
     };
-  }, [threshold, once]);
+  }, [threshold, once, elementRef]);
 
   const animationClass = {
     'fade-in': 'animate-fade-in',
@@ -61,13 +63,13 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 
   return (
     <div
-      ref={ref}
+      ref={elementRef}
       className={cn(
         className,
         isVisible
           ? animationClass
           : 'opacity-0',
-        delay > 0 && `duration-500 delay-[${delay}ms]`
+        delay > 0 ? `duration-500 delay-[${delay}ms]` : ''
       )}
       style={{ 
         animationDelay: delay > 0 ? `${delay}ms` : '',
@@ -76,6 +78,8 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
       {children}
     </div>
   );
-};
+});
+
+ScrollReveal.displayName = 'ScrollReveal';
 
 export default ScrollReveal;

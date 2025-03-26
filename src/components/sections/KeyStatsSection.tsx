@@ -2,9 +2,6 @@ import React from 'react';
 import StatCard from '@/components/ui/StatCard';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import MoleculeModel from '@/components/3d/MoleculeModel';
-import FloatingPills from '@/components/3d/FloatingPills';
-import ProductShowcase from '@/components/3d/ProductShowcase';
 import { motion } from 'framer-motion';
 
 const KeyStatsSection = () => {
@@ -60,7 +57,7 @@ const KeyStatsSection = () => {
           description="Since our founding in 2015, we've consistently delivered high-quality micronutrient premixes, making a significant impact on public health."
         />
         
-        {/* First row with a single highlighted stat */}
+        {/* First row with a single highlighted stat with counting animation */}
         <div className="mt-14 mb-6">
           <StatCard 
             number="573000000"
@@ -68,26 +65,29 @@ const KeyStatsSection = () => {
             delay={100}
             glowColor="amber" 
             className="bg-amber-50/80 backdrop-blur-md max-w-xl mx-auto"
+            animationDuration={2500}
           />
         </div>
 
         {/* Second row with remaining stats */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:max-w-3xl mx-auto">
-              <StatCard 
-              number="10 Tonnes"
-              label="Daily production capacity"
-              delay={300}
-              glowColor="blue"
-              className="bg-blue-50/80 backdrop-blur-md"
-              />
-              <StatCard 
-              number="2015"
-              label="Year established"
-              delay={400}
-              glowColor="green"
-              className="bg-emerald-50/80 backdrop-blur-md"
-              />
-            </div>
+          <StatCard 
+            number="10"
+            label="Daily production capacity (Tonnes)"
+            delay={300}
+            glowColor="blue"
+            className="bg-blue-50/80 backdrop-blur-md"
+            animationDuration={1500}
+          />
+          <StatCard 
+            number="2015"
+            label="Year established"
+            delay={400}
+            glowColor="green"
+            className="bg-emerald-50/80 backdrop-blur-md"
+            animationDuration={1500}
+          />
+        </div>
         
         {/* All 3D visualizations in a row */}
         <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">

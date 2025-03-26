@@ -89,14 +89,14 @@ const Navbar = () => {
             : "backdrop-blur-md bg-white/50"
         )}
       >
-        <div className="bg-gradient-to-r from-emerald-900 to-vitanium-800 text-white py-2 relative overflow-hidden">
+        <div className="bg-gradient-to-r from-vitanium-700 to-vitanium-400 text-white py-2 relative overflow-hidden">
           <div className="absolute inset-0 bg-dots opacity-10"></div>
           <div className="container-wide flex justify-center items-center space-x-6 md:space-x-10">
-            <a href="tel:+919429694121" className="flex items-center text-sm hover:text-emerald-300 transition-colors">
+            <a href="tel:+919429694121" className="flex items-center text-sm hover:text-vitanium-300 transition-colors">
               <Phone className="h-4 w-4 mr-2" />
               +91 9429694121
             </a>
-            <a href="mailto:hello@vitaniumx.com" className="flex items-center text-sm hover:text-emerald-300 transition-colors">
+            <a href="mailto:hello@vitaniumx.com" className="flex items-center text-sm hover:text-vitanium-300 transition-colors">
               <Mail className="h-4 w-4 mr-2" />
               hello@vitaniumx.com
             </a>
@@ -115,8 +115,8 @@ const Navbar = () => {
                   <button className={cn(
                     "flex items-center font-medium transition-colors",
                     hasActivePath(item.submenu)
-                      ? "text-emerald-600" 
-                      : "text-neutral-800 hover:text-emerald-600"
+                      ? "text-vitanium-600" 
+                      : "text-neutral-800 hover:text-vitanium-600"
                   )}>
                     {item.name}
                     <ChevronDown className="ml-1 h-4 w-4 group-hover:rotate-180 transition-transform duration-200" />
@@ -128,9 +128,9 @@ const Navbar = () => {
                           key={subitem.name}
                           to={subitem.path}
                           className={cn(
-                            "block px-4 py-2 text-sm hover:bg-emerald-50/50 hover:text-emerald-600",
+                            "block px-4 py-2 text-sm hover:bg-vitanium-50/50 hover:text-vitanium-600",
                             isActivePath(subitem.path)
-                              ? "text-emerald-600 bg-emerald-50/50"
+                              ? "text-vitanium-600 bg-vitanium-50/50"
                               : "text-neutral-800"
                           )}
                         >
@@ -147,8 +147,8 @@ const Navbar = () => {
                   className={cn(
                     "text-neutral-800 font-medium transition-colors",
                     isActivePath(item.path)
-                      ? "text-emerald-600" 
-                      : "hover:text-emerald-600"
+                      ? "text-vitanium-600" 
+                      : "hover:text-vitanium-600"
                   )}
                 >
                   {item.name}
@@ -161,7 +161,7 @@ const Navbar = () => {
             <Link 
               to="/get-quote" 
               className={cn(
-              "btn-primary bg-vitanium-500 hover:bg-vitanium-600",
+              "btn-primary bg-vitanium-500 hover:bg-vitanium-600 focus:outline-none focus:ring-0",
               location.pathname === "/get-quote" && "bg-[#2a9edb] hover:bg-[#2290cc]"
               )}
             >
@@ -194,7 +194,7 @@ const Navbar = () => {
         <div className="relative w-full h-full pt-28 pb-6 px-6 overflow-y-auto">
           <button 
             onClick={handleBackButton}
-            className="absolute top-20 left-6 p-2 rounded-full bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
+            className="absolute top-20 left-6 p-2 rounded-full bg-vitanium-100 text-vitanium-500 hover:bg-vitanium-200"
             aria-label="Back"
           >
             <ArrowLeft className="h-6 w-6" />
@@ -206,9 +206,9 @@ const Navbar = () => {
                 <div key={item.name} className="py-2">
                   <div className={cn(
                     "font-medium text-lg mb-3",
-                    hasActivePath(item.submenu) ? "text-emerald-700" : "text-neutral-700"
+                    hasActivePath(item.submenu) ? "text-vitanium-700" : "text-neutral-700"
                   )}>{item.name}</div>
-                  <div className="ml-4 border-l-2 border-emerald-200 pl-4 space-y-3">
+                  <div className="ml-4 border-l-2 border-vitanium-200 pl-4 space-y-3">
                     {item.submenu.map((subitem) => (
                       <Link
                         key={subitem.name}
@@ -216,8 +216,8 @@ const Navbar = () => {
                         className={cn(
                           "block py-1.5",
                           isActivePath(subitem.path)
-                            ? "text-emerald-600 font-medium"
-                            : "text-neutral-600 hover:text-emerald-600"
+                            ? "text-vitanium-600 font-medium"
+                            : "text-neutral-600 hover:text-vitanium-600"
                         )}
                         onClick={() => setIsOpen(false)}
                       >
@@ -233,8 +233,8 @@ const Navbar = () => {
                   className={cn(
                     "block py-2 text-lg font-medium",
                     isActivePath(item.path)
-                      ? "text-emerald-600"
-                      : "text-neutral-800 hover:text-emerald-600"
+                      ? "text-vitanium-600"
+                      : "text-neutral-800 hover:text-vitanium-600"
                   )}
                   onClick={() => setIsOpen(false)}
                 >
@@ -245,11 +245,11 @@ const Navbar = () => {
             
             <div className="pt-6 mt-6 border-t border-neutral-200 space-y-4">
               <div className="flex flex-col items-center space-y-4">
-                <a href="tel:+919429694121" className="flex items-center text-neutral-700 hover:text-emerald-600 transition-colors">
+                <a href="tel:+919429694121" className="flex items-center text-neutral-700 hover:text-vitanium-600 transition-colors">
                   <Phone className="h-5 w-5 mr-3" />
                   +91 9429694121
                 </a>
-                <a href="mailto:hello@vitaniumx.com" className="flex items-center text-neutral-700 hover:text-emerald-600 transition-colors">
+                <a href="mailto:hello@vitaniumx.com" className="flex items-center text-neutral-700 hover:text-vitanium-600 transition-colors">
                   <Mail className="h-5 w-5 mr-3" />
                   hello@vitaniumx.com
                 </a>
@@ -258,8 +258,8 @@ const Navbar = () => {
               <Link 
                 to="/get-quote" 
                 className={cn(
-                  "btn-primary bg-vitanium-500 hover:bg-vitanium-600",
-                  location.pathname === "/get-quote" && "bg-[#2a9edb] hover:bg-[#2290cc]"
+                  "flex items-center btn-primary bg-vitanium-500 hover:bg-vitanium-600 focus:outline-none focus:ring-0",
+                  location.pathname === "/get-quote" && "bg-vitanium-500 hover:bg-vitanium-600"
                 )}
                 onClick={() => setIsOpen(false)}
               >

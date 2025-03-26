@@ -156,7 +156,7 @@ const GetQuote = () => {
 
                     <button
                       type="submit"
-                      className="btn-primary w-full py-4"
+                      className="btn-primary bg-vitanium-500 hover:bg-vitanium-600 w-full py-4"
                     >
                       Submit Quote Request
                     </button>

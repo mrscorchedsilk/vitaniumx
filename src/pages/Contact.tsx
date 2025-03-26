@@ -78,7 +78,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="btn-primary w-full py-4"
+                  className="btn-primary bg-vitanium-500 hover:bg-vitanium-600 w-full py-4"
                 >
                   Send Message
                 </button>
@@ -94,7 +94,7 @@ const Contact = () => {
                 <div className="flex items-start">
                   <MapPin className="h-6 w-6 text-vitanium-600 mr-3 flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-semibold text-lg mb-1">Factory Address</h4>
+                    <h4 className="font-semibold text-lg mb-1">Factory Unit 1 Address</h4>
                     <p className="text-neutral-600">
                       F-80, Ramghat Rd, Sector 1, Talanagri, Talashpur, Aligarh, Uttar Pradesh 202001, India
                     </p>
@@ -104,7 +104,7 @@ const Contact = () => {
                 <div className="flex items-start">
                   <MapPin className="h-6 w-6 text-vitanium-600 mr-3 flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-semibold text-lg mb-1">Marketing Office</h4>
+                    <h4 className="font-semibold text-lg mb-1">Corporate Office</h4>
                     <p className="text-neutral-600">
                       Innov8 Coworking Space, 3rd Floor, Orchid Centre, Rapid Metro Station, next to Sector 54, Sector 53, Gurugram, Haryana 122022, India
                     </p>
@@ -135,12 +135,12 @@ const Contact = () => {
                     <p className="text-neutral-600 mt-2">For sales inquiries:</p>
                     <p className="text-neutral-600">
                       <a href="mailto:farhan.anis@vitaniumx.com" className="hover:text-vitanium-600 transition-colors">
-                        farhan.anis@vitaniumx.com
+                        rajat@vitaniumx.com
                       </a>
                     </p>
                     <p className="text-neutral-600">
                       <a href="mailto:vageesh.shukla@vitaniumx.com" className="hover:text-vitanium-600 transition-colors">
-                        vageesh.shukla@vitaniumx.com
+                        ruby.thakur@vitaniumx.com
                       </a>
                     </p>
                   </div>

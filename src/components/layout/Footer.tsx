@@ -30,12 +30,12 @@ const Footer = () => {
               Leading manufacturer of micronutrient premixes for food fortification, combating hidden hunger through precision nutrition.
             </p>
             <div className="flex space-x-3 pt-2">
-              <a href="#" className="text-neutral-300 hover:text-vitanium-400 transition-colors">
+              {/* <a href="#" className="text-neutral-300 hover:text-vitanium-400 transition-colors">
                 <Facebook size={20} />
               </a>
               <a href="#" className="text-neutral-300 hover:text-vitanium-400 transition-colors">
                 <Twitter size={20} />
-              </a>
+              </a> */}
               <a href="#" className="text-neutral-300 hover:text-vitanium-400 transition-colors">
                 <Linkedin size={20} />
               </a>

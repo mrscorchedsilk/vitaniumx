@@ -1,5 +1,5 @@
 
-import { useRef, useState, useEffect, useMemo } from 'react';
+import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, useTexture, Environment } from '@react-three/drei';
 import { Suspense } from 'react';
@@ -203,7 +203,12 @@ const NutrientParticles = ({
         
         if (!gl) {
           gl = canvas.getContext('webgl') || 
-               canvas.getContext('experimental-webgl') as WebGLRenderingContext;
+               canvas.getContext('experimental-webgl');
+          
+          // Fix TypeScript error by proper type assertion
+          if (gl && !(gl instanceof WebGL2RenderingContext)) {
+            gl = gl as WebGLRenderingContext;
+          }
         }
         
         if (!gl) {
@@ -211,18 +216,21 @@ const NutrientParticles = ({
           return false;
         }
         
-        // Additional checks for WebGL capabilities
-        const extensionsNeeded = ['OES_texture_float', 'OES_standard_derivatives'];
-        let supportLevel = 'full';
-        
-        for (const ext of extensionsNeeded) {
-          if (!gl.getExtension(ext)) {
-            supportLevel = 'partial';
-            console.warn(`WebGL extension ${ext} not supported`);
+        // Additional checks for WebGL capabilities - if we have a context
+        if (gl) {
+          // Check for extensions in a type-safe way
+          const extensionsNeeded = ['OES_texture_float', 'OES_standard_derivatives'];
+          let supportLevel = 'full';
+          
+          for (const ext of extensionsNeeded) {
+            if (!gl.getExtension(ext)) {
+              supportLevel = 'partial';
+              console.warn(`WebGL extension ${ext} not supported`);
+            }
           }
+          
+          console.log(`WebGL support detected: ${supportLevel}`);
         }
-        
-        console.log(`WebGL support detected: ${supportLevel}`);
         return true;
       } catch (e) {
         console.warn('Error during WebGL detection:', e);

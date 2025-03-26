@@ -1,5 +1,5 @@
 
-import { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Environment, Text, OrbitControls } from '@react-three/drei';
 import { Suspense } from 'react';
@@ -182,7 +182,12 @@ const FloatingVitaminSpheres = ({
         
         if (!gl) {
           gl = canvas.getContext('webgl') || 
-               canvas.getContext('experimental-webgl') as WebGLRenderingContext;
+               canvas.getContext('experimental-webgl');
+               
+          // Fix TypeScript error by proper type assertion
+          if (gl && !(gl instanceof WebGL2RenderingContext)) {
+            gl = gl as WebGLRenderingContext;
+          }
         }
         
         if (!gl) {
@@ -190,20 +195,22 @@ const FloatingVitaminSpheres = ({
           return false;
         }
         
-        // Additional capability checks
-        if (!gl.getShaderPrecisionFormat) {
-          console.warn('WebGL precision format not available');
-          return false;
-        }
-        
-        const highpFloat = gl.getShaderPrecisionFormat(
-          gl.FRAGMENT_SHADER, 
-          gl.HIGH_FLOAT
-        );
-        
-        if (!highpFloat || highpFloat.precision === 0) {
-          console.warn('WebGL high precision not supported');
-          return false;
+        // Additional capability checks - only if we have a context
+        if (gl) {
+          if (!('getShaderPrecisionFormat' in gl)) {
+            console.warn('WebGL precision format not available');
+            return false;
+          }
+          
+          const highpFloat = gl.getShaderPrecisionFormat(
+            gl.FRAGMENT_SHADER, 
+            gl.HIGH_FLOAT
+          );
+          
+          if (!highpFloat || highpFloat.precision === 0) {
+            console.warn('WebGL high precision not supported');
+            return false;
+          }
         }
         
         return true;

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ChevronDown, Phone, Mail, ArrowLeft } from 'lucide-react';
@@ -55,10 +54,8 @@ const Navbar = () => {
 
   useEffect(() => {
     if (isOpen) {
-      // Prevent scrolling when menu is open
       document.body.style.overflow = 'hidden';
     } else {
-      // Allow scrolling when menu is closed
       document.body.style.overflow = '';
     }
 
@@ -71,7 +68,6 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
-  // Check if path is current location or if it's a parent path of the current location
   const isActivePath = (path: string) => {
     if (path === '#') return false;
     if (path === '/' && location.pathname !== '/') return false;
@@ -79,7 +75,6 @@ const Navbar = () => {
            (path !== '/' && location.pathname.startsWith(path));
   };
 
-  // Check if the submenu contains the current page
   const hasActivePath = (submenu: {name: string, path: string}[]) => {
     return submenu.some(item => isActivePath(item.path));
   };
@@ -94,10 +89,9 @@ const Navbar = () => {
             : "backdrop-blur-md bg-white/50"
         )}
       >
-        {/* Top bar with contact info */}
         <div className="bg-gradient-to-r from-emerald-900 to-vitanium-800 text-white py-2 relative overflow-hidden">
           <div className="absolute inset-0 bg-dots opacity-10"></div>
-          <div className="container-wide flex justify-center md:justify-end items-center space-x-6 md:space-x-10">
+          <div className="container-wide flex justify-center items-center space-x-6 md:space-x-10">
             <a href="tel:+919429694121" className="flex items-center text-sm hover:text-emerald-300 transition-colors">
               <Phone className="h-4 w-4 mr-2" />
               +91 9429694121
@@ -109,7 +103,6 @@ const Navbar = () => {
           </div>
         </div>
         
-        {/* Main navbar content */}
         <div className="container-wide flex items-center justify-between py-4">
           <Link to="/" className="flex-shrink-0">
             <NavbarLogo />
@@ -190,17 +183,14 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile menu overlay - separate from the nav element */}
       <div
         className={cn(
           "fixed inset-0 z-50 transition-opacity duration-300",
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
       >
-        {/* Frosted glass background */}
         <div className="absolute inset-0 backdrop-blur-xl bg-white/70"></div>
         
-        {/* Menu content */}
         <div className="relative w-full h-full pt-28 pb-6 px-6 overflow-y-auto">
           <button 
             onClick={handleBackButton}
@@ -253,16 +243,17 @@ const Navbar = () => {
               )
             )}
             
-            {/* Contact information in mobile menu */}
             <div className="pt-6 mt-6 border-t border-neutral-200 space-y-4">
-              <a href="tel:+919429694121" className="flex items-center text-neutral-700 hover:text-emerald-600 transition-colors">
-                <Phone className="h-5 w-5 mr-3" />
-                +91 9429694121
-              </a>
-              <a href="mailto:hello@vitaniumx.com" className="flex items-center text-neutral-700 hover:text-emerald-600 transition-colors">
-                <Mail className="h-5 w-5 mr-3" />
-                hello@vitaniumx.com
-              </a>
+              <div className="flex flex-col items-center space-y-4">
+                <a href="tel:+919429694121" className="flex items-center text-neutral-700 hover:text-emerald-600 transition-colors">
+                  <Phone className="h-5 w-5 mr-3" />
+                  +91 9429694121
+                </a>
+                <a href="mailto:hello@vitaniumx.com" className="flex items-center text-neutral-700 hover:text-emerald-600 transition-colors">
+                  <Mail className="h-5 w-5 mr-3" />
+                  hello@vitaniumx.com
+                </a>
+              </div>
               
               <Link 
                 to="/get-quote" 

@@ -33,8 +33,8 @@ const Index = () => {
         imageSrc="/lovable-uploads/56f3fb63-53ab-4683-97e9-0203881db931.png"
       />
 
-      {/* Certification Banner */}
-      <CertificationBanner />
+      {/* Certification Banner
+      <CertificationBanner /> */}
 
       {/* Key Stats Section */}
       <KeyStatsSection />

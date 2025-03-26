@@ -23,15 +23,15 @@ const CertificationBanner = () => {
             size="lg"
           />
           <FloatingCertificationLogo 
-            src="/lovable-uploads/e4aab3cf-b528-4ac6-bf8d-039af06a24e9.png" 
-            alt="FSSC 22000 Certification" 
-            delay={0.6}
-            size="lg"
-          />
-          <FloatingCertificationLogo 
             src="/lovable-uploads/2a854855-bbe3-4120-b6e7-becc25616bb0.png" 
             alt="FSSAI Certification" 
             delay={0.8}
+            size="lg"
+          />
+          <FloatingCertificationLogo 
+            src="/lovable-uploads/e4aab3cf-b528-4ac6-bf8d-039af06a24e9.png" 
+            alt="FSSC 22000 Certification" 
+            delay={0.6}
             size="lg"
           />
           <FloatingCertificationLogo 

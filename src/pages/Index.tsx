@@ -36,6 +36,9 @@ const Index = () => {
       {/* Certification Banner
       <CertificationBanner /> */}
 
+      {/* Client Carousel (Simplified) */}
+      <TrustedPartnersSection />
+      
       {/* Key Stats Section */}
       <KeyStatsSection />
 
@@ -45,8 +48,8 @@ const Index = () => {
       {/* Our Solutions Section */}
       <SolutionsSection />
 
-      {/* Certification Section */}
-      <CertificationsSection />
+      {/* Certification Section
+      <CertificationsSection /> */}
 
       {/* Innovation Section */}
       <InnovationSection />
@@ -54,8 +57,7 @@ const Index = () => {
       {/* CTA Section */}
       <CtaSection />
 
-      {/* Client Carousel (Simplified) */}
-      <TrustedPartnersSection />
+
     </div>
   );
 };

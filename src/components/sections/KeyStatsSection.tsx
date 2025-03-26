@@ -1,4 +1,3 @@
-
 import React from 'react';
 import StatCard from '@/components/ui/StatCard';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -24,20 +23,20 @@ const KeyStatsSection = () => {
         
         {/* Ashoka Chakra - Fixed center positioning */}
         <motion.div 
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 md:w-64 md:h-64 opacity-10"
+          className="absolute inset-0 flex items-center justify-center w-full h-full opacity-10"
           animate={{ rotate: 360 }}
           transition={{ duration: 120, repeat: Infinity, ease: "linear" }}
         >
-          <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="500" cy="500" r="475" fill="none" stroke="#0D6EFD" strokeWidth="25" />
-            <circle cx="500" cy="500" r="175" fill="none" stroke="#0D6EFD" strokeWidth="25" />
+          <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" className="w-80 h-80">
+            <circle cx="250" cy="250" r="200" fill="none" stroke="#0D6EFD" strokeWidth="15" />
+            <circle cx="250" cy="250" r="75" fill="none" stroke="#0D6EFD" strokeWidth="15" />
             {/* 24 spokes of the wheel */}
             {Array.from({ length: 24 }).map((_, index) => {
               const angle = (index * 15 * Math.PI) / 180;
-              const x1 = 500 + 175 * Math.cos(angle);
-              const y1 = 500 + 175 * Math.sin(angle);
-              const x2 = 500 + 475 * Math.cos(angle);
-              const y2 = 500 + 475 * Math.sin(angle);
+              const x1 = 250 + 75 * Math.cos(angle);
+              const y1 = 250 + 75 * Math.sin(angle);
+              const x2 = 250 + 200 * Math.cos(angle);
+              const y2 = 250 + 200 * Math.sin(angle);
               return (
                 <line 
                   key={index} 
@@ -46,7 +45,7 @@ const KeyStatsSection = () => {
                   x2={x2} 
                   y2={y2} 
                   stroke="#0D6EFD" 
-                  strokeWidth="25" 
+                  strokeWidth="15" 
                 />
               );
             })}
@@ -61,65 +60,64 @@ const KeyStatsSection = () => {
           description="Since our founding in 2015, we've consistently delivered high-quality micronutrient premixes, making a significant impact on public health."
         />
         
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* First row with a single highlighted stat */}
+        <div className="mt-14 mb-6">
           <StatCard 
-            number="573M+"
+            number="573000000"
             label="Fortified meals delivered"
             delay={100}
             glowColor="amber" 
-            className="bg-amber-50/80 backdrop-blur-md"
-          />
-          <StatCard 
-            number="114,736"
-            label="Tonnes of food fortified"
-            delay={200}
-            glowColor="green"
-            className="bg-emerald-50/80 backdrop-blur-md"
-          />
-          <StatCard 
-            number="10"
-            label="Tonnes daily production capacity"
-            delay={300}
-            glowColor="blue"
-            className="bg-blue-50/80 backdrop-blur-md"
-          />
-          <StatCard 
-            number="2015"
-            label="Year established"
-            delay={400}
-            glowColor="purple"
-            className="bg-purple-50/80 backdrop-blur-md"
+            className="bg-amber-50/80 backdrop-blur-md max-w-xl mx-auto"
           />
         </div>
+
+        {/* Second row with remaining stats */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:max-w-3xl mx-auto">
+              <StatCard 
+              number="10 Tonnes"
+              label="Daily production capacity"
+              delay={300}
+              glowColor="blue"
+              className="bg-blue-50/80 backdrop-blur-md"
+              />
+              <StatCard 
+              number="2015"
+              label="Year established"
+              delay={400}
+              glowColor="green"
+              className="bg-emerald-50/80 backdrop-blur-md"
+              />
+            </div>
         
         {/* All 3D visualizations in a row */}
         <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Molecule Model */}
-          <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-md border border-white/40 h-80 hover:shadow-lg transition-all duration-300">
+          {/* <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-md border border-white/40 h-80 hover:shadow-lg transition-all duration-300">
             <h3 className="text-lg font-semibold text-center mb-4 text-vitanium-600">Molecule Model</h3>
             <ScrollReveal animation="fade-in">
               <MoleculeModel className="h-64" autoRotate={true} />
             </ScrollReveal>
-          </div>
+          </div> */}
           
           {/* Floating Pills */}
-          <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-md border border-white/40 h-80 hover:shadow-lg transition-all duration-300">
+          {/* <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-md border border-white/40 h-80 hover:shadow-lg transition-all duration-300">
             <h3 className="text-lg font-semibold text-center mb-4 text-vitanium-600">Fortification Elements</h3>
             <ScrollReveal animation="fade-in">
               <div className="h-64 relative">
                 <FloatingPills className="h-full" />
               </div>
             </ScrollReveal>
-          </div>
+          </div> */}
           
           {/* Product Showcase */}
-          <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-md border border-white/40 h-80 hover:shadow-lg transition-all duration-300">
+          {/* <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-md border border-white/40 h-80 hover:shadow-lg transition-all duration-300">
             <h3 className="text-lg font-semibold text-center mb-4 text-vitanium-600">Product Gallery</h3>
             <ScrollReveal animation="fade-in">
               <ProductShowcase className="h-64" />
             </ScrollReveal>
-          </div>
+          </div> */}
         </div>
+        
       </div>
     </section>
   );

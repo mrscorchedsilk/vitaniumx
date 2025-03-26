@@ -1,4 +1,3 @@
-
 import React from 'react';
 import PartnersCarousel from '@/components/ui/PartnersCarousel';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -45,8 +44,17 @@ const TrustedPartnersSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-neutral-50">
-      <div className="container-wide">
+    <section className="py-1 pb-16 relative overflow-hidden">
+      {/* Semi-transparent background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-vitanium-50/30 via-emerald-50/30 to-vitanium-50/30 backdrop-blur-sm z-0"></div>
+      
+      {/* Optional decorative elements */}
+      <div className="absolute inset-0 overflow-hidden opacity-10 z-0">
+        <div className="absolute -right-32 -bottom-32 w-96 h-96 rounded-full bg-vitanium-300/30"></div>
+        <div className="absolute -left-24 -top-24 w-80 h-80 rounded-full bg-amber-200/30"></div>
+      </div>
+      
+      <div className="container-wide relative z-10">
         <motion.div 
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}

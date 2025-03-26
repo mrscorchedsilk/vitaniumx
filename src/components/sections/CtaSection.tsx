@@ -6,7 +6,7 @@ import NutrientParticles from '@/components/3d/NutrientParticles';
 
 const CtaSection = () => {
   return (
-    <section className="py-20 bg-navy-900 text-white relative overflow-hidden">
+    <section className="py-20 pb-10 bg-navy-900 text-white relative overflow-hidden">
       {/* Add subtle particle background */}
       <div className="absolute inset-0 opacity-40">
         <NutrientParticles density="high" color="multi" />
@@ -31,7 +31,7 @@ const CtaSection = () => {
                   Contact Our Team
                   </Link>
                 </div>
-                </ScrollReveal>
+          </ScrollReveal>
         </div>
       </div>
     </section>

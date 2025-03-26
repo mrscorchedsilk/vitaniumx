@@ -101,7 +101,7 @@ const Navbar = () => {
       </div>
       <nav 
         className={cn(
-          "fixed top-0 w-full z-40 transition-all duration-300 mt-12",
+          "fixed top-0 w-full z-40 transition-all duration-300 mt-10",
           scrolled 
             ? "backdrop-blur-md bg-white/70 shadow-subtle py-2" 
             : "backdrop-blur-md bg-white/50 py-4"

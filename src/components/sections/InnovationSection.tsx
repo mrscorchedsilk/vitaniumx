@@ -6,11 +6,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import FloatingVitaminSpheres from '@/components/3d/FloatingVitaminSpheres';
 
-interface InnovationSectionProps {
-  webGLSupported?: boolean;
-}
-
-const InnovationSection = ({ webGLSupported = true }: InnovationSectionProps) => {
+const InnovationSection = () => {
   return (
     <section className="py-20 bg-white">
       <div className="container-wide">
@@ -72,23 +68,9 @@ const InnovationSection = ({ webGLSupported = true }: InnovationSectionProps) =>
           </div>
           <div className="order-1 lg:order-2">
             <ScrollReveal animation="slide-in-right">
-              {webGLSupported ? (
-                <div className="rounded-xl overflow-hidden bg-gradient-to-r from-neutral-50 to-vitanium-50 p-4 shadow-subtle border border-neutral-100">
-                  <FloatingVitaminSpheres height={400} interactive={true} />
-                </div>
-              ) : (
-                <div className="rounded-xl overflow-hidden bg-gradient-to-r from-neutral-50 to-vitanium-50 p-4 shadow-subtle border border-neutral-100">
-                  <div className="flex items-center justify-center h-80">
-                    <div className="text-center p-6">
-                      <div className="flex justify-center">
-                        <FlaskConical className="h-16 w-16 text-vitanium-600 mb-4" />
-                      </div>
-                      <h3 className="text-lg font-medium text-vitanium-700">Innovation in Nutrition</h3>
-                      <p className="mt-2 text-neutral-600">Exploring new approaches to micronutrient delivery and stability.</p>
-                    </div>
-                  </div>
-                </div>
-              )}
+              <div className="rounded-xl overflow-hidden bg-gradient-to-r from-neutral-50 to-vitanium-50 p-4 shadow-subtle border border-neutral-100">
+                <FloatingVitaminSpheres height={400} interactive={true} />
+              </div>
             </ScrollReveal>
           </div>
         </div>

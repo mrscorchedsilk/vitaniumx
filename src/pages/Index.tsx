@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import NutrientParticles from '@/components/3d/NutrientParticles';
 import HeroSection from '@/components/sections/HeroSection';
 import CertificationBanner from '@/components/sections/CertificationBanner';
@@ -12,35 +12,10 @@ import CtaSection from '@/components/sections/CtaSection';
 import TrustedPartnersSection from '@/components/sections/TrustedPartnersSection';
 
 const Index = () => {
-  const [webGLSupported, setWebGLSupported] = useState(true);
-
-  // Detect WebGL support on component mount
-  useEffect(() => {
-    const checkWebGLSupport = () => {
-      try {
-        const canvas = document.createElement('canvas');
-        const gl = canvas.getContext('webgl') || 
-                 canvas.getContext('experimental-webgl');
-        
-        // Return false if context creation failed
-        if (!gl) {
-          console.warn('WebGL not supported, disabling 3D elements');
-          return false;
-        }
-        return true;
-      } catch (e) {
-        console.warn('Error detecting WebGL support:', e);
-        return false;
-      }
-    };
-
-    setWebGLSupported(checkWebGLSupport());
-  }, []);
-
   return (
     <div className="pt-0">
-      {/* NutrientParticles in background - only render if WebGL is supported */}
-      {webGLSupported && <NutrientParticles density="low" />}
+      {/* NutrientParticles in background */}
+      <NutrientParticles density="low" />
 
       {/* Hero Section */}
       <HeroSection
@@ -61,8 +36,8 @@ const Index = () => {
       {/* Certification Banner */}
       <CertificationBanner />
 
-      {/* Key Stats Section - pass WebGL support flag */}
-      <KeyStatsSection webGLSupported={webGLSupported} />
+      {/* Key Stats Section */}
+      <KeyStatsSection />
 
       {/* Quality Assurance Section */}
       <QualityAssuranceSection />
@@ -73,8 +48,8 @@ const Index = () => {
       {/* Certification Section */}
       <CertificationsSection />
 
-      {/* Innovation Section - pass WebGL support flag */}
-      <InnovationSection webGLSupported={webGLSupported} />
+      {/* Innovation Section */}
+      <InnovationSection />
 
       {/* CTA Section */}
       <CtaSection />

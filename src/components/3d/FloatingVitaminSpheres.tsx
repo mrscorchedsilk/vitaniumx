@@ -1,5 +1,5 @@
 
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Environment, Text, OrbitControls } from '@react-three/drei';
 import { Suspense } from 'react';
@@ -9,10 +9,8 @@ import { useIsMobile } from '@/hooks/use-mobile';
 // Simple fallback component for non-WebGL environments or loading state
 const VitaminSpheresFallback = () => (
   <div className="bg-white/30 backdrop-blur-sm rounded-lg w-full h-full flex items-center justify-center">
-    <div className="text-center">
-      <div className="text-vitanium-600 font-medium mb-2">Vitamin Visualization</div>
-      <div className="w-16 h-16 mx-auto animate-pulse rounded-full bg-gradient-to-br from-vitanium-100/50 to-vitanium-200/50" />
-    </div>
+    <div className="text-vitanium-600 font-medium">Loading 3D Visualization...</div>
+    <div className="w-3/4 h-3/4 animate-pulse rounded-full bg-gradient-to-br from-vitanium-100/50 to-vitanium-200/50" />
   </div>
 );
 
@@ -166,64 +164,14 @@ const FloatingVitaminSpheres = ({
   interactive = true
 }: FloatingVitaminSpheresProps) => {
   const [isClient, setIsClient] = useState(false);
-  const [webGLSupported, setWebGLSupported] = useState(true);
   const isMobile = useIsMobile();
 
-  // Check WebGL support on client side
+  // Only render canvas on client side
   useEffect(() => {
     setIsClient(true);
-    
-    // Enhanced WebGL detection
-    const checkWebGLSupport = () => {
-      try {
-        const canvas = document.createElement('canvas');
-        // Try for WebGL2 first, then fall back
-        let gl = canvas.getContext('webgl2');
-        
-        if (!gl) {
-          gl = canvas.getContext('webgl') || 
-               canvas.getContext('experimental-webgl');
-               
-          // Fix TypeScript error by proper type assertion
-          if (gl && !(gl instanceof WebGL2RenderingContext)) {
-            gl = gl as WebGLRenderingContext;
-          }
-        }
-        
-        if (!gl) {
-          console.warn('WebGL not supported, using fallback');
-          return false;
-        }
-        
-        // Additional capability checks - only if we have a context
-        if (gl) {
-          if (!('getShaderPrecisionFormat' in gl)) {
-            console.warn('WebGL precision format not available');
-            return false;
-          }
-          
-          const highpFloat = gl.getShaderPrecisionFormat(
-            gl.FRAGMENT_SHADER, 
-            gl.HIGH_FLOAT
-          );
-          
-          if (!highpFloat || highpFloat.precision === 0) {
-            console.warn('WebGL high precision not supported');
-            return false;
-          }
-        }
-        
-        return true;
-      } catch (e) {
-        console.error('WebGL detection error:', e);
-        return false;
-      }
-    };
-    
-    setWebGLSupported(checkWebGLSupport());
   }, []);
   
-  if (!isClient || !webGLSupported) {
+  if (!isClient) {
     return <VitaminSpheresFallback />;
   }
   
@@ -242,75 +190,35 @@ const FloatingVitaminSpheres = ({
         </div>
       )}
       
-      <ErrorBoundary fallback={<VitaminSpheresFallback />}>
-        <Canvas 
-          className="z-10"
-          camera={{ position: [0, 0, 6], fov: 50 }}
-          dpr={[1, 2]} // Limit device pixel ratio for performance
-          gl={{
-            powerPreference: "high-performance",
-            antialias: false, // Disable for performance
-            depth: true,
-            stencil: false,
-            alpha: true
-          }}
-          onError={(e) => {
-            console.error('Canvas error:', e);
-            return true; // Prevent error propagation
-          }}
-          // Allow touch events to be captured
-          onCreated={({ gl }) => {
-            if (gl.domElement) {
-              gl.domElement.style.touchAction = 'none';
-            }
-          }}
-        >
-          <Suspense fallback={null}>
-            <ambientLight intensity={0.5} />
-            <pointLight position={[10, 10, 10]} intensity={1} />
-            <VitaminSpheresGroup />
-            <Environment preset="city" />
-            {interactive && (
-              <OrbitControls 
-                enablePan={false}
-                enableZoom={false}
-                rotateSpeed={0.8}
-                dampingFactor={0.1}
-                enableDamping
-              />
-            )}
-          </Suspense>
-        </Canvas>
-      </ErrorBoundary>
+      <Canvas 
+        className="z-10"
+        camera={{ position: [0, 0, 6], fov: 50 }}
+        dpr={[1, 2]} // Limit device pixel ratio for performance
+        // Allow touch events to be captured
+        onCreated={({ gl }) => {
+          if (gl.domElement) {
+            gl.domElement.style.touchAction = 'none';
+          }
+        }}
+      >
+        <Suspense fallback={null}>
+          <ambientLight intensity={0.5} />
+          <pointLight position={[10, 10, 10]} intensity={1} />
+          <VitaminSpheresGroup />
+          <Environment preset="city" />
+          {interactive && (
+            <OrbitControls 
+              enablePan={false}
+              enableZoom={false}
+              rotateSpeed={0.8}
+              dampingFactor={0.1}
+              enableDamping
+            />
+          )}
+        </Suspense>
+      </Canvas>
     </div>
   );
 };
-
-// Simple ErrorBoundary component to catch and handle WebGL errors
-class ErrorBoundary extends React.Component<
-  { children: React.ReactNode; fallback: React.ReactNode },
-  { hasError: boolean }
-> {
-  constructor(props: { children: React.ReactNode; fallback: React.ReactNode }) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error: any, errorInfo: any) {
-    console.error("WebGL Rendering Error:", error, errorInfo);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return this.props.fallback;
-    }
-
-    return this.props.children;
-  }
-}
 
 export default FloatingVitaminSpheres;

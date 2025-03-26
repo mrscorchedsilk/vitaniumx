@@ -8,11 +8,7 @@ import FloatingPills from '@/components/3d/FloatingPills';
 import ProductShowcase from '@/components/3d/ProductShowcase';
 import { motion } from 'framer-motion';
 
-interface KeyStatsSectionProps {
-  webGLSupported?: boolean;
-}
-
-const KeyStatsSection = ({ webGLSupported = true }: KeyStatsSectionProps) => {
+const KeyStatsSection = () => {
   return (
     <section className="py-20 relative overflow-hidden">
       {/* Indian Flag Background */}
@@ -96,49 +92,34 @@ const KeyStatsSection = ({ webGLSupported = true }: KeyStatsSectionProps) => {
           />
         </div>
         
-        {/* All 3D visualizations in a row - conditionally render based on WebGL support */}
-        {webGLSupported ? (
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Molecule Model */}
-            <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-md border border-white/40 h-80 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-lg font-semibold text-center mb-4 text-vitanium-600">Molecule Model</h3>
-              <ScrollReveal animation="fade-in">
-                <MoleculeModel className="h-64" autoRotate={true} />
-              </ScrollReveal>
-            </div>
-            
-            {/* Floating Pills */}
-            <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-md border border-white/40 h-80 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-lg font-semibold text-center mb-4 text-vitanium-600">Fortification Elements</h3>
-              <ScrollReveal animation="fade-in">
-                <div className="h-64 relative">
-                  <FloatingPills className="h-full" />
-                </div>
-              </ScrollReveal>
-            </div>
-            
-            {/* Product Showcase */}
-            <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-md border border-white/40 h-80 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-lg font-semibold text-center mb-4 text-vitanium-600">Product Gallery</h3>
-              <ScrollReveal animation="fade-in">
-                <ProductShowcase className="h-64" />
-              </ScrollReveal>
-            </div>
+        {/* All 3D visualizations in a row */}
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Molecule Model */}
+          <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-md border border-white/40 h-80 hover:shadow-lg transition-all duration-300">
+            <h3 className="text-lg font-semibold text-center mb-4 text-vitanium-600">Molecule Model</h3>
+            <ScrollReveal animation="fade-in">
+              <MoleculeModel className="h-64" autoRotate={true} />
+            </ScrollReveal>
           </div>
-        ) : (
-          <div className="mt-14">
-            <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-md border border-white/40 hover:shadow-lg transition-all duration-300">
-              <h3 className="text-lg font-semibold text-center mb-4 text-vitanium-600">Our Fortification Products</h3>
-              <div className="flex items-center justify-center p-6">
-                <img 
-                  src="/lovable-uploads/56f3fb63-53ab-4683-97e9-0203881db931.png" 
-                  alt="Vitamin and Mineral Fortification"
-                  className="max-w-full h-auto rounded-lg"
-                />
+          
+          {/* Floating Pills */}
+          <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-md border border-white/40 h-80 hover:shadow-lg transition-all duration-300">
+            <h3 className="text-lg font-semibold text-center mb-4 text-vitanium-600">Fortification Elements</h3>
+            <ScrollReveal animation="fade-in">
+              <div className="h-64 relative">
+                <FloatingPills className="h-full" />
               </div>
-            </div>
+            </ScrollReveal>
           </div>
-        )}
+          
+          {/* Product Showcase */}
+          <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-md border border-white/40 h-80 hover:shadow-lg transition-all duration-300">
+            <h3 className="text-lg font-semibold text-center mb-4 text-vitanium-600">Product Gallery</h3>
+            <ScrollReveal animation="fade-in">
+              <ProductShowcase className="h-64" />
+            </ScrollReveal>
+          </div>
+        </div>
       </div>
     </section>
   );

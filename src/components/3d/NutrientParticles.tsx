@@ -1,5 +1,5 @@
 
-import React, { useRef, useState, useEffect, useMemo } from 'react';
+import { useRef, useState, useEffect, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, useTexture, Environment } from '@react-three/drei';
 import { Suspense } from 'react';
@@ -186,59 +186,24 @@ const NutrientParticles = ({
   reducedMotion = false
 }: NutrientParticlesProps) => {
   const [isClient, setIsClient] = useState(false);
+  const [isWebGLAvailable, setIsWebGLAvailable] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
-  const [webGLAvailable, setWebGLAvailable] = useState(true);
   const isMobile = useIsMobile();
   
   // Progressive loading - detect WebGL support
   useEffect(() => {
     setIsClient(true);
     
-    // Check for WebGL support with more robust detection
-    const detectWebGL = () => {
-      try {
-        const canvas = document.createElement('canvas');
-        // Try to get WebGL 2 first, fall back to WebGL 1
-        let gl = canvas.getContext('webgl2');
-        
-        if (!gl) {
-          gl = canvas.getContext('webgl') || 
-               canvas.getContext('experimental-webgl');
-          
-          // Fix TypeScript error by proper type assertion
-          if (gl && !(gl instanceof WebGL2RenderingContext)) {
-            gl = gl as WebGLRenderingContext;
-          }
-        }
-        
-        if (!gl) {
-          console.warn('WebGL not supported, falling back to static display');
-          return false;
-        }
-        
-        // Additional checks for WebGL capabilities - if we have a context
-        if (gl) {
-          // Check for extensions in a type-safe way
-          const extensionsNeeded = ['OES_texture_float', 'OES_standard_derivatives'];
-          let supportLevel = 'full';
-          
-          for (const ext of extensionsNeeded) {
-            if (!gl.getExtension(ext)) {
-              supportLevel = 'partial';
-              console.warn(`WebGL extension ${ext} not supported`);
-            }
-          }
-          
-          console.log(`WebGL support detected: ${supportLevel}`);
-        }
-        return true;
-      } catch (e) {
-        console.warn('Error during WebGL detection:', e);
-        return false;
-      }
-    };
-    
-    setWebGLAvailable(detectWebGL());
+    // Check for WebGL support
+    try {
+      const canvas = document.createElement('canvas');
+      const gl = canvas.getContext('webgl') || 
+                 canvas.getContext('experimental-webgl');
+      setIsWebGLAvailable(!!gl);
+    } catch (e) {
+      console.log('WebGL not supported, falling back to static display');
+      setIsWebGLAvailable(false);
+    }
     
     // Simulate progressive loading
     const timer = setTimeout(() => {
@@ -270,7 +235,7 @@ const NutrientParticles = ({
   }
   
   // Show fallback if WebGL is not available
-  if (!webGLAvailable) {
+  if (!isWebGLAvailable) {
     return <ParticlesFallback />;
   }
   
@@ -291,63 +256,29 @@ const NutrientParticles = ({
   
   return (
     <div className={`absolute inset-0 w-full h-full pointer-events-none ${className}`}>
-      <ErrorBoundary fallback={<ParticlesFallback />}>
-        <Canvas 
-          camera={{ position: [0, 0, 10], fov: 50 }}
-          dpr={[1, 2]} // Limit device pixel ratio range for performance
-          performance={{ min: 0.5 }} // Allow ThreeJS to reduce quality on low-end devices
-          gl={{ 
-            powerPreference: "high-performance",
-            antialias: false, // Disable antialiasing for performance
-            depth: false, // Disable depth testing for this simple scene
-            stencil: false // Disable stencil buffer
-          }}
-          onError={(e) => {
-            console.error('Canvas error:', e);
-            // Return true to prevent the error from being propagated
-            return true;
-          }}
-        >
-          <Suspense fallback={null}>
-            <ambientLight intensity={0.5} />
-            <ParticleField 
-              count={getParticleCount()} 
-              size={isMobile ? 0.12 : 0.15} 
-              color={color}
-              animationSpeed={getAnimationSpeed()}
-            />
-          </Suspense>
-        </Canvas>
-      </ErrorBoundary>
+      <Canvas 
+        camera={{ position: [0, 0, 10], fov: 50 }}
+        dpr={[1, 2]} // Limit device pixel ratio range for performance
+        performance={{ min: 0.5 }} // Allow ThreeJS to reduce quality on low-end devices
+        gl={{ 
+          powerPreference: "high-performance",
+          antialias: false, // Disable antialiasing for performance
+          depth: false, // Disable depth testing for this simple scene
+          stencil: false // Disable stencil buffer
+        }}
+      >
+        <Suspense fallback={null}>
+          <ambientLight intensity={0.5} />
+          <ParticleField 
+            count={getParticleCount()} 
+            size={isMobile ? 0.12 : 0.15} 
+            color={color}
+            animationSpeed={getAnimationSpeed()}
+          />
+        </Suspense>
+      </Canvas>
     </div>
   );
 };
-
-// Simple ErrorBoundary component to catch and handle WebGL errors
-class ErrorBoundary extends React.Component<
-  { children: React.ReactNode; fallback: React.ReactNode },
-  { hasError: boolean }
-> {
-  constructor(props: { children: React.ReactNode; fallback: React.ReactNode }) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-
-  componentDidCatch(error: any, errorInfo: any) {
-    console.error("WebGL Rendering Error:", error, errorInfo);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return this.props.fallback;
-    }
-
-    return this.props.children;
-  }
-}
 
 export default NutrientParticles;

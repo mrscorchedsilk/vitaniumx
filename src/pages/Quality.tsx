@@ -377,7 +377,7 @@ const Quality = () => {
               
               <ScrollReveal delay={200}>
                 <div className="flex flex-wrap justify-center gap-4">
-                  <Link to="/get-quote" className="btn-primary">
+                  <Link to="/get-quote" className="btn-primary bg-vitanium-500 hover:bg-vitanium-600">
                     Get a Quote
                   </Link>
                   <Link to="/contact" className="btn-secondary">

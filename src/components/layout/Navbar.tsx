@@ -157,17 +157,17 @@ const Navbar = () => {
             )}
           </div>
 
-          <div className="hidden lg:block">
+            <div className="hidden lg:block">
             <Link 
               to="/get-quote" 
               className={cn(
-                "btn-primary",
-                location.pathname === "/get-quote" && "bg-emerald-700 hover:bg-emerald-800"
+              "btn-primary bg-vitanium-500 hover:bg-vitanium-600",
+              location.pathname === "/get-quote" && "bg-[#2a9edb] hover:bg-[#2290cc]"
               )}
             >
               Get a Quote
             </Link>
-          </div>
+            </div>
 
           <button
             className="lg:hidden rounded-md p-2 text-neutral-800 backdrop-blur-md bg-white/30 hover:bg-white/40 focus:outline-none"
@@ -258,8 +258,8 @@ const Navbar = () => {
               <Link 
                 to="/get-quote" 
                 className={cn(
-                  "btn-primary w-full flex justify-center mt-4",
-                  location.pathname === "/get-quote" && "bg-emerald-700 hover:bg-emerald-800"
+                  "btn-primary bg-vitanium-500 hover:bg-vitanium-600",
+                  location.pathname === "/get-quote" && "bg-[#2a9edb] hover:bg-[#2290cc]"
                 )}
                 onClick={() => setIsOpen(false)}
               >

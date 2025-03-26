@@ -78,7 +78,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
               <Link 
                 to={primaryCta.href}
-                className="btn-primary bg-gradient-to-r from-vitanium-500 to-emerald-500 text-white shadow-lg shadow-vitanium-500/25 hover:shadow-vitanium-500/40"
+                className="btn-primary bg-vitanium-500 hover:bg-vitanium-600"
               >
                 {primaryCta.text}
                 <ArrowRight className="ml-2 h-4 w-4" />

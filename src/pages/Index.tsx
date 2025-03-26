@@ -20,7 +20,7 @@ const Index = () => {
       {/* Hero Section */}
       <HeroSection
         title="Precision Fortification for a Healthier World"
-        subtitle="Progressive Processors Private Limited"
+        subtitle="Solution Tailored to Your Needs"
         description="At VitaniumX, we're at the forefront of micronutrient premix manufacturing, dedicated to combating hidden hunger and enhancing nutrition across India and beyond."
         primaryCta={{
           text: "Get a Quote",

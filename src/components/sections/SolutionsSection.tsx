@@ -61,7 +61,7 @@ const SolutionsSection = () => {
         </div>
         
         <div className="mt-12 text-center">
-          <Link to="/solutions" className="btn-outline">
+          <Link to="/solutions" className="btn-primary bg-vitanium-500 hover:bg-vitanium-600">
             View All Solutions
           </Link>
         </div>

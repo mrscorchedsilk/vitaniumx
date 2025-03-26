@@ -23,15 +23,15 @@ const CtaSection = () => {
             </p>
           </ScrollReveal>
           <ScrollReveal delay={200}>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/get-quote" className="btn-primary bg-vitanium-500 hover:bg-vitanium-600">
-                Get a Quote
-              </Link>
-              <Link to="/contact" className="btn-secondary bg-transparent text-white border-white hover:bg-white/10">
-                Contact Our Team
-              </Link>
-            </div>
-          </ScrollReveal>
+                <div className="flex flex-wrap justify-center gap-4">
+                  <Link to="/get-quote" className="btn-primary bg-vitanium-500 hover:bg-vitanium-600">
+                  Get a Quote
+                  </Link>
+                  <Link to="/contact" className="btn-secondary bg-transparent text-white border-white hover:bg-white/10">
+                  Contact Our Team
+                  </Link>
+                </div>
+                </ScrollReveal>
         </div>
       </div>
     </section>

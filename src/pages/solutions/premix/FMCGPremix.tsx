@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FlaskConical, ArrowRight, CheckCircle } from 'lucide-react';
@@ -55,102 +54,138 @@ const FMCGPremix = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ScrollReveal delay={100}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden p-6 hover:shadow-md transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4">Bakery Product Premixes</h3>
-                <p className="text-neutral-600 mb-6">
-                  Our bakery premixes are designed for breads, biscuits, and other baked goods, ensuring stability during baking and long shelf life.
-                </p>
-                
-                <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Heat-stable formulations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">No impact on rising or texture</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Customizable nutrient profiles</span>
-                  </li>
-                </ul>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
+                <div className="h-56 overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/cb84f353-f35c-4368-aeb6-69773b4f27a3.png" 
+                    alt="Bakery Product Premixes" 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-4">Bakery Product Premixes</h3>
+                  <p className="text-neutral-600 mb-6">
+                    Our bakery premixes are designed for breads, biscuits, and other baked goods, ensuring stability during baking and long shelf life.
+                  </p>
+                  
+                  <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Heat-stable formulations</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">No impact on rising or texture</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Customizable nutrient profiles</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </ScrollReveal>
             
             <ScrollReveal delay={200}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden p-6 hover:shadow-md transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4">Breakfast Cereal Premixes</h3>
-                <p className="text-neutral-600 mb-6">
-                  Our breakfast cereal premixes provide comprehensive nutrient fortification for flaked, extruded, or granola-type cereals.
-                </p>
-                
-                <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Uniform distribution in product matrix</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Stability in milk and other liquid media</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Formulations for various age groups</span>
-                  </li>
-                </ul>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
+                <div className="h-56 overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/5d1395f9-6745-44ee-a3ab-e906f439b4ab.png" 
+                    alt="Breakfast Cereal Premixes" 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-4">Breakfast Cereal Premixes</h3>
+                  <p className="text-neutral-600 mb-6">
+                    Our breakfast cereal premixes provide comprehensive nutrient fortification for flaked, extruded, or granola-type cereals.
+                  </p>
+                  
+                  <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Uniform distribution in product matrix</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Stability in milk and other liquid media</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Formulations for various age groups</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </ScrollReveal>
             
             <ScrollReveal delay={300}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden p-6 hover:shadow-md transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4">Beverage Fortification Premixes</h3>
-                <p className="text-neutral-600 mb-6">
-                  Our beverage premixes are designed for clear and cloudy drinks, ensuring solubility and stability in various pH environments.
-                </p>
-                
-                <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Enhanced solubility formulations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Stability in various pH conditions</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Neutral flavor profiles</span>
-                  </li>
-                </ul>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
+                <div className="h-56 overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/3eb0835b-5ca5-4842-b678-ce01b41639e6.png" 
+                    alt="Beverage Fortification Premixes" 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-4">Beverage Fortification Premixes</h3>
+                  <p className="text-neutral-600 mb-6">
+                    Our beverage premixes are designed for clear and cloudy drinks, ensuring solubility and stability in various pH environments.
+                  </p>
+                  
+                  <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Enhanced solubility formulations</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Stability in various pH conditions</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Neutral flavor profiles</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </ScrollReveal>
             
             <ScrollReveal delay={400}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden p-6 hover:shadow-md transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4">Snack Food Premixes</h3>
-                <p className="text-neutral-600 mb-6">
-                  Our snack food premixes are designed for extruded snacks, chips, and other savory products, providing stability in high-fat environments.
-                </p>
-                
-                <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Oxidative stability in high-fat matrices</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Heat-resistant during processing</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Compatible with various seasoning systems</span>
-                  </li>
-                </ul>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
+                <div className="h-56 overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/c0a32cb5-dcb2-48e8-b9dd-954bab2fbeec.png" 
+                    alt="Snack Food Premixes" 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-4">Snack Food Premixes</h3>
+                  <p className="text-neutral-600 mb-6">
+                    Our snack food premixes are designed for extruded snacks, chips, and other savory products, providing stability in high-fat environments.
+                  </p>
+                  
+                  <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Oxidative stability in high-fat matrices</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Heat-resistant during processing</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Compatible with various seasoning systems</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </ScrollReveal>
           </div>

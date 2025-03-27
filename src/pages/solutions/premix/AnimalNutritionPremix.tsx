@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Fish, ArrowRight, CheckCircle } from 'lucide-react';
@@ -55,102 +54,138 @@ const AnimalNutritionPremix = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ScrollReveal delay={100}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden p-6 hover:shadow-md transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4">Cattle Feed Premixes</h3>
-                <p className="text-neutral-600 mb-6">
-                  Our cattle premixes are formulated for dairy and beef cattle, supporting milk production, growth, and reproductive performance.
-                </p>
-                
-                <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Rumen-protected formulations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Optimal trace mineral bioavailability</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Support for lactation and growth</span>
-                  </li>
-                </ul>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
+                <div className="h-56 overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/b0b63c5c-00a5-4bba-a608-966326136286.png" 
+                    alt="Cattle Feed Premixes" 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-4">Cattle Feed Premixes</h3>
+                  <p className="text-neutral-600 mb-6">
+                    Our cattle premixes are formulated for dairy and beef cattle, supporting milk production, growth, and reproductive performance.
+                  </p>
+                  
+                  <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Rumen-protected formulations</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Optimal trace mineral bioavailability</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Support for lactation and growth</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </ScrollReveal>
             
             <ScrollReveal delay={200}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden p-6 hover:shadow-md transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4">Poultry Feed Premixes</h3>
-                <p className="text-neutral-600 mb-6">
-                  Our poultry premixes are designed for broilers, layers, and breeders, supporting growth, egg production, and hatchability.
-                </p>
-                
-                <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Heat-stable formulations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Support for skeletal integrity</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Egg quality enhancement</span>
-                  </li>
-                </ul>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
+                <div className="h-56 overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/671c36e8-6268-44ca-b9e1-1793ee35ba8e.png" 
+                    alt="Poultry Feed Premixes" 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-4">Poultry Feed Premixes</h3>
+                  <p className="text-neutral-600 mb-6">
+                    Our poultry premixes are designed for broilers, layers, and breeders, supporting growth, egg production, and hatchability.
+                  </p>
+                  
+                  <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Heat-stable formulations</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Support for skeletal integrity</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Egg quality enhancement</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </ScrollReveal>
             
             <ScrollReveal delay={300}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden p-6 hover:shadow-md transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4">Swine Feed Premixes</h3>
-                <p className="text-neutral-600 mb-6">
-                  Our swine premixes are formulated for different growth stages, supporting optimal growth, reproductive performance, and piglet viability.
-                </p>
-                
-                <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Phase-specific formulations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Support for sow lactation</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Enhanced piglet immunity</span>
-                  </li>
-                </ul>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
+                <div className="h-56 overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/b6defa9a-7ef3-4a67-b3ee-6f818c1ddc85.png" 
+                    alt="Swine Feed Premixes" 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-4">Swine Feed Premixes</h3>
+                  <p className="text-neutral-600 mb-6">
+                    Our swine premixes are formulated for different growth stages, supporting optimal growth, reproductive performance, and piglet viability.
+                  </p>
+                  
+                  <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Phase-specific formulations</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Support for sow lactation</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Enhanced piglet immunity</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </ScrollReveal>
             
             <ScrollReveal delay={400}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden p-6 hover:shadow-md transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4">Aquaculture Feed Premixes</h3>
-                <p className="text-neutral-600 mb-6">
-                  Our aquaculture premixes are designed for various fish and shrimp species, supporting growth, immune function, and coloration.
-                </p>
-                
-                <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Water-stable formulations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Species-specific nutrient profiles</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Pigmentation enhancement</span>
-                  </li>
-                </ul>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
+                <div className="h-56 overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/10da3b95-043b-4c40-a27d-55b29dfd59e0.png" 
+                    alt="Aquaculture Feed Premixes" 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-4">Aquaculture Feed Premixes</h3>
+                  <p className="text-neutral-600 mb-6">
+                    Our aquaculture premixes are designed for various fish and shrimp species, supporting growth, immune function, and coloration.
+                  </p>
+                  
+                  <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Water-stable formulations</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Species-specific nutrient profiles</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Pigmentation enhancement</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </ScrollReveal>
           </div>

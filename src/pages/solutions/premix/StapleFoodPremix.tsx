@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Wheat, ArrowRight, CheckCircle } from 'lucide-react';
@@ -55,102 +54,138 @@ const StapleFoodPremix = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ScrollReveal delay={100}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden p-6 hover:shadow-md transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4">Wheat Flour Premix</h3>
-                <p className="text-neutral-600 mb-6">
-                  Our wheat flour premix typically contains iron, folic acid, vitamin B12, and other B vitamins to prevent anemia and neural tube defects.
-                </p>
-                
-                <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Encapsulated iron for improved stability</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Compatible with various flour types</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Minimal impact on organoleptic properties</span>
-                  </li>
-                </ul>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
+                <div className="h-56 overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/38125dfc-481a-4b2a-a4b5-615898b4a565.png" 
+                    alt="Wheat Flour Premix" 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-4">Wheat Flour Premix</h3>
+                  <p className="text-neutral-600 mb-6">
+                    Our wheat flour premix typically contains iron, folic acid, vitamin B12, and other B vitamins to prevent anemia and neural tube defects.
+                  </p>
+                  
+                  <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Encapsulated iron for improved stability</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Compatible with various flour types</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Minimal impact on organoleptic properties</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </ScrollReveal>
             
             <ScrollReveal delay={200}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden p-6 hover:shadow-md transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4">Rice Premix</h3>
-                <p className="text-neutral-600 mb-6">
-                  Our rice premix is formulated for both coating and extrusion technologies, providing multiple micronutrients in a stable form.
-                </p>
-                
-                <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Available in various blending ratios</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Resistant to washing and cooking</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Multiple micronutrient formulations</span>
-                  </li>
-                </ul>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
+                <div className="h-56 overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/7554c3c6-5fda-4d7b-b2e3-6d81aa139bb0.png" 
+                    alt="Rice Premix" 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-4">Rice Premix</h3>
+                  <p className="text-neutral-600 mb-6">
+                    Our rice premix is formulated for both coating and extrusion technologies, providing multiple micronutrients in a stable form.
+                  </p>
+                  
+                  <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Available in various blending ratios</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Resistant to washing and cooking</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Multiple micronutrient formulations</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </ScrollReveal>
             
             <ScrollReveal delay={300}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden p-6 hover:shadow-md transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4">Edible Oil Premix</h3>
-                <p className="text-neutral-600 mb-6">
-                  Our edible oil premix contains vitamins A and D in a stable, oil-soluble form suitable for various types of cooking oils.
-                </p>
-                
-                <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Excellent stability during storage</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Compatible with various oil types</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Resistance to oxidation</span>
-                  </li>
-                </ul>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
+                <div className="h-56 overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/5642c1e5-ab13-474e-8553-562dd7c66826.png" 
+                    alt="Edible Oil Premix" 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-4">Edible Oil Premix</h3>
+                  <p className="text-neutral-600 mb-6">
+                    Our edible oil premix contains vitamins A and D in a stable, oil-soluble form suitable for various types of cooking oils.
+                  </p>
+                  
+                  <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Excellent stability during storage</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Compatible with various oil types</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Resistance to oxidation</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </ScrollReveal>
             
             <ScrollReveal delay={400}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden p-6 hover:shadow-md transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4">Milk Premix</h3>
-                <p className="text-neutral-600 mb-6">
-                  Our milk premix typically contains vitamins A and D, formulated to ensure stability in liquid and powdered milk products.
-                </p>
-                
-                <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Uniform dispersion in milk</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">No impact on taste or appearance</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Stability in UHT processing</span>
-                  </li>
-                </ul>
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
+                <div className="h-56 overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/8d759c8c-d287-4991-9717-a30ccaf79af0.png" 
+                    alt="Milk Premix" 
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-4">Milk Premix</h3>
+                  <p className="text-neutral-600 mb-6">
+                    Our milk premix typically contains vitamins A and D, formulated to ensure stability in liquid and powdered milk products.
+                  </p>
+                  
+                  <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Uniform dispersion in milk</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">No impact on taste or appearance</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Stability in UHT processing</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </ScrollReveal>
           </div>

@@ -21,6 +21,12 @@ import TherapeuticNutrition from "./pages/solutions/TherapeuticNutrition";
 import CustomFormulations from "./pages/solutions/CustomFormulations";
 import GovernmentPrograms from "./pages/solutions/GovernmentPrograms";
 
+// Premix detail pages
+import StapleFoodPremix from "./pages/solutions/premix/StapleFoodPremix";
+import FMCGPremix from "./pages/solutions/premix/FMCGPremix";
+import AnimalNutritionPremix from "./pages/solutions/premix/AnimalNutritionPremix";
+import PharmaceuticalGradePremix from "./pages/solutions/premix/PharmaceuticalGradePremix";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -41,6 +47,12 @@ const App = () => (
           <Route path="/solutions/therapeutic-nutrition" element={<Layout><TherapeuticNutrition /></Layout>} />
           <Route path="/solutions/custom" element={<Layout><CustomFormulations /></Layout>} />
           <Route path="/solutions/government-programs" element={<Layout><GovernmentPrograms /></Layout>} />
+          
+          {/* Premix detail pages */}
+          <Route path="/solutions/premix/staple-food" element={<Layout><StapleFoodPremix /></Layout>} />
+          <Route path="/solutions/premix/fmcg" element={<Layout><FMCGPremix /></Layout>} />
+          <Route path="/solutions/premix/animal-nutrition" element={<Layout><AnimalNutritionPremix /></Layout>} />
+          <Route path="/solutions/premix/pharmaceutical-grade" element={<Layout><PharmaceuticalGradePremix /></Layout>} />
           
           <Route path="/quality" element={<Layout><Quality /></Layout>} />
           <Route path="/innovation" element={<Layout><Innovation /></Layout>} />

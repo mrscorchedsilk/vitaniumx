@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Wheat, ArrowRight, CheckCircle, BarChart3, Tablet, Droplet } from 'lucide-react';
@@ -136,7 +135,7 @@ const MicronutrientPremix = () => {
                   
                   <div className="mt-6">
                     <Button asChild>
-                      <Link to="/get-quote">
+                      <Link to="/solutions/premix/staple-food">
                         Request Information
                       </Link>
                     </Button>
@@ -199,7 +198,7 @@ const MicronutrientPremix = () => {
                   
                   <div className="mt-6">
                     <Button asChild>
-                      <Link to="/get-quote">
+                      <Link to="/solutions/premix/fmcg">
                         Request Information
                       </Link>
                     </Button>
@@ -260,7 +259,7 @@ const MicronutrientPremix = () => {
                   
                   <div className="mt-6">
                     <Button asChild>
-                      <Link to="/get-quote">
+                      <Link to="/solutions/premix/animal-nutrition">
                         Request Information
                       </Link>
                     </Button>
@@ -323,7 +322,7 @@ const MicronutrientPremix = () => {
                   
                   <div className="mt-6">
                     <Button asChild>
-                      <Link to="/get-quote">
+                      <Link to="/solutions/premix/pharmaceutical-grade">
                         Request Information
                       </Link>
                     </Button>

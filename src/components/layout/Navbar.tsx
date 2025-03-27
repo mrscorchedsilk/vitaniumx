@@ -15,14 +15,12 @@ const Navbar = () => {
     { name: 'Our Expertise', path: '/expertise' },
     { 
       name: 'Solutions & Products', 
-      path: '/solutions',
+      path: '#',
       submenu: [
-        { name: 'Staple Food Fortification', path: '/solutions/staple-food' },
-        { name: 'Processed Food Solutions', path: '/solutions/processed-foods' },
-        { name: 'Therapeutic Foods', path: '/solutions/therapeutic' },
-        { name: 'Animal Nutrition', path: '/solutions/animal-nutrition' },
-        { name: 'Customized Formulations', path: '/solutions/custom' },
-        { name: 'FMCG Fortification', path: '/solutions/fmcg' },
+        { name: 'Micronutrient Premix', path: '/solutions/micronutrient-premix' },
+        { name: 'Therapeutic Nutrition', path: '/solutions/therapeutic-nutrition' },
+        { name: 'Customized Formulation', path: '/solutions/custom' },
+        { name: 'Government Program Solutions', path: '/solutions/government-programs' },
       ]
     },
     { 

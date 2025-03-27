@@ -3,12 +3,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import OurExpertise from "./pages/OurExpertise";
-import Solutions from "./pages/Solutions";
 import Quality from "./pages/Quality";
 import Innovation from "./pages/Innovation";
 import Knowledge from "./pages/Knowledge";
@@ -17,12 +16,10 @@ import Contact from "./pages/Contact";
 import GetQuote from "./pages/GetQuote";
 
 // Solution pages
-import StapleFood from "./pages/solutions/StapleFood";
-import ProcessedFoods from "./pages/solutions/ProcessedFoods";
-import TherapeuticFoods from "./pages/solutions/TherapeuticFoods";
-import AnimalNutrition from "./pages/solutions/AnimalNutrition";
+import MicronutrientPremix from "./pages/solutions/MicronutrientPremix";
+import TherapeuticNutrition from "./pages/solutions/TherapeuticNutrition";
 import CustomFormulations from "./pages/solutions/CustomFormulations";
-import FmcgFortification from "./pages/solutions/FmcgFortification";
+import GovernmentPrograms from "./pages/solutions/GovernmentPrograms";
 
 const queryClient = new QueryClient();
 
@@ -35,15 +32,15 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Layout><Index /></Layout>} />
           <Route path="/expertise" element={<Layout><OurExpertise /></Layout>} />
-          <Route path="/solutions" element={<Layout><Solutions /></Layout>} />
+          
+          {/* Redirect from old solutions page to the first solution page */}
+          <Route path="/solutions" element={<Navigate to="/solutions/micronutrient-premix" replace />} />
           
           {/* Solutions & Products subpages */}
-          <Route path="/solutions/staple-food" element={<Layout><StapleFood /></Layout>} />
-          <Route path="/solutions/processed-foods" element={<Layout><ProcessedFoods /></Layout>} />
-          <Route path="/solutions/therapeutic" element={<Layout><TherapeuticFoods /></Layout>} />
-          <Route path="/solutions/animal-nutrition" element={<Layout><AnimalNutrition /></Layout>} />
+          <Route path="/solutions/micronutrient-premix" element={<Layout><MicronutrientPremix /></Layout>} />
+          <Route path="/solutions/therapeutic-nutrition" element={<Layout><TherapeuticNutrition /></Layout>} />
           <Route path="/solutions/custom" element={<Layout><CustomFormulations /></Layout>} />
-          <Route path="/solutions/fmcg" element={<Layout><FmcgFortification /></Layout>} />
+          <Route path="/solutions/government-programs" element={<Layout><GovernmentPrograms /></Layout>} />
           
           <Route path="/quality" element={<Layout><Quality /></Layout>} />
           <Route path="/innovation" element={<Layout><Innovation /></Layout>} />

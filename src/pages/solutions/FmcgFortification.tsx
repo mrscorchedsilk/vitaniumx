@@ -49,7 +49,7 @@ const FmcgFortification = () => {
         </div>
         
         {/* Food Image Gallery */}
-        <div className="mt-16">
+        {/* <div className="mt-16">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-neutral-800 mb-8">Our FMCG Solutions</h2>
           </ScrollReveal>
@@ -84,7 +84,7 @@ const FmcgFortification = () => {
             columns={3}
             className="mb-12"
           />
-        </div>
+        </div> */}
         
         {/* Product Categories */}
         <div className="mt-16">

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Fish, ArrowRight, CheckCircle } from 'lucide-react';
@@ -52,10 +53,10 @@ const AnimalNutritionPremix = () => {
             <h2 className="text-3xl font-bold text-neutral-800 mb-12">Animal Nutrition Premix Products</h2>
           </ScrollReveal>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <ScrollReveal delay={100}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
-                <div className="h-56 overflow-hidden">
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300 shadow-[0_10px_25px_-5px_rgba(14,165,233,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.5)]">
+                <div className="aspect-video overflow-hidden">
                   <img 
                     src="/lovable-uploads/b0b63c5c-00a5-4bba-a608-966326136286.png" 
                     alt="Cattle Feed Premixes" 
@@ -88,8 +89,8 @@ const AnimalNutritionPremix = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={200}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
-                <div className="h-56 overflow-hidden">
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300 shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.5)]">
+                <div className="aspect-video overflow-hidden">
                   <img 
                     src="/lovable-uploads/671c36e8-6268-44ca-b9e1-1793ee35ba8e.png" 
                     alt="Poultry Feed Premixes" 
@@ -122,8 +123,8 @@ const AnimalNutritionPremix = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={300}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
-                <div className="h-56 overflow-hidden">
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300 shadow-[0_10px_25px_-5px_rgba(245,158,11,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.5)]">
+                <div className="aspect-video overflow-hidden">
                   <img 
                     src="/lovable-uploads/b6defa9a-7ef3-4a67-b3ee-6f818c1ddc85.png" 
                     alt="Swine Feed Premixes" 
@@ -156,8 +157,8 @@ const AnimalNutritionPremix = () => {
             </ScrollReveal>
             
             <ScrollReveal delay={400}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
-                <div className="h-56 overflow-hidden">
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300 shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.5)]">
+                <div className="aspect-video overflow-hidden">
                   <img 
                     src="/lovable-uploads/10da3b95-043b-4c40-a27d-55b29dfd59e0.png" 
                     alt="Aquaculture Feed Premixes" 

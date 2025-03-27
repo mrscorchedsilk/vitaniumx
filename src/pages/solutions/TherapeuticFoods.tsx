@@ -49,7 +49,7 @@ const TherapeuticFoods = () => {
         </div>
         
         {/* Food Image Gallery */}
-        <div className="mt-16">
+        {/* <div className="mt-16">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-neutral-800 mb-8">Our Therapeutic Solutions</h2>
           </ScrollReveal>
@@ -85,7 +85,7 @@ const TherapeuticFoods = () => {
             className="mt-6"
             hoverEffect="both"
           />
-        </div>
+        </div> */}
         
         {/* Product Categories */}
         <div className="mt-16">

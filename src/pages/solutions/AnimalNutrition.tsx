@@ -24,10 +24,9 @@ const foodImages = [
 
 const AnimalNutrition = () => {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-20 pb-20">
       <div className="container-wide">
         <SectionHeading
-          subtitle="Solutions & Products"
           title="Animal Nutrition"
           description="Premium vitamin and mineral premixes for livestock, poultry, and aquaculture to optimize animal health and productivity."
         />
@@ -56,7 +55,7 @@ const AnimalNutrition = () => {
         </div>
         
         {/* Food Image Gallery */}
-        <div className="mt-16">
+        {/* <div className="mt-16">
           <ScrollReveal>
             <h2 className="text-2xl font-bold text-neutral-800 mb-8">High-Quality Nutrient Sources</h2>
             <FoodImageGallery 
@@ -65,7 +64,7 @@ const AnimalNutrition = () => {
               className="mt-6"
             />
           </ScrollReveal>
-        </div>
+        </div> */}
         
         {/* Product Categories */}
         <div className="mt-16">

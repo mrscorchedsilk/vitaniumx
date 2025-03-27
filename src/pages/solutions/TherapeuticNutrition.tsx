@@ -19,7 +19,7 @@ const TherapeuticNutrition = () => {
         {/* Hero Image */}
         <div className="mt-10 relative rounded-xl overflow-hidden">
           <img 
-            src="/lovable-uploads/d0098acb-8109-49f0-813d-3cb10b8a9f7b.png" 
+            src="/lovable-uploads/therapeutic-nutrition-hero.jpg" 
             alt="Therapeutic Nutrition Products" 
             className="w-full aspect-[21/9] object-cover"
           />
@@ -87,7 +87,7 @@ const TherapeuticNutrition = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(14,165,233,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/4fa0c9a4-c990-4524-9ce1-c0bc24be38b6.png" 
+                    src="/lovable-uploads/therapeutic-RUTF-paste.jpg" 
                     alt="Ready-to-Use Therapeutic Food" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -154,7 +154,7 @@ const TherapeuticNutrition = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/6023eb0a-5382-4ccd-81a1-ceda74c22753.png" 
+                    src="/lovable-uploads/therapeutic-RUSF-milk.jpeg" 
                     alt="Ready-to-Use Supplementary Food" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -223,7 +223,7 @@ const TherapeuticNutrition = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(245,158,11,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/b6defa9a-7ef3-4a67-b3ee-6f818c1ddc85.png" 
+                    src="/lovable-uploads/therapeutic-specialized-nutrition.webp" 
                     alt="Specialized Therapeutic Products" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -286,7 +286,7 @@ const TherapeuticNutrition = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/671c36e8-6268-44ca-b9e1-1793ee35ba8e.png" 
+                    src="/lovable-uploads/therapeutic-emergency-nutrition.jpg" 
                     alt="Emergency Response Nutrition" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -358,7 +358,7 @@ const TherapeuticNutrition = () => {
                 <div className="flex flex-col h-full">
                   <div className="mb-4 rounded-lg overflow-hidden">
                     <img 
-                      src="/lovable-uploads/69a2d987-2c3a-41b1-909d-4e2c5cb19d6f.png" 
+                      src="/lovable-uploads/therapeutic-east-africa-drought.jpeg" 
                       alt="RUTF Program Success" 
                       className="w-full aspect-video object-cover"
                     />
@@ -378,7 +378,7 @@ const TherapeuticNutrition = () => {
                 <div className="flex flex-col h-full">
                   <div className="mb-4 rounded-lg overflow-hidden">
                     <img 
-                      src="/lovable-uploads/efa88797-b242-4857-8154-49dcab3871c2.png" 
+                      src="/lovable-uploads/therapeutic-maternal-nutrition-initiative.jpg" 
                       alt="Maternal Nutrition Program" 
                       className="w-full aspect-video object-cover"
                     />

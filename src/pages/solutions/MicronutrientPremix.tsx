@@ -18,7 +18,7 @@ const MicronutrientPremix = () => {
         {/* Hero Image */}
         <div className="mt-10 relative rounded-xl overflow-hidden">
           <img 
-            src="/lovable-uploads/8dcfc58b-98fa-43b2-812e-97e7507e2ac4.png" 
+            src="/lovable-uploads/micronutrient-premix-hero-section.jpg" 
             alt="Micronutrient Premix" 
             className="w-full aspect-[21/9] object-cover"
           />
@@ -86,7 +86,7 @@ const MicronutrientPremix = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(14,165,233,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/dc73f31d-4223-4d13-a641-5089713fd5d0.png" 
+                    src="/lovable-uploads/staple-food-premix.jpg" 
                     alt="Staple Food Premixes" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -136,7 +136,7 @@ const MicronutrientPremix = () => {
                   <div className="mt-6">
                     <Button asChild>
                       <Link to="/solutions/premix/staple-food">
-                        Request Information
+                        Learn More
                       </Link>
                     </Button>
                   </div>
@@ -149,7 +149,7 @@ const MicronutrientPremix = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/6204902b-53ac-4075-9923-76e67c548ea0.png" 
+                    src="/lovable-uploads/fmcg-premix.jpg" 
                     alt="FMCG Food Products" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -199,7 +199,7 @@ const MicronutrientPremix = () => {
                   <div className="mt-6">
                     <Button asChild>
                       <Link to="/solutions/premix/fmcg">
-                        Request Information
+                        Learn More
                       </Link>
                     </Button>
                   </div>
@@ -214,7 +214,7 @@ const MicronutrientPremix = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(245,158,11,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/74a3d0a0-22d5-4ba7-a2f9-bf495d9de3a0.png" 
+                    src="/lovable-uploads/animal-nutrition-premix.jpg" 
                     alt="Animal Feed Premixes" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -260,7 +260,7 @@ const MicronutrientPremix = () => {
                   <div className="mt-6">
                     <Button asChild>
                       <Link to="/solutions/premix/animal-nutrition">
-                        Request Information
+                        Learn More
                       </Link>
                     </Button>
                   </div>
@@ -273,7 +273,7 @@ const MicronutrientPremix = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/059e844d-fe4e-47f4-b1a3-104c6a541f6d.png" 
+                    src="/lovable-uploads/pharmaceutical-premix.jpeg" 
                     alt="Pharmaceutical Grade Products" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -323,7 +323,7 @@ const MicronutrientPremix = () => {
                   <div className="mt-6">
                     <Button asChild>
                       <Link to="/solutions/premix/pharmaceutical-grade">
-                        Request Information
+                        Learn More
                       </Link>
                     </Button>
                   </div>
@@ -334,7 +334,7 @@ const MicronutrientPremix = () => {
         </div>
 
         {/* Success Stories */}
-        <div className="mt-20">
+        {/* <div className="mt-20">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-neutral-800 mb-8">Success Stories</h2>
           </ScrollReveal>
@@ -382,7 +382,7 @@ const MicronutrientPremix = () => {
               </ScrollReveal>
             </div>
           </div>
-        </div>
+        </div> */}
         
         {/* CTA Section */}
         <div className="mt-16">

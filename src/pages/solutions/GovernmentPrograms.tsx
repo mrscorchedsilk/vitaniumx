@@ -19,7 +19,7 @@ const GovernmentPrograms = () => {
         {/* Hero Image */}
         <div className="mt-10 relative rounded-xl overflow-hidden">
           <img 
-            src="/lovable-uploads/6aa39373-a88a-49b3-98ea-0dc7006f1609.png" 
+            src="/lovable-uploads/government-program-solutions-hero.jpg" 
             alt="Government Nutrition Program" 
             className="w-full aspect-[21/9] object-cover"
           />
@@ -87,7 +87,7 @@ const GovernmentPrograms = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(14,165,233,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/2d24b59b-1dc0-4c14-9736-2efaa2ea875e.png" 
+                    src="/lovable-uploads/FRK-premix.jpg" 
                     alt="FRK Premix" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -150,7 +150,7 @@ const GovernmentPrograms = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/a2700011-5dc2-4329-9c4f-3acbc46caa75.png" 
+                    src="/lovable-uploads/panjiri-premix.webp" 
                     alt="Panjiri Premix" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -215,7 +215,7 @@ const GovernmentPrograms = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(245,158,11,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/c0a32cb5-dcb2-48e8-b9dd-954bab2fbeec.png" 
+                    src="/lovable-uploads/dalia-premix.jpg" 
                     alt="Dalia Products" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -278,7 +278,7 @@ const GovernmentPrograms = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.5)] transition-all duration-300">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/10da3b95-043b-4c40-a27d-55b29dfd59e0.png" 
+                    src="/lovable-uploads/custom-gov-formulation.jpeg" 
                     alt="Custom Government Formulations" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -350,7 +350,7 @@ const GovernmentPrograms = () => {
                 <div className="flex flex-col h-full">
                   <div className="mb-4 rounded-lg overflow-hidden">
                     <img 
-                      src="/lovable-uploads/a6e4f46c-1bc5-4185-a0ee-4e19acea274d.png" 
+                      src="/lovable-uploads/gov-rice-fortification-prog.jpg" 
                       alt="Rice Fortification Program" 
                       className="w-full aspect-video object-cover"
                     />
@@ -370,7 +370,7 @@ const GovernmentPrograms = () => {
                 <div className="flex flex-col h-full">
                   <div className="mb-4 rounded-lg overflow-hidden">
                     <img 
-                      src="/lovable-uploads/d0098acb-8109-49f0-813d-3cb10b8a9f7b.png" 
+                      src="/lovable-uploads/gov-mid-day-meal-prog.jpg" 
                       alt="School Nutrition Program" 
                       className="w-full aspect-video object-cover"
                     />

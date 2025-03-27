@@ -21,7 +21,7 @@ const StapleFoodPremix = () => {
         {/* Hero Image */}
         <div className="mt-10 relative rounded-xl overflow-hidden">
           <img 
-            src="/lovable-uploads/8dcfc58b-98fa-43b2-812e-97e7507e2ac4.png" 
+            src="/lovable-uploads/staple-food-premix-hero.png" 
             alt="Wheat Field" 
             className="w-full aspect-[21/9] object-cover"
           />

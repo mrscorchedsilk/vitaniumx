@@ -1,8 +1,11 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Wheat, ArrowRight, CheckCircle } from 'lucide-react';
+import { Wheat, ArrowRight, CheckCircle, BarChart3, Tablet, Utensils } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import FoodImageGallery from '@/components/ui/FoodImageGallery';
+import StatCard from '@/components/ui/StatCard';
 import { Button } from '@/components/ui/button';
 
 const StapleFoodPremix = () => {
@@ -10,23 +13,24 @@ const StapleFoodPremix = () => {
     <div className="pt-20 pb-20">
       <div className="container-wide">
         <SectionHeading
-          title="Staple Food Premixes"
+          
+          title="Staple Food Fortification"
           description="High-quality micronutrient premixes for fortifying staple foods to address widespread nutritional deficiencies."
         />
         
         {/* Hero Image */}
         <div className="mt-10 relative rounded-xl overflow-hidden">
           <img 
-            src="/lovable-uploads/dc73f31d-4223-4d13-a641-5089713fd5d0.png" 
-            alt="Staple Food Premixes" 
+            src="/lovable-uploads/8dcfc58b-98fa-43b2-812e-97e7507e2ac4.png" 
+            alt="Wheat Field" 
             className="w-full aspect-[21/9] object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
             <div className="text-white p-8 md:p-12 max-w-2xl">
               <Wheat className="w-16 h-16 text-vitanium-400 mb-4" />
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Staple Food Fortification</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Enhancing Staple Foods</h2>
               <p className="text-lg text-white/80">
-                Our staple food premixes are designed for large-scale food fortification programs, targeting widely consumed foods like wheat flour, rice, edible oil, and milk.
+                Our fortification solutions add essential micronutrients to everyday foods, improving public health and combating malnutrition.
               </p>
             </div>
           </div>
@@ -36,193 +40,389 @@ const StapleFoodPremix = () => {
         <div className="mt-16 max-w-4xl mx-auto">
           <ScrollReveal>
             <p className="text-lg text-neutral-700 mb-6">
-              Our staple food premixes are designed for large-scale food fortification programs, targeting widely consumed foods to address nutritional deficiencies at the population level. These premixes are developed with strict quality control and optimized for stability, bioavailability, and compatibility with various food matrices.
+              Staple food fortification is a crucial strategy for addressing micronutrient deficiencies at a population level. By adding essential vitamins and minerals to widely consumed staple foods like rice, wheat flour, maize flour, and edible oils, VitaniumX helps improve public health in a cost-effective and sustainable way.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={100}>
             <p className="text-lg text-neutral-700">
-              At VitaniumX, we collaborate with governments, NGOs, and food manufacturers to implement effective fortification programs. Our premixes meet both national and international standards, ensuring optimal nutritional impact while maintaining the sensory qualities of the food vehicles.
+              Our staple food fortification solutions are designed to meet both national and international standards, ensuring optimal bioavailability while maintaining the sensory properties of the food. We work closely with government programs, NGOs, and food manufacturers to implement effective fortification strategies tailored to specific regional needs.
             </p>
           </ScrollReveal>
         </div>
         
+        {/* Stats Section */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StatCard 
+            number="2.5B+"
+            label="People reached through fortification"
+            glowColor="blue"
+          />
+          <StatCard 
+            number="40+"
+            label="Countries with fortification programs"
+            glowColor="green"
+            delay={100}
+          />
+          <StatCard 
+            number="30%"
+            label="Reduction in micronutrient deficiencies"
+            glowColor="amber"
+            delay={200}
+          />
+          <StatCard 
+            number="9:1"
+            label="Benefit-to-cost ratio of fortification"
+            glowColor="purple"
+            delay={300}
+          />
+        </div>
+        
+        {/* Food Image Gallery */}
+        {/* <div className="mt-16">
+          <ScrollReveal>
+            <h2 className="text-3xl font-bold text-neutral-800 mb-8">Our Staple Food Solutions</h2>
+          </ScrollReveal>
+          
+          <FoodImageGallery 
+            images={[
+              {
+                src: "/lovable-uploads/a6e4f46c-1bc5-4185-a0ee-4e19acea274d.png",
+                alt: "White Rice"
+              },
+              {
+                src: "/lovable-uploads/2d24b59b-1dc0-4c14-9736-2efaa2ea875e.png",
+                alt: "Rice Sack with Wooden Scoop"
+              },
+              {
+                src: "/lovable-uploads/60a0493f-f80d-4e07-8105-ddc44b525875.png",
+                alt: "Premium Edible Oils"
+              },
+              {
+                src: "/lovable-uploads/a2700011-5dc2-4329-9c4f-3acbc46caa75.png",
+                alt: "Oil Manufacturing Line"
+              },
+              {
+                src: "/lovable-uploads/6a8ba746-47c7-4954-a5d0-a19272eb55bd.png",
+                alt: "Iodized Salt Crystals"
+              },
+              {
+                src: "/lovable-uploads/c0a32cb5-dcb2-48e8-b9dd-954bab2fbeec.png",
+                alt: "Wheat Flour and Wheat Stalks"
+              }
+            ]}
+            columns={3}
+            className="mb-12"
+          />
+        </div> */}
+        
         {/* Product Details */}
         <div className="mt-16">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-neutral-800 mb-12">Staple Food Premix Products</h2>
+            <h2 className="text-3xl font-bold text-neutral-800 mb-12">Our Staple Food Fortification Solutions</h2>
           </ScrollReveal>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Wheat Flour Fortification */}
             <ScrollReveal delay={100}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
-                <div className="h-56 overflow-hidden">
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(14,165,233,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.5)] transition-all duration-300">
+                <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/38125dfc-481a-4b2a-a4b5-615898b4a565.png" 
-                    alt="Wheat Flour Premix" 
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    src="/lovable-uploads/dc73f31d-4223-4d13-a641-5089713fd5d0.png" 
+                    alt="Flour Fortification Premixes" 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-4">Wheat Flour Premix</h3>
+                  <h3 className="text-2xl font-bold mb-4">Wheat Flour Fortification</h3>
                   <p className="text-neutral-600 mb-6">
-                    Our wheat flour premix typically contains iron, folic acid, vitamin B12, and other B vitamins to prevent anemia and neural tube defects.
+                    Our wheat flour premixes are designed to address common micronutrient deficiencies by incorporating essential vitamins and minerals. These premixes are easy to integrate into existing flour milling processes and ensure even distribution of nutrients throughout the flour.
                   </p>
                   
-                  <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
+                  <h4 className="font-semibold text-lg mb-3">Key Components:</h4>
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Encapsulated iron for improved stability</span>
+                      <span className="text-neutral-600">Iron (Ferrous Fumarate / NaFeEDTA)</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Compatible with various flour types</span>
+                      <span className="text-neutral-600">Folic Acid</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Minimal impact on organoleptic properties</span>
+                      <span className="text-neutral-600">Vitamin B12</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Zinc</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Vitamin A (optional)</span>
                     </li>
                   </ul>
+                  
+                  <h4 className="font-semibold text-lg mb-3">Applications:</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">National fortification programs</span>
+                    </li>
+                    <li className="flex items-start">
+                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Commercial flour mills</span>
+                    </li>
+                    <li className="flex items-start">
+                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Humanitarian food assistance</span>
+                    </li>
+                  </ul>
+                  
+                  <div className="mt-6">
+                    <Button asChild>
+                      <Link to="/get-quote">
+                        Request Information
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
             
+            {/* Rice Fortification */}
             <ScrollReveal delay={200}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
-                <div className="h-56 overflow-hidden">
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.5)] transition-all duration-300">
+                <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/7554c3c6-5fda-4d7b-b2e3-6d81aa139bb0.png" 
-                    alt="Rice Premix" 
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    src="/lovable-uploads/6204902b-53ac-4075-9923-76e67c548ea0.png" 
+                    alt="Rice in hands over rice field" 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-4">Rice Premix</h3>
+                  <h3 className="text-2xl font-bold mb-4">Rice Fortification</h3>
                   <p className="text-neutral-600 mb-6">
-                    Our rice premix is formulated for both coating and extrusion technologies, providing multiple micronutrients in a stable form.
+                    Our Fortified Rice Kernels (FRK) and premixes are formulated to blend seamlessly with regular rice, providing essential micronutrients without affecting taste, appearance, or cooking quality. We offer multiple fortification technologies to suit different production scenarios.
                   </p>
                   
-                  <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
+                  <h4 className="font-semibold text-lg mb-3">Key Components:</h4>
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Available in various blending ratios</span>
+                      <span className="text-neutral-600">Iron (Ferric Pyrophosphate / NaFeEDTA)</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Resistant to washing and cooking</span>
+                      <span className="text-neutral-600">Folic Acid</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Multiple micronutrient formulations</span>
+                      <span className="text-neutral-600">Vitamin B12</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Vitamin A</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Zinc</span>
                     </li>
                   </ul>
+                  
+                  <h4 className="font-semibold text-lg mb-3">Technology Options:</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Hot extrusion</span>
+                    </li>
+                    <li className="flex items-start">
+                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Warm extrusion</span>
+                    </li>
+                    <li className="flex items-start">
+                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Coating technology</span>
+                    </li>
+                  </ul>
+                  
+                  <div className="mt-6">
+                    <Button asChild>
+                      <Link to="/get-quote">
+                        Request Information
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
-            
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
+            {/* Edible Oil Fortification */}
             <ScrollReveal delay={300}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
-                <div className="h-56 overflow-hidden">
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(245,158,11,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.5)] transition-all duration-300">
+                <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/5642c1e5-ab13-474e-8553-562dd7c66826.png" 
-                    alt="Edible Oil Premix" 
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    src="/lovable-uploads/74a3d0a0-22d5-4ba7-a2f9-bf495d9de3a0.png" 
+                    alt="Oil Fortification Premixes" 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-4">Edible Oil Premix</h3>
+                  <h3 className="text-2xl font-bold mb-4">Edible Oil Fortification</h3>
                   <p className="text-neutral-600 mb-6">
-                    Our edible oil premix contains vitamins A and D in a stable, oil-soluble form suitable for various types of cooking oils.
+                    Our oil-soluble vitamin premixes are specifically designed for fortifying various edible oils, including palm oil, soybean oil, sunflower oil, and more. These premixes ensure stability and even distribution of nutrients throughout the oil.
                   </p>
                   
-                  <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
+                  <h4 className="font-semibold text-lg mb-3">Key Components:</h4>
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Excellent stability during storage</span>
+                      <span className="text-neutral-600">Vitamin A (Retinyl Palmitate)</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Compatible with various oil types</span>
+                      <span className="text-neutral-600">Vitamin D (Cholecalciferol)</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Resistance to oxidation</span>
+                      <span className="text-neutral-600">Vitamin E (optional)</span>
                     </li>
                   </ul>
+                  
+                  <h4 className="font-semibold text-lg mb-3">Features:</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Enhanced stability to heat and light</span>
+                    </li>
+                    <li className="flex items-start">
+                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">No impact on sensory properties</span>
+                    </li>
+                    <li className="flex items-start">
+                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Easy integration into oil processing</span>
+                    </li>
+                  </ul>
+                  
+                  <div className="mt-6">
+                    <Button asChild>
+                      <Link to="/get-quote">
+                        Request Information
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
             
+            {/* Milk Fortification */}
             <ScrollReveal delay={400}>
-              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300">
-                <div className="h-56 overflow-hidden">
+              <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.5)] transition-all duration-300">
+                <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/8d759c8c-d287-4991-9717-a30ccaf79af0.png" 
-                    alt="Milk Premix" 
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    src="/lovable-uploads/059e844d-fe4e-47f4-b1a3-104c6a541f6d.png" 
+                    alt="Fresh Dairy Products" 
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-4">Milk Premix</h3>
+                  <h3 className="text-2xl font-bold mb-4">Milk Fortification</h3>
                   <p className="text-neutral-600 mb-6">
-                    Our milk premix typically contains vitamins A and D, formulated to ensure stability in liquid and powdered milk products.
+                    Our milk fortification solutions are designed to enhance the nutritional value of liquid milk and milk products. These premixes are formulated to ensure stability during pasteurization, homogenization, and storage.
                   </p>
                   
-                  <h4 className="font-semibold text-lg mb-3">Key Features:</h4>
+                  <h4 className="font-semibold text-lg mb-3">Key Components:</h4>
                   <ul className="space-y-2 mb-6">
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Uniform dispersion in milk</span>
+                      <span className="text-neutral-600">Vitamin A</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">No impact on taste or appearance</span>
+                      <span className="text-neutral-600">Vitamin D</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Stability in UHT processing</span>
+                      <span className="text-neutral-600">Calcium (optional)</span>
                     </li>
                   </ul>
+                  
+                  <h4 className="font-semibold text-lg mb-3">Applications:</h4>
+                  <ul className="space-y-2 mb-6">
+                    <li className="flex items-start">
+                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Liquid milk</span>
+                    </li>
+                    <li className="flex items-start">
+                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Milk powders</span>
+                    </li>
+                    <li className="flex items-start">
+                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                      <span className="text-neutral-600">Yogurt and other dairy products</span>
+                    </li>
+                  </ul>
+                  
+                  <div className="mt-6">
+                    <Button asChild>
+                      <Link to="/get-quote">
+                        Request Information
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
           </div>
         </div>
-        
-        {/* Implementation Support */}
+
+        {/* Success Stories */}
         <div className="mt-20">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-neutral-800 mb-8">Implementation Support</h2>
+            <h2 className="text-3xl font-bold text-neutral-800 mb-8">Implementation Success Stories</h2>
           </ScrollReveal>
           
-          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(236,72,153,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(236,72,153,0.5)] transition-all duration-300">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <ScrollReveal delay={100}>
-                <div>
-                  <h3 className="text-xl font-bold mb-4">Technical Assistance</h3>
-                  <p className="text-neutral-600">
-                    Our technical team provides comprehensive support for premix integration, including equipment selection, dosing optimization, and quality control protocols.
+                <div className="flex flex-col h-full">
+                  <div className="mb-4 rounded-lg overflow-hidden">
+                    <img 
+                      src="/lovable-uploads/2025292d-9888-4583-8efc-9e5ec53fbca5.png" 
+                      alt="Fresh Milk in Containers" 
+                      className="w-full aspect-video object-cover"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4">Uttar Pradesh Rice Fortification Program</h3>
+                  <p className="text-neutral-600 mb-6">
+                    Partnered with the Uttar Pradesh government to implement rice fortification across public distribution systems, reaching over 15 million beneficiaries with fortified rice containing iron, folic acid, and vitamin B12.
                   </p>
+                  <div className="flex items-center space-x-4 mt-auto">
+                    <div className="font-semibold">Impact:</div>
+                    <div className="text-vitanium-600">15M+ beneficiaries</div>
+                  </div>
                 </div>
               </ScrollReveal>
               
               <ScrollReveal delay={200}>
-                <div>
-                  <h3 className="text-xl font-bold mb-4">Training Programs</h3>
-                  <p className="text-neutral-600">
-                    We offer training for production staff on proper handling, storage, and use of premixes to ensure consistent fortification results.
+                <div className="flex flex-col h-full">
+                  <div className="mb-4 rounded-lg overflow-hidden">
+                    <img 
+                      src="/lovable-uploads/60a0493f-f80d-4e07-8105-ddc44b525875.png" 
+                      alt="Edible Oil Bottles" 
+                      className="w-full aspect-video object-cover"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4">National Edible Oil Fortification Initiative</h3>
+                  <p className="text-neutral-600 mb-6">
+                    Collaborated with major oil manufacturers to implement vitamin A and D fortification in edible oils, contributing to a national initiative aimed at addressing vitamin deficiencies.
                   </p>
-                </div>
-              </ScrollReveal>
-              
-              <ScrollReveal delay={300}>
-                <div>
-                  <h3 className="text-xl font-bold mb-4">Monitoring Solutions</h3>
-                  <p className="text-neutral-600">
-                    We provide testing kits and protocols to help manufacturers and regulatory bodies monitor fortification levels and ensure compliance.
-                  </p>
+                  <div className="flex items-center space-x-4 mt-auto">
+                    <div className="font-semibold">Impact:</div>
+                    <div className="text-vitanium-600">30M+ households reached</div>
+                  </div>
                 </div>
               </ScrollReveal>
             </div>
@@ -235,9 +435,9 @@ const StapleFoodPremix = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <ScrollReveal>
                 <div>
-                  <h2 className="text-2xl font-bold mb-4">Ready to Start Your Fortification Program?</h2>
+                  <h2 className="text-2xl font-bold mb-4">Need a Custom Staple Food Fortification Solution?</h2>
                   <p className="text-neutral-300 mb-6">
-                    Contact our team to discuss your specific requirements and learn how our staple food premixes can support your fortification initiatives.
+                    Our team can develop tailored premixes to meet your specific requirements, whether you're a government program, food manufacturer, or NGO.
                   </p>
                   <div className="flex flex-wrap gap-4">
                     <Link to="/get-quote" className="btn-primary bg-vitanium-500 hover:bg-vitanium-600">
@@ -252,23 +452,23 @@ const StapleFoodPremix = () => {
               
               <ScrollReveal delay={100}>
                 <div className="bg-navy-800 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-4">Benefits of Working With Us</h3>
+                  <h3 className="text-xl font-semibold mb-4">Why Choose Our Staple Food Fortification Solutions?</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-vitanium-400 mt-0.5 mr-3 flex-shrink-0" />
-                      <span className="text-neutral-300">Customized formulations to meet your specific needs</span>
+                      <span className="text-neutral-300">Compliant with FSSAI and international standards</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-vitanium-400 mt-0.5 mr-3 flex-shrink-0" />
-                      <span className="text-neutral-300">Compliance with international and local standards</span>
+                      <span className="text-neutral-300">Optimal bioavailability and stability</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-vitanium-400 mt-0.5 mr-3 flex-shrink-0" />
-                      <span className="text-neutral-300">End-to-end implementation support</span>
+                      <span className="text-neutral-300">No impact on taste, color, or cooking properties</span>
                     </li>
                     <li className="flex items-start">
                       <CheckCircle className="h-5 w-5 text-vitanium-400 mt-0.5 mr-3 flex-shrink-0" />
-                      <span className="text-neutral-300">Proven track record in national fortification programs</span>
+                      <span className="text-neutral-300">Technical support and quality assurance</span>
                     </li>
                   </ul>
                 </div>

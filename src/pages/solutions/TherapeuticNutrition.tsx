@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HeartPulse, ArrowRight, CheckCircle, Baby, Users, Shield } from 'lucide-react';
@@ -345,55 +346,6 @@ const TherapeuticNutrition = () => {
           </div>
         </div>
 
-        {/* Case Study */}
-        <div className="mt-20">
-          <ScrollReveal>
-            <h2 className="text-3xl font-bold text-neutral-800 mb-8">Success Story</h2>
-          </ScrollReveal>
-          
-          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(250,82,82,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(250,82,82,0.5)] transition-all duration-300">
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-              <div className="col-span-1 lg:col-span-2">
-                <div className="aspect-square rounded-lg overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/9081fb71-845c-4105-903a-fc00fb2ba426.png" 
-                    alt="Children receiving nutritious meal in humanitarian setting" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-              
-              <div className="col-span-1 lg:col-span-3">
-                <h3 className="text-2xl font-bold mb-4">Rural Nutrition Program in Madhya Pradesh</h3>
-                <p className="text-neutral-600 mb-6">
-                  VitaniumX partnered with a state government and an international NGO to implement a comprehensive nutrition program in rural districts of Madhya Pradesh, targeting children under 5 years with moderate acute malnutrition.
-                </p>
-                
-                <h4 className="font-semibold text-lg mb-3">Our Solution:</h4>
-                <p className="text-neutral-600 mb-6">
-                  We developed a locally produced RUSF formulation using regionally available ingredients like chickpea, peanut, milk powder, and a custom micronutrient premix. The product was designed to align with local taste preferences while meeting international nutritional standards.
-                </p>
-                
-                <h4 className="font-semibold text-lg mb-3">Results:</h4>
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Over 25,000 children treated for moderate acute malnutrition</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">85% recovery rate within 12 weeks of intervention</span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                    <span className="text-neutral-600">Program expanded to five additional districts based on success</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        
         {/* Implementation Success Stories */}
         <div className="mt-20">
           <ScrollReveal>

@@ -33,10 +33,10 @@ const foodImages = [
 
 const ProcessedFoods = () => {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-20 pb-20">
       <div className="container-wide">
         <SectionHeading
-          subtitle="Solutions & Products"
+          
           title="Processed Food Solutions"
           description="Custom micronutrient premixes for bakery, confectionery, beverages, and more."
         />

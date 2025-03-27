@@ -8,10 +8,10 @@ import FoodImageGallery from '@/components/ui/FoodImageGallery';
 
 const FmcgFortification = () => {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-20 pb-20">
       <div className="container-wide">
         <SectionHeading
-          subtitle="Solutions & Products"
+          
           title="FMCG Fortification"
           description="Specialized fortification solutions for Fast-Moving Consumer Goods to enhance nutritional value and market differentiation."
         />

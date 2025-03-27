@@ -8,10 +8,10 @@ import { Button } from '@/components/ui/button';
 
 const TherapeuticFoods = () => {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-20 pb-20">
       <div className="container-wide">
         <SectionHeading
-          subtitle="Solutions & Products"
+          
           title="Therapeutic Foods"
           description="Specialized, nutrient-dense formulations for addressing acute malnutrition and specific dietary needs."
         />

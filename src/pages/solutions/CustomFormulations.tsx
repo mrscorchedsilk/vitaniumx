@@ -8,10 +8,10 @@ import FoodImageGallery from '@/components/ui/FoodImageGallery';
 
 const CustomFormulations = () => {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-20 pb-20">
       <div className="container-wide">
         <SectionHeading
-          subtitle="Solutions & Products"
+          
           title="Customized Formulations"
           description="Tailor-made micronutrient premixes designed to meet your specific requirements and applications."
         />

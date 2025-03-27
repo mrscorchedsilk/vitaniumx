@@ -9,10 +9,10 @@ import { Button } from '@/components/ui/button';
 
 const StapleFood = () => {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-20 pb-20">
       <div className="container-wide">
         <SectionHeading
-          subtitle="Solutions & Products"
+          
           title="Staple Food Fortification"
           description="High-quality micronutrient premixes for fortifying staple foods to address widespread nutritional deficiencies."
         />

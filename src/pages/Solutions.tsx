@@ -46,10 +46,10 @@ const foodImages = [
 
 const Solutions = () => {
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-20 pb-20">
       <div className="container-wide">
         <SectionHeading
-          subtitle="Solutions & Products"
+          
           title="Comprehensive Fortification Solutions"
           description="We offer a wide range of micronutrient premixes designed for various applications across the food industry."
         />

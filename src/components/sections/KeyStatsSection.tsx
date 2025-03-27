@@ -1,3 +1,4 @@
+
 import React from 'react';
 import StatCard from '@/components/ui/StatCard';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -86,6 +87,7 @@ const KeyStatsSection = () => {
             glowColor="green"
             className="bg-emerald-50/80 backdrop-blur-md"
             animationDuration={1500}
+            noFormat={true} // Add this prop to prevent comma formatting
           />
         </div>
         

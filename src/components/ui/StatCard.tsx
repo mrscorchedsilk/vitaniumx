@@ -11,6 +11,7 @@ interface StatCardProps {
   delay?: number;
   glowColor?: 'blue' | 'green' | 'amber' | 'red' | 'purple' | 'pink';
   animationDuration?: number; // Duration for the counting animation in ms
+  noFormat?: boolean; // Added this prop to skip formatting for years or small numbers
 }
 
 const StatCard: React.FC<StatCardProps> = ({ 
@@ -19,7 +20,8 @@ const StatCard: React.FC<StatCardProps> = ({
   className,
   delay = 0,
   glowColor = 'blue',
-  animationDuration = 2000 // Default 2 seconds for animation
+  animationDuration = 2000, // Default 2 seconds for animation
+  noFormat = false // Default false, set to true for years
 }) => {
   const [displayValue, setDisplayValue] = useState('0');
   const ref = useRef(null);
@@ -47,6 +49,9 @@ const StatCard: React.FC<StatCardProps> = ({
 
   // Format the number with commas for thousands
   const formatNumber = (num: number): string => {
+    if (noFormat) {
+      return num.toString(); // Return as plain string without commas
+    }
     return num.toLocaleString('en-US');
   };
 
@@ -88,7 +93,7 @@ const StatCard: React.FC<StatCardProps> = ({
 
     // Cleanup
     return () => clearInterval(counter);
-  }, [number, isInView, animationDuration]);
+  }, [number, isInView, animationDuration, noFormat]);
 
   return (
     <ScrollReveal 

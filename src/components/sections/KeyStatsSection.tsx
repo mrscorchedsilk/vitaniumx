@@ -61,12 +61,12 @@ const KeyStatsSection = () => {
         {/* First row with a single highlighted stat with counting animation */}
         <div className="mt-14 mb-6">
           <StatCard 
-            number="573000000"
+            number="573680000"
             label="Fortified meals delivered"
             delay={100}
             glowColor="amber" 
             className="bg-amber-50/80 backdrop-blur-md max-w-xl mx-auto"
-            animationDuration={2500}
+            animationDuration={10000}
           />
         </div>
 

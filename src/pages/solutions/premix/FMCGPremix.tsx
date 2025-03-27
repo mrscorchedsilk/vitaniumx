@@ -5,37 +5,8 @@ import { FlaskConical, ArrowRight, CheckCircle } from 'lucide-react';
 import SectionHeading from '@/components/ui/SectionHeading';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { Button } from '@/components/ui/button';
-import FoodImageGallery from '@/components/ui/FoodImageGallery';
 
 const FMCGPremix = () => {
-  // Sample gallery images for FMCG products
-  const galleryImages = [
-    {
-      src: "/lovable-uploads/a6e4f46c-1bc5-4185-a0ee-4e19acea274d.png",
-      alt: "Fortified Breakfast Cereal"
-    },
-    {
-      src: "/lovable-uploads/aaf178d4-a6a4-4b55-80ec-0c7059537d4e.png",
-      alt: "Fortified Snack Products"
-    },
-    {
-      src: "/lovable-uploads/73949e72-29c8-4be2-8a66-fb45bba5fd39.png",
-      alt: "Nutritional Beverage Powder"
-    },
-    {
-      src: "/lovable-uploads/4fa0c9a4-c990-4524-9ce1-c0bc24be38b6.png",
-      alt: "Fortified Baked Goods"
-    },
-    {
-      src: "/lovable-uploads/1cb06548-367b-451e-b18e-0fb4cf05f88b.png",
-      alt: "Enriched Dairy Products"
-    },
-    {
-      src: "/lovable-uploads/5c7accf9-77ec-4d24-8c6c-ec4d7d12cdcf.png",
-      alt: "Functional Beverage Applications"
-    }
-  ];
-
   return (
     <div className="pt-20 pb-20">
       <div className="container-wide">
@@ -76,25 +47,8 @@ const FMCGPremix = () => {
           </ScrollReveal>
         </div>
         
-        {/* Image Gallery */}
-        <div className="mt-16">
-          <ScrollReveal>
-            <h2 className="text-3xl font-bold text-neutral-800 mb-8">Applications Gallery</h2>
-          </ScrollReveal>
-          <ScrollReveal>
-            <FoodImageGallery 
-              images={galleryImages}
-              columns={3}
-              hoverEffect="both"
-              imageHeight="square"
-              captionStyle="hover"
-              className="mb-12"
-            />
-          </ScrollReveal>
-        </div>
-        
         {/* Product Details */}
-        <div className="mt-10">
+        <div className="mt-16">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-neutral-800 mb-12">FMCG Premix Products</h2>
           </ScrollReveal>

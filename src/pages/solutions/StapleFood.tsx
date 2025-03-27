@@ -77,7 +77,7 @@ const StapleFood = () => {
         </div>
         
         {/* Food Image Gallery */}
-        <div className="mt-16">
+        {/* <div className="mt-16">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-neutral-800 mb-8">Our Staple Food Solutions</h2>
           </ScrollReveal>
@@ -112,7 +112,7 @@ const StapleFood = () => {
             columns={3}
             className="mb-12"
           />
-        </div>
+        </div> */}
         
         {/* Product Details */}
         <div className="mt-16">
@@ -409,7 +409,7 @@ const StapleFood = () => {
                 <div className="flex flex-col h-full">
                   <div className="mb-4 rounded-lg overflow-hidden">
                     <img 
-                      src="/lovable-uploads/23ee7423-4dc4-4911-9637-b46de5bd277a.png" 
+                      src="/lovable-uploads/60a0493f-f80d-4e07-8105-ddc44b525875.png" 
                       alt="Edible Oil Bottles" 
                       className="w-full aspect-video object-cover"
                     />

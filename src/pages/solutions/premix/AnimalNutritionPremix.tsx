@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Fish, ArrowRight, CheckCircle } from 'lucide-react';
@@ -226,6 +225,59 @@ const AnimalNutritionPremix = () => {
                   </p>
                 </div>
               </ScrollReveal>
+            </div>
+          </div>
+        </div>
+        
+        {/* Success Story */}
+        <div className="mt-20">
+          <ScrollReveal>
+            <h2 className="text-3xl font-bold text-neutral-800 mb-8">Success Story</h2>
+          </ScrollReveal>
+          
+          <div className="bg-white p-8 rounded-xl shadow-subtle border border-neutral-100 shadow-[0_10px_25px_-5px_rgba(14,165,233,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.3)] transition-all duration-300">
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+              <div className="col-span-1 lg:col-span-2">
+                <div className="rounded-lg overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/d8fdbed4-1f7c-4aa0-80ba-79f6252a8dc3.png" 
+                    alt="Healthy bowl with chickpeas, cucumber and carrots" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              <div className="col-span-1 lg:col-span-3">
+                <h3 className="text-2xl font-bold mb-4">Leading Dairy Cooperative in Gujarat</h3>
+                <p className="text-neutral-600 mb-6">
+                  A major dairy cooperative in Gujarat approached VitaniumX to develop a specialized mineral mixture to address reproductive issues and suboptimal milk production in their member farmers' herds.
+                </p>
+                
+                <h4 className="font-semibold text-lg mb-3">Our Solution:</h4>
+                <p className="text-neutral-600 mb-6">
+                  We conducted a comprehensive nutritional assessment and developed a customized mineral mixture with optimized levels of trace minerals (including organic forms of zinc, copper, and selenium) and fat-soluble vitamins. The formulation was designed to be easily mixed with existing feed and to address the specific deficiencies identified.
+                </p>
+                
+                <h4 className="font-semibold text-lg mb-3">Results:</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                    <span className="text-neutral-600">12% increase in milk yield across participating farms</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                    <span className="text-neutral-600">15% improvement in reproductive parameters</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                    <span className="text-neutral-600">Significant reduction in metabolic disorders</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
+                    <span className="text-neutral-600">ROI of 3:1 for participating farmers</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

@@ -54,8 +54,8 @@ const Index = () => {
       {/* Innovation Section */}
       <InnovationSection />
 
-      {/* CTA Section */}
-      <CtaSection />
+      {/* CTA Section
+      <CtaSection /> */}
 
 
     </div>

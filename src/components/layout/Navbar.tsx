@@ -26,7 +26,7 @@ const Navbar = () => {
       ]
     },
     { 
-      name: 'About Us', 
+      name: 'Knowledge Hub', 
       path: '#',
       submenu: [
         { name: 'Quality Assurance', path: '/quality' },

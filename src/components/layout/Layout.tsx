@@ -5,6 +5,7 @@ import Footer from './Footer';
 import { Toaster } from 'sonner';
 import OrganicShape from '../ui/OrganicShape';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -59,6 +60,13 @@ export const FloatingSphere = ({
 };
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const location = useLocation();
+  
+  // Scroll to top when location changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <div className="flex min-h-screen flex-col bg-background overflow-hidden">
       {/* Decorative organic shapes in the background */}

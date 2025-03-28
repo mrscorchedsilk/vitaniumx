@@ -9,6 +9,7 @@ interface GlassCardProps {
   hoverEffect?: boolean;
   delay?: number;
   color?: 'default' | 'primary' | 'secondary' | 'tertiary' | 'quaternary';
+  glowIntensity?: 'light' | 'medium' | 'strong';
 }
 
 const GlassCard: React.FC<GlassCardProps> = ({
@@ -16,7 +17,8 @@ const GlassCard: React.FC<GlassCardProps> = ({
   className,
   hoverEffect = true,
   delay = 0,
-  color = 'default'
+  color = 'default',
+  glowIntensity = 'medium'
 }) => {
   const colorClasses = {
     default: 'bg-white/60 border-white/30',
@@ -26,20 +28,75 @@ const GlassCard: React.FC<GlassCardProps> = ({
     quaternary: 'bg-coral-50/70 border-coral-100/50',
   };
 
+  const glowIntensities = {
+    light: {
+      default: 'shadow-[0_5px_15px_-5px_rgba(14,165,233,0.15)]',
+      hover: 'hover:shadow-[0_10px_25px_-5px_rgba(14,165,233,0.25)]',
+    },
+    medium: {
+      default: 'shadow-[0_10px_25px_-5px_rgba(14,165,233,0.25)]',
+      hover: 'hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.4)]',
+    },
+    strong: {
+      default: 'shadow-[0_15px_35px_-5px_rgba(14,165,233,0.35)]',
+      hover: 'hover:shadow-[0_20px_45px_-5px_rgba(14,165,233,0.5)]',
+    },
+  };
+
   const shadowColors = {
-    default: 'shadow-[0_10px_30px_-5px_rgba(14,165,233,0.3)]',
-    primary: 'shadow-[0_10px_30px_-5px_rgba(16,185,129,0.3)]',
-    secondary: 'shadow-[0_10px_30px_-5px_rgba(14,165,233,0.3)]',
-    tertiary: 'shadow-[0_10px_30px_-5px_rgba(245,158,11,0.3)]',
-    quaternary: 'shadow-[0_10px_30px_-5px_rgba(250,82,82,0.3)]',
+    default: {
+      light: 'shadow-[0_5px_15px_-5px_rgba(14,165,233,0.15)]',
+      medium: 'shadow-[0_10px_25px_-5px_rgba(14,165,233,0.25)]',
+      strong: 'shadow-[0_15px_35px_-5px_rgba(14,165,233,0.35)]',
+    },
+    primary: {
+      light: 'shadow-[0_5px_15px_-5px_rgba(16,185,129,0.15)]',
+      medium: 'shadow-[0_10px_25px_-5px_rgba(16,185,129,0.25)]',
+      strong: 'shadow-[0_15px_35px_-5px_rgba(16,185,129,0.35)]',
+    },
+    secondary: {
+      light: 'shadow-[0_5px_15px_-5px_rgba(14,165,233,0.15)]',
+      medium: 'shadow-[0_10px_25px_-5px_rgba(14,165,233,0.25)]',
+      strong: 'shadow-[0_15px_35px_-5px_rgba(14,165,233,0.35)]',
+    },
+    tertiary: {
+      light: 'shadow-[0_5px_15px_-5px_rgba(245,158,11,0.15)]',
+      medium: 'shadow-[0_10px_25px_-5px_rgba(245,158,11,0.25)]',
+      strong: 'shadow-[0_15px_35px_-5px_rgba(245,158,11,0.35)]',
+    },
+    quaternary: {
+      light: 'shadow-[0_5px_15px_-5px_rgba(250,82,82,0.15)]',
+      medium: 'shadow-[0_10px_25px_-5px_rgba(250,82,82,0.25)]',
+      strong: 'shadow-[0_15px_35px_-5px_rgba(250,82,82,0.35)]',
+    },
   };
 
   const hoverShadows = {
-    default: 'hover:shadow-[0_15px_40px_-5px_rgba(14,165,233,0.4)]',
-    primary: 'hover:shadow-[0_15px_40px_-5px_rgba(16,185,129,0.4)]',
-    secondary: 'hover:shadow-[0_15px_40px_-5px_rgba(14,165,233,0.4)]',
-    tertiary: 'hover:shadow-[0_15px_40px_-5px_rgba(245,158,11,0.4)]',
-    quaternary: 'hover:shadow-[0_15px_40px_-5px_rgba(250,82,82,0.4)]',
+    default: {
+      light: 'hover:shadow-[0_10px_25px_-5px_rgba(14,165,233,0.25)]',
+      medium: 'hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.4)]',
+      strong: 'hover:shadow-[0_20px_45px_-5px_rgba(14,165,233,0.5)]',
+    },
+    primary: {
+      light: 'hover:shadow-[0_10px_25px_-5px_rgba(16,185,129,0.25)]',
+      medium: 'hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.4)]',
+      strong: 'hover:shadow-[0_20px_45px_-5px_rgba(16,185,129,0.5)]',
+    },
+    secondary: {
+      light: 'hover:shadow-[0_10px_25px_-5px_rgba(14,165,233,0.25)]',
+      medium: 'hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.4)]',
+      strong: 'hover:shadow-[0_20px_45px_-5px_rgba(14,165,233,0.5)]',
+    },
+    tertiary: {
+      light: 'hover:shadow-[0_10px_25px_-5px_rgba(245,158,11,0.25)]',
+      medium: 'hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.4)]',
+      strong: 'hover:shadow-[0_20px_45px_-5px_rgba(245,158,11,0.5)]',
+    },
+    quaternary: {
+      light: 'hover:shadow-[0_10px_25px_-5px_rgba(250,82,82,0.25)]',
+      medium: 'hover:shadow-[0_15px_35px_-5px_rgba(250,82,82,0.4)]',
+      strong: 'hover:shadow-[0_20px_45px_-5px_rgba(250,82,82,0.5)]',
+    },
   };
 
   const variants = {
@@ -62,10 +119,10 @@ const GlassCard: React.FC<GlassCardProps> = ({
   return (
     <motion.div
       className={cn(
-        'backdrop-blur-md rounded-2xl border shadow-lg p-6 transition-shadow duration-300',
+        'backdrop-blur-md rounded-2xl border p-6 transition-shadow duration-300',
         colorClasses[color],
-        shadowColors[color],
-        hoverEffect && hoverShadows[color],
+        shadowColors[color][glowIntensity],
+        hoverEffect && hoverShadows[color][glowIntensity],
         className
       )}
       initial="hidden"

@@ -14,6 +14,7 @@ interface ProductCardProps {
   className?: string;
   delay?: number;
   image?: string;
+  glowColor?: 'blue' | 'green' | 'amber' | 'purple' | 'coral';
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
@@ -24,12 +25,21 @@ const ProductCard: React.FC<ProductCardProps> = ({
   className,
   delay = 0,
   image,
+  glowColor = 'blue',
 }) => {
+  const glowStyles = {
+    blue: 'shadow-[0_10px_25px_-5px_rgba(14,165,233,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.35)]',
+    green: 'shadow-[0_10px_25px_-5px_rgba(16,185,129,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.35)]',
+    amber: 'shadow-[0_10px_25px_-5px_rgba(245,158,11,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.35)]',
+    purple: 'shadow-[0_10px_25px_-5px_rgba(139,92,246,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.35)]',
+    coral: 'shadow-[0_10px_25px_-5px_rgba(250,82,82,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(250,82,82,0.35)]',
+  };
+
   return (
     <ScrollReveal
       className={cn(
         'group rounded-lg border border-neutral-100 transition-all duration-300',
-        'shadow-[0_10px_25px_-5px_rgba(16,185,129,0.2)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.35)]',
+        glowStyles[glowColor],
         'hover:border-vitanium-200 overflow-hidden',
         className
       )}

@@ -22,6 +22,7 @@ const SolutionsSection = () => {
             icon={<Wheat className="h-6 w-6" />}
             link="/solutions/micronutrient-premix"
             delay={100}
+            image="/lovable-uploads/micronutrient-premix-hero-section.jpg"
           />
           <ProductCard
             title="Therapeutic Nutrition"
@@ -29,6 +30,7 @@ const SolutionsSection = () => {
             icon={<HeartPulse className="h-6 w-6" />}
             link="/solutions/therapeutic-nutrition"
             delay={200}
+            image="/lovable-uploads/therapeutic-nutrition-hero.jpg"
           />
           <ProductCard
             title="Customized Formulations"
@@ -36,6 +38,7 @@ const SolutionsSection = () => {
             icon={<FlaskConical className="h-6 w-6" />}
             link="/solutions/custom"
             delay={300}
+            image="/lovable-uploads/custom-gov-formulation.jpeg"
           />
           <ProductCard
             title="Government Program Solutions"
@@ -43,6 +46,7 @@ const SolutionsSection = () => {
             icon={<Building className="h-6 w-6" />}
             link="/solutions/government-programs"
             delay={400}
+            image="/lovable-uploads/government-program-solutions-hero.jpg"
           />
         </div>
         

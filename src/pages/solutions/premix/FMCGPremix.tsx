@@ -98,7 +98,7 @@ const FMCGPremix = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
                 <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(14,165,233,0.3)]">
                   <img 
-                    src="/lovable-uploads/0a0f90ca-61ce-4de1-9cbe-0f33664555f9.png" 
+                    src="/lovable-uploads/fmcg-bakery-prod.jpg" 
                     alt="Bakery Products" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -126,33 +126,33 @@ const FMCGPremix = () => {
               </div>
             </ScrollReveal>
             
-            {/* Biscuits & Cookies */}
-            <ScrollReveal delay={200}>
+            {/* Snack Foods */}
+            <ScrollReveal delay={600}>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-                <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)]">
+                <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(34,197,94,0.3)]">
                   <img 
-                    src="/lovable-uploads/56f3fb63-53ab-4683-97e9-0203881db931.png" 
-                    alt="Biscuits & Cookies" 
+                    src="/lovable-uploads/fmcg-snacks.jpg" 
+                    alt="Snack Foods" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
                 </div>
                 <div className="md:col-span-2">
-                  <h3 className="text-xl font-bold mb-3">Biscuits & Cookies</h3>
+                  <h3 className="text-xl font-bold mb-3">Snack Foods</h3>
                   <p className="text-neutral-600 mb-4">
-                    Micronutrient premixes for biscuits and cookies, offering multiple fortification levels to target different consumer segments from children to adults.
+                    Fortification solutions for extruded snacks, biscuits, and other packaged snack foods to create nutritionally enhanced options in this high-consumption category.
                   </p>
                   <ul className="space-y-2">
                     <li className="flex items-start">
                       <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Multiple vitamin & mineral combinations</span>
+                      <span className="text-neutral-600">Custom micronutrient blends</span>
                     </li>
                     <li className="flex items-start">
                       <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">No impact on taste or texture</span>
+                      <span className="text-neutral-600">High-temperature process compatible</span>
                     </li>
                     <li className="flex items-start">
                       <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Child-specific formulations available</span>
+                      <span className="text-neutral-600">Long shelf-life stability</span>
                     </li>
                   </ul>
                 </div>
@@ -164,7 +164,7 @@ const FMCGPremix = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
                 <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(245,158,11,0.3)]">
                   <img 
-                    src="/lovable-uploads/cd3a1c8b-d5f6-4cd7-a3d6-39e0b727d689.png" 
+                    src="/lovable-uploads/fmcg-breakfast-cereal.webp" 
                     alt="Breakfast Cereals" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -197,7 +197,7 @@ const FMCGPremix = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
                 <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)]">
                   <img 
-                    src="/lovable-uploads/9935357e-e5dc-4e78-aaa2-74bf3bec2c52.png" 
+                    src="/lovable-uploads/fmcg-beverages.jpg" 
                     alt="Beverages" 
                     className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
                   />
@@ -225,71 +225,7 @@ const FMCGPremix = () => {
               </div>
             </ScrollReveal>
             
-            {/* Noodles & Pasta */}
-            <ScrollReveal delay={500}>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-                <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(236,72,153,0.3)]">
-                  <img 
-                    src="/lovable-uploads/2ca41337-27d1-496a-8cf1-0ea6d1624fed.png" 
-                    alt="Noodles & Pasta" 
-                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
-                  />
-                </div>
-                <div className="md:col-span-2">
-                  <h3 className="text-xl font-bold mb-3">Noodles & Pasta</h3>
-                  <p className="text-neutral-600 mb-4">
-                    Fortification solutions for instant noodles, pasta, and other wheat-based products, designed to withstand manufacturing processes and cooking.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Iron, B-vitamins, and other micronutrients</span>
-                    </li>
-                    <li className="flex items-start">
-                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Heat and moisture-stable formulations</span>
-                    </li>
-                    <li className="flex items-start">
-                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Masking technologies for mineral fortification</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </ScrollReveal>
             
-            {/* Snack Foods */}
-            <ScrollReveal delay={600}>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-                <div className="md:col-span-1 rounded-lg aspect-square overflow-hidden shadow-[0_10px_25px_-5px_rgba(34,197,94,0.3)]">
-                  <img 
-                    src="/lovable-uploads/2d865ce1-0dc4-4d49-ac5f-73cc566caa2c.png" 
-                    alt="Snack Foods" 
-                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
-                  />
-                </div>
-                <div className="md:col-span-2">
-                  <h3 className="text-xl font-bold mb-3">Snack Foods</h3>
-                  <p className="text-neutral-600 mb-4">
-                    Fortification solutions for extruded snacks, chips, and other packaged snack foods to create nutritionally enhanced options in this high-consumption category.
-                  </p>
-                  <ul className="space-y-2">
-                    <li className="flex items-start">
-                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Custom micronutrient blends</span>
-                    </li>
-                    <li className="flex items-start">
-                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">High-temperature process compatible</span>
-                    </li>
-                    <li className="flex items-start">
-                      <ArrowRight className="h-5 w-5 text-vitanium-600 mt-0.5 mr-2 flex-shrink-0" />
-                      <span className="text-neutral-600">Long shelf-life stability</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </ScrollReveal>
           </div>
         </div>
         
@@ -373,7 +309,7 @@ const FMCGPremix = () => {
               <div className="col-span-1 lg:col-span-2">
                 <div className="aspect-square rounded-lg overflow-hidden">
                   <img 
-                    src="/lovable-uploads/56f3fb63-53ab-4683-97e9-0203881db931.png" 
+                    src="/lovable-uploads/fmcg-success-story.webp" 
                     alt="Fortified biscuit retail packaging" 
                     className="w-full h-full object-cover"
                   />

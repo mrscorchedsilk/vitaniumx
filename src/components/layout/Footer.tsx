@@ -110,12 +110,12 @@ const Footer = () => {
                   FAQs
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/careers" className="text-neutral-300 hover:text-white transition-colors flex items-center">
                   <ArrowRight className="mr-2 h-4 w-4" />
                   Career Opportunities
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/global-presence" className="text-neutral-300 hover:text-white transition-colors flex items-center">
                   <ArrowRight className="mr-2 h-4 w-4" />

@@ -46,7 +46,7 @@ const Index = () => {
       <QualityAssuranceSection />
 
       {/* Our Solutions Section */}
-      <SolutionsSection />
+      {/* <SolutionsSection /> */}
 
       {/* Certification Section
       <CertificationsSection /> */}

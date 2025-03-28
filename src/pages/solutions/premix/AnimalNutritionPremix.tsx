@@ -17,7 +17,7 @@ const AnimalNutritionPremix = () => {
         {/* Hero Image */}
         <div className="mt-10 relative rounded-xl overflow-hidden">
           <img 
-            src="/lovable-uploads/74a3d0a0-22d5-4ba7-a2f9-bf495d9de3a0.png" 
+            src="/lovable-uploads/animal-nutrition-hero.webp" 
             alt="Animal Nutrition Premixes" 
             className="w-full aspect-[21/9] object-cover"
           />
@@ -49,7 +49,7 @@ const AnimalNutritionPremix = () => {
         {/* Product Details */}
         <div className="mt-16">
           <ScrollReveal>
-            <h2 className="text-3xl font-bold text-neutral-800 mb-12">Animal Nutrition Premix Products</h2>
+            <h2 className="text-3xl font-bold text-neutral-800 mb-12">Our Animal Nutrition Premix Products</h2>
           </ScrollReveal>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -57,7 +57,7 @@ const AnimalNutritionPremix = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300 shadow-[0_10px_25px_-5px_rgba(14,165,233,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(14,165,233,0.5)]">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/b0b63c5c-00a5-4bba-a608-966326136286.png" 
+                    src="/lovable-uploads/cattle-feed-premix.jpg" 
                     alt="Cattle Feed Premixes" 
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
@@ -91,7 +91,7 @@ const AnimalNutritionPremix = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300 shadow-[0_10px_25px_-5px_rgba(16,185,129,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(16,185,129,0.5)]">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/671c36e8-6268-44ca-b9e1-1793ee35ba8e.png" 
+                    src="/lovable-uploads/poultry-feed-premix.jpg" 
                     alt="Poultry Feed Premixes" 
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
@@ -125,7 +125,7 @@ const AnimalNutritionPremix = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300 shadow-[0_10px_25px_-5px_rgba(245,158,11,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(245,158,11,0.5)]">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/b6defa9a-7ef3-4a67-b3ee-6f818c1ddc85.png" 
+                    src="/lovable-uploads/swine-feed-premix.jpeg" 
                     alt="Swine Feed Premixes" 
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
@@ -159,7 +159,7 @@ const AnimalNutritionPremix = () => {
               <div className="bg-white rounded-xl shadow-subtle border border-neutral-100 overflow-hidden hover:shadow-md transition-all duration-300 shadow-[0_10px_25px_-5px_rgba(139,92,246,0.3)] hover:shadow-[0_15px_35px_-5px_rgba(139,92,246,0.5)]">
                 <div className="aspect-video overflow-hidden">
                   <img 
-                    src="/lovable-uploads/10da3b95-043b-4c40-a27d-55b29dfd59e0.png" 
+                    src="/lovable-uploads/fish-feed-premix.jpg" 
                     alt="Aquaculture Feed Premixes" 
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
@@ -240,7 +240,7 @@ const AnimalNutritionPremix = () => {
               <div className="col-span-1 lg:col-span-2">
                 <div className="rounded-lg overflow-hidden">
                   <img 
-                    src="/lovable-uploads/d8fdbed4-1f7c-4aa0-80ba-79f6252a8dc3.png" 
+                    src="/lovable-uploads/animal-nutrition-success-story.webp" 
                     alt="Healthy bowl with chickpeas, cucumber and carrots" 
                     className="w-full h-full object-cover"
                   />

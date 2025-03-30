@@ -40,6 +40,10 @@ const TrustedPartnersSection = () => {
     {
       src: "/lovable-uploads/735b2b7f-face-4ea8-87c0-1d1db3287a2d.png",
       alt: "SPR FOODS",
+    },
+    {
+      src: "/lovable-uploads/haryana_gov_logo.png",
+      alt: "Government of Haryana",
     }
   ];
 

@@ -19,8 +19,8 @@ const Index = () => {
 
       {/* Hero Section */}
       <HeroSection
-        title="Precision Fortification for a Healthier World"
-        subtitle="Solution Tailored to Your Needs"
+        title="Micronutrient Premix Solutions"
+        subtitle="A Company of Progressive Processors"
         description="At VitaniumX, we're at the forefront of micronutrient premix manufacturing, dedicated to combating hidden hunger and enhancing nutrition across India and beyond."
         primaryCta={{
           text: "Get a Quote",
@@ -32,9 +32,6 @@ const Index = () => {
         }}
         imageSrc="/lovable-uploads/56f3fb63-53ab-4683-97e9-0203881db931.png"
       />
-
-      {/* Certification Banner
-      <CertificationBanner /> */}
 
       {/* Client Carousel (Simplified) */}
       <TrustedPartnersSection />
@@ -48,14 +45,8 @@ const Index = () => {
       {/* Our Solutions Section */}
       <SolutionsSection />
 
-      {/* Certification Section
-      <CertificationsSection /> */}
-
       {/* Innovation Section */}
       <InnovationSection />
-
-      {/* CTA Section
-      <CtaSection /> */}
     </div>
   );
 };

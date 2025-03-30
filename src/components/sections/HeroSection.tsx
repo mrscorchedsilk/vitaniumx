@@ -104,15 +104,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 <div className="flex items-center gap-4 justify-center lg:justify-start">
                 <span className="text-lg font-semibold text-neutral-700">Certified By:</span>
                 <FloatingCertificationLogo 
-                  src="/lovable-uploads/31315a0c-68fe-442c-9d74-dd8c22a5c0d3.png" 
+                  src="/lovable-uploads/gmp.png" 
                   alt="GMP Certification" 
                   delay={0.2}
-                  size="md"
-                />
-                <FloatingCertificationLogo 
-                  src="/lovable-uploads/b7e9e76c-af31-4725-a211-4ec5d4ed72ff.png" 
-                  alt="ISO 9001:2015 Certification" 
-                  delay={0.4}
                   size="md"
                 />
                 <FloatingCertificationLogo 
@@ -122,13 +116,20 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   size="md"
                 />
                 <FloatingCertificationLogo 
-                  src="/lovable-uploads/e4aab3cf-b528-4ac6-bf8d-039af06a24e9.png" 
+                  src="/lovable-uploads/b7e9e76c-af31-4725-a211-4ec5d4ed72ff.png" 
+                  alt="ISO 9001:2015 Certification" 
+                  delay={0.4}
+                  size="md"
+                />
+                
+                <FloatingCertificationLogo 
+                  src="/lovable-uploads/fssc_22000-logo.png" 
                   alt="FSSC 22000 Certification" 
                   delay={0.8}
                   size="md"
                 />
                 <FloatingCertificationLogo 
-                  src="/lovable-uploads/d808de9e-13d6-4730-a723-30fc5e1e036e.png" 
+                  src="/lovable-uploads/iso-22000-2018-.png" 
                   alt="ISO 22000:2018 Certification" 
                   delay={1.0}
                   size="md"

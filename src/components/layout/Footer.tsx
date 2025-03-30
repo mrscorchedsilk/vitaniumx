@@ -138,14 +138,14 @@ const Footer = () => {
               <li className="flex">
                 <MapPin className="h-5 w-5 text-vitanium-400 mr-3 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-white font-medium">Factory:</p>
+                  <p className="text-white font-medium">Factory Unit 1:</p>
                   <p className="text-neutral-300">F-80, Ramghat Rd, Sector 1, Talanagri, Talashpur, Aligarh, Uttar Pradesh 202001, India</p>
                 </div>
               </li>
               <li className="flex">
                 <MapPin className="h-5 w-5 text-vitanium-400 mr-3 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-white font-medium">Marketing Office:</p>
+                  <p className="text-white font-medium">Corporate Office:</p>
                   <p className="text-neutral-300">Innov8 Coworking Space, 3rd Floor, Orchid Centre, Gurugram, Haryana 122022, India</p>
                 </div>
               </li>

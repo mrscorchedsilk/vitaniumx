@@ -11,7 +11,7 @@ const CertificationBanner = () => {
         </div>
         <div className="flex flex-wrap justify-center items-center gap-12">
           <FloatingCertificationLogo 
-            src="/lovable-uploads/31315a0c-68fe-442c-9d74-dd8c22a5c0d3.png" 
+            src="/lovable-uploads/gmp.png" 
             alt="GMP Certification" 
             delay={0.2}
             size="lg"
@@ -29,13 +29,13 @@ const CertificationBanner = () => {
             size="lg"
           />
           <FloatingCertificationLogo 
-            src="/lovable-uploads/e4aab3cf-b528-4ac6-bf8d-039af06a24e9.png" 
+            src="/lovable-uploads/fssc_22000-logo.png" 
             alt="FSSC 22000 Certification" 
             delay={0.6}
             size="lg"
           />
           <FloatingCertificationLogo 
-            src="/lovable-uploads/d808de9e-13d6-4730-a723-30fc5e1e036e.png" 
+            src="/lovable-uploads/iso-22000-2018-.png" 
             alt="ISO 22000:2018 Certification" 
             delay={1.0}
             size="lg"

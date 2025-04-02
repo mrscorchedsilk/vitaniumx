@@ -10,7 +10,7 @@ const TrustedPartnersSection = () => {
       alt: "M.P. AGRO",
     },
     {
-      src: "/lovable-uploads/b0b63c5c-00a5-4bba-a608-966326136286.png",
+      src: "/lovable-uploads/Shree Lal i Logo.png",
       alt: "SHREE LALJI ENERGY FOODS PVT LTD",
     },
     {
